@@ -107,42 +107,17 @@ Pada proses instalisasi ini langkah pertama yaitu mengakses website scikit denga
 \begin{enumerate}
 \item 
 cara instalisasi Instalasi library scikit dari anaconda langkah pertama instal terlebih dahulu anacondanya dikarenakan anaconda sudah include dengan python maka codingan python dapat digunakan di anaconda dan ketika diperikas versinya maka akan muncul tampilan seperti Gambar \ref{c}
-\begin{figure}[ht]
-      \centerline{\includegraphics[width=1\textwidth]
-      {figures/c}}
-      \caption{Tampilan Versi Python dan Anaconda .}
-      \label{c}
-      \end{figure}
+
 kemudian pada cmd administrator install library sikic dengan cara memasukan codingan pip install -U scikit-learn maka hasilnya seperti seperti pada gambar \ref{c1} berikut.
-\begin{figure}[ht]
-      \centerline{\includegraphics[width=1\textwidth]
-      {figures/c1}}
-      \caption{Instalisasi Library Sikic.}
-      \label{c1}
-      \end{figure}
+
 setelah itu masukan kembali perintah berikut di cmd conda install scikit-learn jika hasilnya seperti pada gambar \ref{c2} maka librari sikic telah teristal dan siap untuk di gunakan.
-\begin{figure}[ht]
-      \centerline{\includegraphics[width=1\textwidth]
-      {figures/c2}}
-      \caption{.}
-      \label{c2}
-      \end{figure}
+
 kemudian untuk mencobanya tuliskan perintah python pada cmd lalu masukan codingan print("Hello Anaconda!") maka hasilnya terlihat seperti gambar \ref{c3} codingan print("Hello Anaconda!") yaitu berfungsi mencetak nilai yang ada di dalam kurung dan di antara kutip.
-\begin{figure}[ht]
-      \centerline{\includegraphics[width=1\textwidth]
-      {figures/c3}}
-      \caption{.}
-      \label{c3}
-      \end{figure}
+
 
 \item
 cara mencoba dataset yaitu dengan cara memasukan perintah berikut pada cmd seperti pada gambar \ref{c4} 
-\begin{figure}[ht]
-      \centerline{\includegraphics[width=1\textwidth]
-      {figures/c4}}
-      \caption{I.}
-      \label{c4}
-      \end{figure}
+
 \begin{itemize}
 \item
 pada codingan from sklearn import datasets menjelaskan inport librari dataset dari librari sikic pada gambar \ref{c4}
@@ -155,4 +130,418 @@ kemudian pada codingan print(digits.data) yaitu mencetak data digits yang di ban
 \item 
 pada codingan print(iris.data) yaitu mencetak data iris yang dibandingkan dengan data digits pada gambar \ref{c4}
 \end{itemize}
+\item
+Mencoba Learning and Predicting\par
+Pada kasus ini dataset digit digunakan untuk memprediksi yang mana telah di berikan gambar untuk mewakili sampel masing-masing dari 10 kelas yang dimulai dari digit nol hingga sembilan yang digunakan untuk memprediksi sampel yang tidak terlihat untuk lebih jelasnya dapat di praktikan codingan berikut ini.
+
+\begin{verbatim}
+>>> from sklearn import datasets 
+\end{verbatim}
+pada baris ini dapat diartikan bahwa librari sklearn mengimport package dataset
+\begin{verbatim}
+>>> iris = datasets.load_iris() 
+\end{verbatim}
+pada baris ini dimasukan parameter iris yang di sandingkan dengan dataset load sehingga iris berisi nilai dataset
+\begin{verbatim}
+>>> digits = datasets.load_digits()
+\end{verbatim}
+pada baris ini dimasukan parameter digits yang di sandingkan dengan dataset load sehingga digits berisi nilai dataset
+\begin{verbatim}
+>>> from sklearn import svm
+\end{verbatim}
+pada baris ini  librari sklearn mengimport package svm
+\begin{verbatim}
+>>> clf = svm.SVC(gamma=0.0001, C=100.)
+\end{verbatim}
+pada codingan diatas dibuat variabel clf yang di isi dengan nilai svm dengan nilai gama 0.0001 dan 100.
+\begin{verbatim}
+>>> clf.fit(digits.data[:-1], digits.target[:-1])
+\end{verbatim}
+pada codingan clf di implementasikan dengan perintah fit
+\begin{verbatim}
+SVC(C=100.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+\end{verbatim}
+yang hasilnya seperti codingan diatas yang menjabarkan isi dari SVC itu sendiri.
+\begin{verbatim}
+>>> clf.predict(digits.data[-1:])
+array([8])
+>>>
+\end{verbatim}
+kemudain pada codingan diatas digunakan printah predic yang merupakan printah untuk mengimplementasikan method digits.
+\item
+Mencoba model pertistence\par 
+model pertistence yaitu model yang digunakan untuk mengolah data sehingga data tersebut konstan atau konsisten terhadap parameter tertentu contoh pada codingan di bagawah nilai y akan konstan di nol walaupuntelah di isi nilai lebih dari nol.
+\begin{verbatim}
+>>> from sklearn import svm
+\end{verbatim}
+pada baris ini  librari sklearn mengimport package svm.
+\begin{verbatim}
+>>> from sklearn import datasets
+\end{verbatim}
+pada baris ini  librari sklearn mengimport package datasets.
+\begin{verbatim}
+>>> clf = svm.SVC(gamma='scale')
+\end{verbatim}
+pada codingan diatas dibuat variabel clf yang di isi dengan nilai svm dengan gamma sama dengan scale.
+\begin{verbatim}
+>>> iris = datasets.load_iris()
+\end{verbatim}
+pada baris ini dimasukan parameter iris yang di sandingkan dengan dataset load sehingga iris berisi nilai dataset.
+\begin{verbatim}
+>>> X, y = iris.data, iris.target
+\end{verbatim}
+pada codingan diatas X berisi nilai iris.data dan y berisi nilai iris.target.
+\begin{verbatim}
+>>> clf.fit(X, y)
+\end{verbatim}
+method clf di implementasikan dengan perintah fit dengan X, y sebagai nilai untuk implementasinya.
+\begin{verbatim}
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+\end{verbatim}
+maka hasilnya penjabaran dari SVC seperti codingan diatas.
+\begin{verbatim}
+>>> import pickle
+\end{verbatim}
+mengimport library atau package pickle.
+\begin{verbatim}
+>>> s = pickle.dumps(clf)
+\end{verbatim}
+kemudian di buat variabel s yang di load oleh package pickle dengan di isi nilai clf.
+\begin{verbatim}
+>>> clf2 = pickle.loads(s)
+\end{verbatim}
+setelah itu pada codingan diatas dibuat lagi variabel clf2 kemudian di load pickle.
+\begin{verbatim}
+>>> clf2.predict(X[0:1])
+\end{verbatim}
+kemudian variabel clf2 di implementasikan dengan parameter X dengan nilai 0 berbanding 1maka hasilnya nilainya array bernilai nol dan y bernialai nol.
+\begin{verbatim}
+array([0])
+>>> y[0]
+0
+\end{verbatim}
+\item
+mencoba conventions
+convenstiions merupakan aturan aturan dasar atau kesepakatan kesepakatan dalam pemerograman sikit python dan anaconda berikut merupakan jenis-jenis codingan conventions :
+\begin{itemize}
+\item
+Type casting yaitu tipe pelemparan parameter atau variabel kedalam variabel baru.
+\begin{verbatim}
+>>> import numpy as np
+\end{verbatim}
+codingan diatas yaitu import librari numpy yang di inisialisasi menjadi np
+\begin{verbatim}
+>>> from sklearn import random_projection
+\end{verbatim}
+import librari random\_projection
+\begin{verbatim}
+>>> rng = np.random.RandomState(0)
+\end{verbatim}
+membuat variabel baru dengan nama rng dengan nilai random
+\begin{verbatim}
+>>> X = rng.rand(10, 2000)
+\end{verbatim}
+memasukan nilai rng kedalam variabel X dengan rad nilai 10 sampai 2000
+\begin{verbatim}
+>>> X = np.array(X, dtype='float32')
+\end{verbatim}
+menambahkan nilai np berupa array yaitu X dan float 32 
+\begin{verbatim}
+>>> X.dtype
+dtype('float32')
+\end{verbatim}
+X.dtype di running menghasilkan nilai dtype float
+\begin{verbatim}
+>>> transformer = random_projection.GaussianRandomProjection()
+\end{verbatim}
+membuat variabel transformer dengan nilai random
+\begin{verbatim}
+>>> X_new = transformer.fit_transform(X)
+\end{verbatim}
+membuat variabel X\_new dan di isi nilai transformer kemudian di implementasikan 
+\begin{verbatim}
+>>> X_new.dtype
+\end{verbatim}
+merunning variabel X\_new
+\begin{verbatim}
+dtype('float64')
+\end{verbatim}
+hasil running X\_new
+
+
+\begin{verbatim}
+>>> from sklearn import datasets
+\end{verbatim}
+mengimport library dataset
+\begin{verbatim}
+>>> from sklearn.svm import SVC
+\end{verbatim}
+mengimport library SVC
+\begin{verbatim}
+>>> iris = datasets.load_iris()
+\end{verbatim}
+membuat variabel iris dengan nilai load dataset
+\begin{verbatim}
+>>> clf = SVC(gamma='scale')
+\end{verbatim}
+membuat variabel clf bernilai SVC dengan gamma menggunakan nilai sekala
+\begin{verbatim}
+>>> clf.fit(iris.data, iris.target)
+\end{verbatim}
+merunning variabel atau method clf dengan isian nilai iris data dan iris target
+\begin{verbatim}
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+\end{verbatim}
+detail hasil runing clf 
+\begin{verbatim}
+>>> list(clf.predict(iris.data[:3]))
+[0, 0, 0]
+\end{verbatim}
+memunculkan detail atau lis sebanyak tiga nilai
+\begin{verbatim}
+>>> clf.fit(iris.data, iris.target_names[iris.target])
+\end{verbatim}
+merunning kembali clf dengan nilai iris data, iris target name
+\begin{verbatim}
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+\end{verbatim}
+hasil dari running clf
+\begin{verbatim}
+>>> list(clf.predict(iris.data[:3]))
+['setosa', 'setosa', 'setosa']
+\end{verbatim}
+memunculkan tiga nilai yang telah dilempar dari SVC
+\item
+Refitting and updating parameters atau pengisian ulang atau memperbagarui paramater merupakan cara untuk merubah nilai dari sebuah parameter contoh nilai x adalah 10 jika di perbaharui bisa menjadi 15 begitu juga dalam codiangan berikut hal ini dapat dilakukan untuk lebih jelasnya dabat dilihat codingan dibawah ini :
+\begin{verbatim}
+>>> import numpy as np
+\end{verbatim}
+codingan diatas yaitu import librari numpy yang di inisialisasi menjadi np
+\begin{verbatim}
+>>> from sklearn.svm import SVC
+\end{verbatim}
+mengimport library SVC
+\begin{verbatim}
+>>> rng = np.random.RandomState(0).
+\end{verbatim}
+membuat variabel baru dengan nama rng dengan nilai random.
+\begin{verbatim}
+>>> X = rng.rand(100, 10)
+\end{verbatim}
+paramater X dengan nilai dari variabel rng dan rad dari 100 sampai 10.
+\begin{verbatim}
+>>> y = rng.binomial(1, 0.5, 100)
+\end{verbatim}
+parameter y dengan nilai rng binominal dari 1 0,5 sampai 100.
+\begin{verbatim}
+>>> X_test = rng.rand(5, 10)
+\end{verbatim}
+parameter X\_test dengan nilai rng dan rad dari 5 ke 10
+\begin{verbatim}
+>>> clf = SVC()
+\end{verbatim}
+parameter clf bernilai SVC
+\begin{verbatim}
+>>> clf.set_params(kernel='linear').fit(X, y)
+\end{verbatim}
+parameter clf di set dengan mengkompile atau mengekstrak nilai X dan y dengan kernel linear.
+\begin{verbatim}
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto_deprecated',
+  kernel='linear', max_iter=-1, probability=False, random_state=None,
+  shrinking=True, tol=0.001, verbose=False)
+\end{verbatim}
+penjabaran nilai SVC hasul running CLF
+\begin{verbatim}
+>>> clf.predict(X_test)
+array([1, 0, 1, 1, 0])
+\end{verbatim}
+meranning clf dengan nilai X\_test
+\begin{verbatim}
+>>> clf.set_params(kernel='rbf', gamma='scale').fit(X, y)
+\end{verbatim}
+parameter clf di set dengan kernel rbf dan gama skala dan mengkompile nilai X dan y.
+\begin{verbatim}
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+\end{verbatim}
+penjabaran nilai SVC hasul running CLF
+\begin{verbatim}
+>>> clf.predict(X_test)
+array([1, 0, 1, 1, 0])
+\end{verbatim}
+Hasil dari  running clf.
+\item
+Multiclass vs. multilabel fitting
+perbandingan antara bnyak klass dan pelabelan yang tepat berikut merupakan codingannya.
+\begin{verbatim}
+>>> from sklearn.svm import SVC
+\end{verbatim}
+mengimport library SVC
+\begin{verbatim}
+>>> from sklearn.multiclass import OneVsRestClassifier
+\end{verbatim}
+memasukan librari OneVsRestClassifier dengan kondisi multi class.
+\begin{verbatim} 
+>>> from sklearn.preprocessing import LabelBinarizer
+\end{verbatim}
+memasukan librari  LabelBinarizer
+\begin{verbatim}
+>>> X = [[1, 2], [2, 4], [4, 5], [3, 2], [3, 1]]
+\end{verbatim}
+pemberian nilai pada parameter X
+\begin{verbatim}
+>>> y = [0, 0, 1, 1, 2]
+\end{verbatim}
+pemberian nilai pada parameter y
+\begin{verbatim}
+>>> classif = OneVsRestClassifier(estimator=SVC(gamma='scale',
+... random_state=0))
+\end{verbatim}
+opsi untuk class dengan ketentuan estimator SVC gamma berbentuk skala dan random (acak).
+\begin{verbatim}
+>>> classif.fit(X, y).predict(X)
+array([0, 0, 1, 1, 2])
+\end{verbatim}
+hasil array dari running classif
+\begin{verbatim}
+>>> y = LabelBinarizer().fit_transform(y)
+\end{verbatim}
+memberikan niilai pada parameter y
+\begin{verbatim}
+>>> classif.fit(X, y).predict(X)
+array([[1, 0, 0],
+       [1, 0, 0],
+       [0, 1, 0],
+       [0, 0, 0],
+       [0, 0, 0]])
+\end{verbatim}
+hasil running classif 
+\begin{verbatim}
+>>> from sklearn.preprocessing import MultiLabelBinarizer
+\end{verbatim}
+import librari multi label
+\begin{verbatim}
+>>> y = [[0, 1], [0, 2], [1, 3], [0, 2, 3], [2, 4]]
+\end{verbatim}
+memberikan nilai pada parameter y
+\begin{verbatim}
+>>> y = MultiLabelBinarizer().fit_transform(y)
+\end{verbatim}
+membuat parameter y menjadi multi label.
+\begin{verbatim}
+>>> classif.fit(X, y).predict(X)
+array([[1, 1, 0, 0, 0],
+       [1, 0, 1, 0, 0],
+       [0, 1, 0, 1, 0],
+       [1, 0, 1, 0, 0],
+       [1, 0, 1, 0, 0]])
+\end{verbatim}
+hasil running classif setelah nili parameter y telah di ganti.
+\end{itemize}
 \end{enumerate}
+
+
+
+\subsection{Penanganan Error}\par
+\begin{enumerate}
+\item
+Screenshot Error
+untuk lebih jelasnya Screenshot codingan dapat dilihat pada gambar \ref{c5} dan \ref{c6}
+\item
+Kode error pada screenshot
+untuk kode error pada gambar \ref{c5} yaitu pada surce code berikut \begin{verbatim} clf.fit(digits.data[:-1], digits.target[:-1]) \end{verbatim} pada codingan tersebut menjadi error dikarenakan variabel atau method digits belum di definisikan.
+sedangkan untuk kode error pada gambar \ref{c6} yaitu pada source code \begin{verbatim} from joblib import dump, load \end{verbatim}  pada codingantersebut terjadi error dikarenakan  module joblib belum di install atau modul tersebut tidak ada di library python.
+\item
+Solusi Pemecahan Masalah Error 
+\begin{itemize}
+\item
+untuk memperbaiki error pada gambar \ref{c5} tinggal mendefinisikan variabel atau method digits, untuk lebih lengkapnya dapat dilihat pada gambar  \ref{c7} dengan cara tersebut maka masalah error dapat diselesaikan.
+\item
+sedangkan untuk error joblib bisa dilakukan dengan cara masuk ke cmd administrator kemudian isikan perintah pip install joblib kemudiantekan enter sehingga hasilnya terlihat seperti gambar \ref{c8} setelah itu coba masuk kembali ke python di cmd dan ketikan perintah from joblib import dump, load maka hasilnya seperti gambar \ref{c9}.
+\end{itemize}
+\end{enumerate}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c}}
+      \caption{Tampilan Versi Python dan Anaconda .}
+      \label{c}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c1}}
+      \caption{Instalisasi Library Sikic.}
+      \label{c1}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c2}}
+      \caption{Instalasi Library Sikic Melalui Conda}
+      \label{c2}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c3}}
+      \caption{Console Python Include Anaconda}
+      \label{c3}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c4}}
+      \caption{Contoh Codingan Dataset}
+      \label{c4}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c5}}
+      \caption{Error Coding 1}
+      \label{c5}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c6}}
+      \caption{Error Coding 2}
+      \label{c6}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c7}}
+      \caption{Codingan Solusi Untuk Error digits}
+      \label{c7}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c8}}
+      \caption{Codingan Solusi Untuk Error Joblib}
+      \label{c8}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/c9}}
+      \caption{Hasil Solusi Error Joblib}
+      \label{c9}
+      \end{figure}
