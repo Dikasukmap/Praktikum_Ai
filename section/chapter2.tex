@@ -46,6 +46,84 @@ cite and paraphrase method 1
 \subsection{Method 2}
 cite and paraphrase method 2 if you have more method please add new subsection.
 
+\section{Ahmad Syafrizal Huda/1164062}
+\subsection{Teori}
+\begin{enumerate}
+\item Binary Classification yaitu katakanlah kita memiliki tugas untuk mengklasifikasikan objek menjadi dua kelompok berdasarkan beberapa fitur. Sebagai contoh, katakanlah kita diberi beberapa pena dan pensil dari berbagai jenis dan merek, kita dapat dengan mudah memisahkannya menjadi dua kelas, yaitu pena dan pensil.
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{1}.
+
+\item Supervised learning merupakan sebuah pendekatan dimana sudah terdapat data yang dilatih, dan terdapat variable yang ditargetkan sehingga tujuan dari pendekatan ini adalah mengkelompokan suatu data ke data yang sudah ada. Sedangkan unsupervised learning tidak memiliki data latih, sehingga dari data yang ada, kita mengelompokan data tersebut menjadi 2 bagian atau 3 bagian dan seterusnya. Dan clustering adalah proses pengelompokan entitas yang sama bersama-sama. Tujuan dari teknik pembelajaran mesin tanpa pengawasan ini adalah untuk menemukan kesamaan pada titik data dan mengelompokkan titik data yang serupa secara bersamaan\cite{zhu2009introduction}.
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{2}.
+\subitem Contoh ilustrasi gambar bisa dilihat  pada gambar \ref{3}.
+\item Evaluasi dan akurasi adalah bagaimana cara kita bisa mengevaluasi sebarapa baik model mengerjakan pekerjaannya dengan cara mengukur akurasinya. Akurasi nantinya didefinisikan sebagai presentase kasus yang telah diklasifikasikan dengan benar. Kita dapat melakukan analisis kesalahan yang telah di buat oleh model.
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{5}.
+\item Cara membuat dan membaca confusion matrix yaitu, menentukan pokok permasalahan serta atributnya, membuat Decision Tree, membuat Data Testing, mencari nilai variabelnya misal a,b,c, dan d, mencari nilai recall, precision, accuracy, dan erorr rate.
+\subitem Contoh Confusion Matrix.
+\begin{verbatim}
+		Recall =3/(1+3) = 0,75
+		Precision = 3/(1+3) = 0,75
+		Accuracy =(5+3)/(5+1+1+3) = 0,8
+		Error Rate =(1+1)/(5+1+1+3) = 0,2 
+\end{verbatim}
+\item Berikut ini tata cara kerja K-fold Cross Validation>
+	\begin{itemize}
+		\item Total instance akan dibagi menjadi N bagian.
+		\item Fold yang pertama adalah bagian pertama menjadi testing data dan sisanya menjadi training data.
+		\item Hitung akurasi berdasarkan porsi data tersebut dengan menggunakan persamaan.
+		\item Fold yang ke dua adalah bagian ke dua menjadi testing data dan sisanya training data. 
+		\item Hitung akurasi berdasarkan porsi data tersebut.
+		\item Lakukan step secara berulang hingga habis mencapai fold ke-K.
+		\item Terakhir hitung rata-rata akurasi K buah.
+	\end{itemize}
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{6}.
+\item Decision Tree adalah sebuah metode pembelajaran yang digunakan untuk melakukan klarifikasi dan regresi. Decision Tree digunakan untuk membuat sebuah model yang dapat memprediksi sebuah nilai variabel target dengan cara mempelajari aturan keputusan dari fitur data. Contoh Decision Tree adalah untuk melakukan predikisi apakah Kuda termasuk hewan mamalia atau bukan.
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{7}.
+\item Gain adalah pengurangan yang diharapkan dalam enthropy. Dalam mechine learning, gain dapat digunakan untuk menentukan sebuah urutan atribut atau memperkecil atribut yang telah dipilih. Urutan ini akan membentuk decision tree, atribut gain dipilih yang paling besar. Dan Entropi adalah ukuran ketidakpastian sebuah variabel acak sehingga dapat di artikan entropi adalah ukuran ketidakpastian dari sebuah atribut.
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{8}.
+\end{enumerate}
+
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/binary.JPG}}
+		\caption{Binary Classification.}
+		\label{1}
+\end{figure}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/supervised.JPG}}
+		\caption{Supervised Learning.}
+		\label{2}
+\end{figure}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/unsupervised.JPG}}
+		\caption{Unsupervised Learning.}
+		\label{3}
+\end{figure}
+\subitem Contoh ilustrasi gambar bisa dilihat pada gambar \ref{4}.
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/clustering.JPG}}
+		\caption{Clustering.}
+		\label{4}
+\end{figure}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/evaluasidanakurasi.JPG}}
+		\caption{Evaluasi dan Akurasi.}
+		\label{5}
+\end{figure}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/K-fold.JPG}}
+		\caption{K-fold Cross Validation.}
+		\label{6}
+\end{figure}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/DecisionTree.JPG}}
+		\caption{Decision Tree.}
+		\label{7}
+\end{figure}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/huda/Gain.PNG}}
+		\caption{Gain.}
+		\label{8}
+\end{figure}
+
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c10}}
