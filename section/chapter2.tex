@@ -32,19 +32,268 @@ informasion gain merupakan informasi atau keriteria dalam pembagian sebuah objek
 sedangkan entropi merupakan ukuran keacakan dari informasi semakin tinggi entropi maka semakin sulit dalam menentukan keputusan contoh dalam menentukan jenis kelamin semakin detail informasi maka akan semakin susah dalam menentukan keputusan.
 \end{enumerate}
 
+\subsection{Sikic-Learn /Cokro Edi Prawiro/1164069}
+\begin{enumerate}
+\item pada surcode pertama yang dapat dilihat pada gambar \ref{c19} pada baris pertama di tuliskan \begin{verbatim} import pandas as baso \end{verbatim} yang berarti mengimport library padas yang di inisialisasi namanya menjadi baso. selanjutnya pada baris ke dua codingan tersebut berisi \begin{verbatim} cireng = baso.read_csv
+('E:\KULIAH\semester_6\AI\Buku\Chapter01\dataset\student-por.csv', sep=';')\end{verbatim} pada code tersebut terdapat variabel cireng yang berisi inisialisasi padas (baso) dengan aksi untuk membaca vfile csv yang terdapat pada direktori pada komputer kemudian terdapat sep samadengan titik koma yang berarti pemisah field di dalam vile tersebut merupakan titik koma. kemudian pada bagian akhir terdapat code len (nama variabel) yang berarti akan menghotung jumlah baris pada file tersebut. untuk hasilnya dapat dilihat pada gambar \ref{hasil1}
 
-\subsection{Topic 2}
-if you have two topics you can include here to
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c19}}
+      \caption{Source Code Load Dataset}
+      \label{c19}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil1}}
+      \caption{Hasil Load Dataset}
+      \label{hasil1}
+      \end{figure}
+
+\item Pada code selanjutnya akan ditambahkan fungsi untuk lulus atau gagal yang dibuat berupa kolom kolom yang di dalammya terdapat nilai 0 dan 1 dimana 0 berarti gagal dan 1 berarti lulus. kemudian variabel pada codingan sebelumnya masih digunakan yaitu pada codingan berikut \begin{verbatim} cireng['pass'] = cireng.apply(lambda row:
+ 1 if (row['G1']+row['G2']+row['G3']) >= 35 else 0, axis=1) \end{verbatim}. dimana variabel cireng digunakan karena berisi nilai file csv kemudian dilakukan ekseskusi dengan parameter G1, G2, dan G3 dengan fungsi lambda yang berarti if bersarang atau if didalam if yang berarti nilai yang di eksekusi akan dilempar ke dalam setiap paramater sasuai dengan kriteria dan axis=1 yaitu nilai tersebut akan digunakan dari tiap baris data. sedangkan pada codingan \begin{verbatim} cireng = cireng.drop(['G1', 'G2', 'G3'], axis=1) \end{verbatim} variabel cireng di berikan aksi drop yaitu penurunan nilai pada bagian baris data. dan pada code cireng.head () yaitu untuk mengeksekusi codingan sebelumnya untuk lebih jelasnya dapat dilihat pada gambar \ref{c20} dan hasilnya seperti pada gambar \ref{hasil2} berikut :
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c20}}
+      \caption{memberikan nilai satau atau nol}
+      \label{c20}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil2}}
+      \caption{hasil dari memberikan nilai nol dan satu}
+      \label{hasil2}
+      \end{figure}
+
+\item pada kodingan selanjutnya diguanakn untuk menambahkan nilai numerik berupa 0 dan 1 yang dirubah dari nilai tidak dan iya hal ini merupakan fungsi dari codingan get\_dummies pada baris pertama pada gambar \ref{c21} yang nilainya diambil dari variabel cireng yang telah di dekralasikan tadi banyaknya data numerik itu sendiri tergantung pada field dari kolom yang di camtumkan pada codingan dengan catatan field tersebut harus ada dalam data csv yang di import oleh codingan pertama tadi maka hasilnya akam merubah data dalam field tersebut menjadi 0 dan 1 untuk lebih jelasnya dapat di lihat pada gambar \ref{hasil3} berikut; 
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c21}}
+      \caption{Penambahan nilai numerik}
+      \label{c21}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil3}}
+      \caption{hasil Penambahan nilai numerik}
+      \label{hasil3}
+      \end{figure}
+
+\item selanjutnya pada codingan selanjutnya yaitu menentukan data training dan data testing dari dataset dimana variabel cireng yang berisi data csv tadi dibuat perbandingan 500 untuk data training dan sisanya yaitu 149 digunakan untuk data testing hal ini di lakukan pada baris ke 1 sampai ke 3 pada gambar \ref{c22} kemudian nilai tersebut di turunkan  brdasarkan baris pada data set hal itu dapat dilihat pada baris ke 4 sampai ke 9 pada gambar \ref{c22} kemudian selanjutnya mengimport library numpy yang berguna untuk oprasi vektor dan matrix karna data diatas berupa data matrix maka library ini di gunakan. untuk hasilnya dapat dilihat pada gambar \ref{hasil4} dan \ref{hasilk4}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c22}}
+      \caption{penentuan data training dan data testing}
+      \label{c22}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil4}}
+      \caption{Hasil 1 penentuan data training dan data testing}
+      \label{hasil4}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasilk4}}
+      \caption{hasil 2 penentuan data training dan data testing}
+      \label{hasilk4}
+      \end{figure}
+
+\item selanjutnya yaitu membuat pohon keputusan dapat lebih jelasnya dapat di lihat pada gambar \ref{c23}. pada baris pertama yairu memasukan librari tree kemudian pada baris kedua dibuat variabel tempe dengan nilai DecisionTreeClasifier yang merupakan paket atau fungsi dari scikit-learn yang merupakan class yang mampu melakukan multi class. sedangkan max\_depth=5 merupakan untuk penyesuaian data terhadap pohon keputusan itu sndiri. untuk hasilnya dapat dilihat pada gambar \ref{hasil5}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c23}}
+      \caption{memberikan nilai pada pohon keputusan}
+      \label{c23}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil5}}
+      \caption{hasil memberikan nilai pada pohon keputusan}
+      \label{hasil5}
+      \end{figure}
+
+\item selanjutnya yaitu pembuatan gambar dari pohon keputusan yang tadi di buta pada codingan sebelumnya pada baris pertama codingan ya itu mengimport library graphviz kemudian pada baris ke dua yaitu pemberian nilai pada variabel baru dot data nilainy diambil dari pembuatan puhon keputusan tadi kemudian di tentukannya nilai benar dan salah dari codingan tersebut setelah itu dibuatlah sebuah variabel untuk menampung hasil eksekusi tersebut kemudian variabel tersebut di running untuk lebih jelasnya dapat di lihat pada gambar \ref{c24} kemudian hasilnya dapat dilihat pada gambar \ref{hasil6}.
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c24}}
+      \caption{pembuatan diagram puhon keputusan}
+      \label{c24}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil6}}
+      \caption{hasil pembuatan puhon keputusan}
+      \label{hasil6}
+      \end{figure}
+
+\item selanjutnya pembuatasn method untuk menyimpan data pohon dengan menarik data langsung dari pohon keputusan di buat tadi untuk code lebih jelasnya dapat dilihat pada gambar\ref{c25}. kemudian intuk hasilnya dapat dilihat pada gambar \ref{hasil7} berikut.
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c25}}
+      \caption{coding save}
+      \label{c25}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil7}}
+      \caption{hasil coding save }
+      \label{hasil7}
+      \end{figure}
+
+\item selanjutnya pada codingan berikut yaitu digunakan untuk mencetak nilai score rata-rata dari ketepatan data yang telah di olah tadi lebih jelsnya dapat dilihat pada gambar \ref{c26} kemudian untuk hasilnya dapat dilihat pada gambar \ref{hasil8} tersebut:
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c26}}
+      \caption{Contoh Binary Classification}
+      \label{c26}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil8}}
+      \caption{hasil coding save }
+      \label{hasil8}
+      \end{figure}
+
+\item selanjutnya yaitu digunakan untuk memeriksa akurasi dari ketepatan hasil pengolahan data tersebut maka akan didapat nilai rata-rata 60 persen dari hasil pengolahan data tersebut untuk lebih jelasnya dapat di lihat pada gambar \ref{c27} pada codingan tersebut pada baris ke satu melakukan import library dari sklern kemudian pada baris selanjutnya mengisi nilai skor dengan nilai pada variabel tempe setelah hal tersebut dilakukan kemudian data tersebut di eksekusi. berikut merupakan hasil dari code tersebut dapat dilihat pada gambar \ref{hasil9}.
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c27}}
+      \caption{Akurasi perhitungan pohon keputusan}
+      \label{c27}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil9}}
+      \caption{hasil Akurasi perhitungan pohon keputusan }
+      \label{hasil9}
+      \end{figure}
+
+\item membuat rank akurasi dari 1 sampai 20 untuk melihat akurasi data apakah datatersebut terdapat di rata rata 60 persen atau tidak dengan cara membuat lagi variabel baru dengan nilai tree diadalammya jadi hampir mirip seperti membuat pohon keputusan namun ini langsung dalam bentuk rata rata akurasi yanlebih spesifik untuk lebih jelasnya dpat dilihat pada gambar\ref{c28} codingan berikut. dan untuk hasilnya dapat dilihat pada gambar \ref{hasil10} berikut.
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c28}}
+      \caption{Contoh Binary Classification}
+      \label{c28}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil10}}
+      \caption{hasil Akurasi perhitungan pohon keputusan }
+      \label{hasil10}
+      \end{figure}
+
+\item untuk selanjutnya yaitu menentukan nilai untuk grafik hampirsama dengan nilia akurasi tadi pertama tentukan rank atai batasan nilai itu disini batasannya di mulai dari 1 sampai 20 dengan menggunakan nilai tree tadi maka hasilnya dapat ditentuka kemudian buat variabel i untuk penomoran tiap record yang keluar atau recod hadil dari eksekusi tree tersebut. untuk lebih jelasnya dapat dilihat pada gambar \ref{c29} dan untuk hasilnya dapat dilihat pada gambar \ref{hasil11}.
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c29}}
+      \caption{Contoh Binary Classification}
+      \label{c29}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil11}}
+      \caption{hasil Akurasi perhitungan pohon keputusan }
+      \label{hasil11}
+      \end{figure}
+
+\item terakhir yaitu pembuatan grafik untuk pembuatan grafik diambil data dari codingan sebelumnya yang 20 record tadi dengan cara mengimport libray matplotlib.pyplot yang di inisialisasi menjadi bakwankemudian inisialisasi tersebut di eksekusi. untuk lebih jelasnya codingannya seperti gambar \ref{c30} dan untuk hasilnya seperti gambar \ref{hasil12} berikut. 
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c30}}
+      \caption{codingan pembuatan grafik}
+      \label{c30}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/hasil12}}
+      \caption{hasil grafik }
+      \label{hasil12}
+      \end{figure}
+\end{enumerate}
+
+\subsection{Penanganan Error /Cokro Edi Prawiro/1164069}
+\begin{enumerate}
+\item skrinsut error dapat dilihat pada gambar \ref{c31}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c31}}
+      \caption{Scrensot error }
+      \label{c31}
+     \end{figure}
+
+\item kode error dan jenis errornya .
+\begin{verbatim}
+import graphviz
+dot_data = tree.export_graphviz(tempe, out_file=None, label="all", impurity=False, proportion=True,
+                                feature_names=list(cireng_train_att), class_names=["fail", "pass"], 
+                                filled=True, rounded=True)
+graph = graphviz.Source(dot_data)
+graph
+\end{verbatim}
+
+pada codingan tersebut error karena graphiznya belu di istall 
+
+\item Solusi pemecahan masalah \par
+buka CMD komputer anda run as administrator koemudian masukan perintah conda install graphviz kemudian tekan enter ingat hal ini dilakukan harus terkoneksi dengan jaringan internet. untuk hasinya dapat dilihat pada gambar\ref{c32} dan gambar \ref{c33}
+setelah itu masukan PATH graphviz dengan cara masuk ke direktori graphviz itu di simpan kalau di komputer saya disempan di 
+\begin{verbatim}C:\ProgramData\Anaconda3\Library\bin\graphviz \end{verbatim} kemudian setelah itu copy alamat direktori tersebut dan masukan kedalam path seperti pada gambar \ref{c34} dan pada gambar \ref{c35}.
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c32}}
+      \caption{Proses instalisasi  graphviz }
+      \label{c32}
+     \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c33}}
+      \caption{Proses instalisasi  graphviz di user }
+      \label{c33}
+     \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c34}}
+      \caption{Path Komputer}
+      \label{c34}
+     \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c35}}
+      \caption{Memasukan Direktori Ke Path }
+      \label{c35}
+     \end{figure}
 
 
-\section{Same Method}
-write and cite latest journal with same method
-
-\subsection{Method 1}
-cite and paraphrase method 1
-
-\subsection{Method 2}
-cite and paraphrase method 2 if you have more method please add new subsection.
+\end{enumerate}
 
 \section{Ahmad Syafrizal Huda/1164062}
 \subsection{Teori}
@@ -134,56 +383,56 @@ cite and paraphrase method 2 if you have more method please add new subsection.
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c11}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi Suvervised Learning}
       \label{c11}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c12}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi Unsuvervised Learning}
       \label{c12}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c13}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi Clustering}
       \label{c13}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c14}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi Evaluasi}
       \label{c14}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c15}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi Confusion Matrix}
       \label{c15}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c16}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi K-Fold}
       \label{c16}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c17}}
-      \caption{Contoh Binary Classification}
+      \caption{Ilustrasi Decision Tree}
       \label{c17}
       \end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
       {figures/c18}}
-      \caption{Contoh Binary Classification}
+      \caption{Contoh Ilustrasi Information Gain.}
       \label{c18}
       \end{figure}
 
