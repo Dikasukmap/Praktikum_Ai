@@ -101,7 +101,54 @@ Voting merupakan data hasil dari decision tree yang terdapat pada random forest.
 
 \end{enumerate}
 
-
+\section{Ahmad Syafrizal Huda / 1164062}
+\subsection{Teori}
+\begin{enumerate}
+\item Random forest ialah sekumpulan classifier yang terdiri dari banyak pohon keputusan dan mengerjakan klasifikasi berdasarkan keluaran dari hasil klasifikasi setiap pohon keputusan anggota. Klasifikasi random forest dikerjakan melalui penggabungan pohon (tree) dengan melakukan training pada sampel data yang dimiliki. Contoh ilustrasi gambar random forest pada gambar \ref{h1}.
+\item Cara membaca dataset kasus dan makna setiap file dan isi field masing-masing file
+\subitem Gunakan librari pandas yang sudah di install sebelumnya pada python untuk dapat membaca dataset dengan format text file.
+\subitem  Selanjutnya buatlah variabel baru misalkan diberi nama dataset yang berisikan perintah untuk membaca file csv.
+\begin{verbatim}
+import pandas as data
+dataset = data.read_csv("car.txt")
+dataset.head()
+\end{verbatim}
+\subitem Pada perintah diatas yaitu memanggil library pandas untuk membaca dataset, membuat variabel dataset yang berisikan data.read\_csv untuk membaca dataset. Pada contoh ini menggunakan txt tapi tetap bisa membaca datasetnya, karena pada saat dijalankan librari pandas secara otomatis akan mengubah data dalam bentuk text file ke format csv. Hasilnya seperti pada gambar \ref{h2}.
+\subitem Penjelasan dari isi field pada hasil gambar \ref{h2} yaitu: Atribut Index merupakan atribut otomatis untuk penomoran data yang sudah ada, Atribut Buying merupakan harga beli dari mobil tersebut. dengan value : v high/Sangat mahal,high/mahal,med/Cukup, low/Murah, Atribut Maint merupakan harga perawatan dari mobil tersebut, dengan value sama seperti pada atribut Buying, Atribut Doors merupakan jumlah pintu yang terdapat pada mobil, dengan value 2,3,4,5 more atau lebih dari 5, Atribut Persons merupakan kapasitas orang yang bisa masuk kedapalm mobil, dengan value 2,4, more /lebih, Atribut Lug Boot merupakan ukuran bagasi boot mobil, dengan value small,med,big, Atribut Safety merupakan perkiraan keselamatan mobil, dengan value low,med,high, Yang terakhir yaitu Value, yang dimana merupakan merupakan Class nya atau disebut dengan targetnya menyatakan apakah mobil tersebut dapat diterima atau tidak dan apakah mobil tersebut bagus atau tidak, dengan value unacc, acc, good,v good.
+\item Cross validation adalah teknik validasi model untuk menilai bagaimana hasil analisis statistik (model) akan digeneralisasi ke kumpulan data independen. Ini terutama digunakan dalam pengaturan di mana tujuannya adalah prediksi, dan orang ingin memperkirakan seberapa akurat model prediksi akan dilakukan dalam praktek.
+\item Arti score 44\% pada random forest yaitu merupakan outputannya untuk hutan acak, arti score 27\% pada decission tree adalah presentasi hasil dari perhitungan dataset acak, dan arti score 29\% dari SVM adalah hasil pendekatan jaringan saraf.  Hasil tersebut didapat dari hasil valdasi silang untuk memastikan bahwa membagi training test dengan cara yang berbeda. Jadi 44\% untuk random forest, 27\% untuk pohon keputusan, dan 29\% untuk SVM. Itu merupakan presentase keakurasian prediksi yang dilakukan pada saat testing menggunakan label pada dataset yang digunakan. Score mendefinisikan aturan evaluasi model.
+\item Perhitungan confusion Matriks dapat dilakukan sebagai berikut:
+\subitem Import librari Pandas, Matplotlib, dan Numpy.
+\subitem Buat variabel x\_aktu yang berisikan data aktual.
+\subitem Buat variabel x\_diksi berisikan data yang akan dijadikan sebagai prediksi.
+\subitem Buat variabel ak\_confusion yang berisikan crosstab untuk membangun tabel tabulasi silang yang dapat menunjukkan frekuensi kemunculan kelompok data tertentu.
+\subitem Pada variabel ak\_confusion definisikan lagi nama baris yaitu Aktual dan kolomnya Prediksi
+\subitem Kemudian definisikan suatu fungsi yang diberi nama plot confusion matrix yang berisikan pendefinisian confusion matrix dan juga akan di plotting. untuk code perintah lengkapnya sebagai berikut :
+\subitem
+\begin{verbatim}
+import numpy as cm1
+import matplotlib.pyplot as plt
+import pandas as cm2
+x_aktu = cm2.Series([3, 1, 3, 3, 1, 2, 2, 3, 3, 1, 2, 3], name='Aktual')
+x_diksi = cm2.Series([1, 1, 3, 2, 1, 3, 2, 1, 3, 1, 3, 3], name='Prediksi')
+ak_confusion = cm2.crosstab(x_aktu, x_diksi)
+ak_confusion = cm2.crosstab(x_aktu, x_diksi, rownames=['Aktual'], colnames=['Prediksi'], margins=True)
+def plot_confusion_matrix(df_confusion, title='Confusion matrix', cmap=plt.cm.gray_r):
+    plt.matshow(ak_confusion, cmap=cmap) # imshow
+    #plt.title(title)
+    plt.colorbar()
+    tick_marks = cm1.arange(len(ak_confusion.columns))
+    plt.xticks(tick_marks, ak_confusion.columns, rotation=45)
+    plt.yticks(tick_marks, ak_confusion.index)
+    #plt.tight_layout()
+    plt.ylabel(ak_confusion.index.name)
+    plt.xlabel(ak_confusion.columns.name)
+plot_confusion_matrix(ak_confusion)
+plt.show()
+\end{verbatim}
+Hasilnya akan seperti pada gambar \ref{h3} :
+\item Voting pada random forest sebagaimana voting yaitu suara/hasil untuk setiap target yang diprediksi pada saat melakukan Random Forest. Pertimbangkan target prediksi dengan voting terbanyak/tertinggi sebagai prediksi akhir dari algoritma random forest. Contoh ilustrasi dapat dilihat pada gambar \ref{h4}.
+\end{enumerate}
 
 \begin{figure}[ht]
 	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/1.png}}
@@ -144,3 +191,29 @@ Voting merupakan data hasil dari decision tree yang terdapat pada random forest.
       \caption{Ilustrasi Confusion matrix}
       \label{c38}
       \end{figure}
+
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/huda/chapter3/1.JPG}}
+	\caption{Random Forest}
+	\label{h1}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/huda/chapter3/2.PNG}}
+	\caption{Hasil Dataset}
+	\label{h2}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/huda/chapter3/3.JPG}}
+	\caption{Confusion Matrix}
+	\label{h3}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/huda/chapter3/4.png}}
+	\caption{Voting}
+	\label{h4}
+\end{figure}
+
