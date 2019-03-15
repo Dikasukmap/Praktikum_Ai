@@ -66,11 +66,77 @@ penggunaan code diatas adala cara untuk membaca dataset jenis burung dengan meto
 voting pada random forest berguna untuk mengambil nilai yang akan digunakan sebagai bandingan dari masing - masing tree yang ada untuk menghasilkan nilai final sebagai data yang diinginkan, contohnya adalah seperti berikut ini : Gambar \ref{fig3}
 \end{enumerate}
 
+\subsection{Praktek}
+\begin{enumerate}
+\item membaca data Hero Dota dengan Pandas
+\subitem
+pada code ini akan dijelaskan maksud dan tujuan dari setiap baris code yang ada.
+\begin{itemize}
+\item pertama ada perintah import yang berguna untuk memanggil library pandas untuk digunakan aliaskan sebagai dota agar mudah dalam melakukan pemanggilan variable.
+\item lalu ada variable hero yang menampung data untuk ditampilkan.
+\item lalu ada variable dh yang berguna sebagai variable yang akan memanggil proses dari data dota dengan menggunakan tipe DataFrame dengan data variable hero.
+\item lalu perintah print untuk menampilkan hasilnya ada pada gambar \ref{p1}.
+\end{itemize}
 
+\item membaca data Integer yang disusun dengan menggunakan Numpy
+\subitem 
+pada code ini kita akan menggunakan numpy sebagai library dengan beberapa function codenya seperti eye(), reshape() dan dot(), langsung saja dijelaskan bagian dari masing - masing baris codenya.
+\begin{itemize}
+\item pertama ada import numpy as cat dengan menggunakan library numpy maka kita harus terlebih dahulu melakukan import librarynya agar dapat menggunakan function yang terdapat disana, lalu kita menggunakan aliasnya menjadi cat
+\item lalu terdapat beberapa variable yang dibuat yaitu a, b dan c dengan memiliki data tersendiri pertama ada variable a dengan function eye() yang berguna untuk menghasilkan matrix identitas, lalu disikan dengan nilai 5, hasilnya adalah sebagai berikut \ref{numpy21}.
+\item lalu variable b dengan function arange dan reshape yang berguna untuk menyusun data menjadi 5 x 5 dengan jumlah data 25 hasilnya bisa dilihat pada gambar \ref{numpy22}
+\item dan terakhir ada data variable c dengan function dot yang berguna untuk memberikan nilai titik pada masing - masing datanya seperti pada gambar \ref{numpy23}
+\end{itemize}
 
+\item membaca data variable dengan menggunakan Matplotlib 
+\subitem 
+pada code ini kita menggunakan matplotlib sebagai librarynya untuk dapat membaca data yang akan kita buat, pada kali ini kita akan menggunakan matplotlib dengan parameter class pyplot.
+\begin{itemize}
+\item pertama kita akan memanggil data metplotlibnya dengan menggunakan perintah import matplotlib.pyplot dengan alias me.
+\item lalu pada code berikut terdapat 2 variable yaitu kecerdasan dan nilai untuk digunakan seabgai data acuan yang akan dibaca oleh function bar() dan akan ditampilkan dengan menggunakan function show() hasilnya adalah seperti pada gambar \ref{matplotlib}
+\end{itemize}
 
+\item Random Forest
+\subitem
+hasil yang didapatkan dari menggunakan pemrosesan data Random Forest terdapat pada gambar \ref{p1}, hasil dari keluarannya terdapat nilai 0.4553854276663147 yang jika kita masukan dalam proses ini menjadi 45 \% dengan nilai yang didapat tersebut meyakinkan bahwa data yang diolah telah mencapai titik dimana data tersebut dapat dianalisa dengan tepat.
 
+\item Confusion Matrix
+\subitem
+hasil yang didapat dari proses menggunakan \ref{p2} confusion matrix adalah tampilnya gambar \ref{matrix} dengan hasil berupa gambar tersebut dapat dipastikan bahwa nilai yang didapatkan memiliki bebrapa titik yang dapat disusun seperti pada gambar berikut \ref{matrix2}.
 
+\item Decision tree dan SVM
+\begin{itemize}
+\item Decision Tree
+\subitem
+hasil dari proses terdapat pada gambar \ref{p3} terdapat nilai 0.2713833157338965 yang diproses menjadi 27 \% pada kasus ini, yang menjelaskan bahwa nilai tersebut merupakan nilai dari hasil analisa function decision tree terhadap data yang sudah disediiakan.
+
+\item SVM
+\subitem
+hasil dari proses terdapat pada gambar \ref{p4} terdapat nilai 0.28801478352692717 yang diproses menjadi 28 \% pada kasus ini, yang menjelaskan bahwa nilai tersebut merupakan nilai dari hasil analisa menggunakan function SVM terhadap data yang sudah disediiakan dan menghasilkan data tersebut.
+\end{itemize}
+
+\item Cross Validation
+\subitem
+pada hasil dari proses cross validation ini terdapat 3 hasil dengan menggunakan function Random Forest, Decision Tree dan SVM, yang menghasilkan beberapa data yang terdapat pada gambar \ref{p5} sebagai data nilai Random Forest, \ref{p6} sebagai hasil data Decision tree dan \ref{p7} merupakan hasil dari SVM. dimana data pada Random Forest bernilai 0.44 , Decision Tree 0.26 dan SVM 0.26 yang berarti dari 3 function yang digunakan untuk melakukan analisa data penggunaan Random Forest lah yang menghasilkan nilai data paling signifikan sehingga data yang diolah dapat diketahui bahwasannya data tersebut sudah 44 \% termasuk data valid atau benar.
+
+\item Pengamatan
+pengamatan hasil data tersebut dibagi menjadi 2 yaitu dengan metode cross validation dan matplotlib, hasilnya adalah sebagai berikut ini :
+\begin{itemize}
+\item Cross Validation
+\subitem
+data yang dihasilkan merupakan data pengamatan apakah nilai yang dikeluarkan merupakan nilai yang valid sehingga data yang dianalisa dapat diketahui kebenarannya dengan menggunakan nilai range10 - 200 dengan lompatan 20 data dan dimulai dari 10 serta 5 perulangan data hasilnya sebanyak 50 kali, hasilnya terdapat pada gambar \ref{p8}
+\item Matplotlib
+\subitem
+data yang dihasilkan merupakan data pengamatan apakah nilai yang dikeluarkan merupakan nilai yang valid sehingga data yang dianalisa dapat diketahui kebenarannya dengan menggunakan class Axes3D yang akan menghasilkan data berupa gambar\ref{p8} dimana data yang terbaca adalah menggunakan nilai variable X Y Z dengan membandingkan nilai dari masing - masing data varible tersebut, hasilnya terdapat pada gambar \ref{p8}
+\end{itemize}
+\end{enumerate}
+
+\subsection{Error}
+\begin{enumerate}
+\item Error pada gambar \ref{error}
+\item Jenis Error adalah tidak terbacanya data karena kurangnya nilai yang dimasukan
+\item Solusinya adalah dengan menambahkan nilai sesuai dengan jumlah masing - masing kolom hasilnya ada pada gambar \ref{fix}
+\end{enumerate}
 
 
 \section{Cokro Edi Prawiro / 1164069}
@@ -202,25 +268,130 @@ Hasilnya akan seperti pada gambar \ref{h3} :
 \end{enumerate}
 
 \begin{figure}[ht]
-	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/1.png}}
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari1/1.png}}
 	\caption{Random Forest}
 	\label{fig1}
 \end{figure}
 
 \begin{figure}[ht]
-	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/2.PNG}}
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari1/2.PNG}}
 	\caption{Hasil dari membaca data dengan Confusion Matriks}
 	\label{fig2}
 \end{figure}
 
 \begin{figure}[ht]
-	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/3.png}}
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari1/3.png}}
 	\caption{Voting Random Forest}
 	\label{fig3}
 \end{figure}
 
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/1.png}}
+	\caption{Pandas Implementasi}
+	\label{pandas}
+\end{figure}
 
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/21.png}}
+	\caption{Numpy Implementasi}
+	\label{numpy1}
+\end{figure}
 
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/22.png}}
+	\caption{Numpy Implementasi}
+	\label{numpy2}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/23.png}}
+	\caption{Numpy Implementasi}
+	\label{numpy3}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/3.png}}
+	\caption{Matplotlib Implementasi}
+	\label{matplotlib}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/4.png}}
+	\caption{Random Forest Classifier}
+	\label{p1}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/5.png}}
+	\caption{Confusion Matrix}
+	\label{p2}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/6.png}}
+	\caption{Decision Tree}
+	\label{p3}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/7.png}}
+	\caption{Support Vector Machine}
+	\label{p4}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/8.png}}
+	\caption{Cross Validation data Random Forest}
+	\label{p5}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/9.png}}
+	\caption{Cross Validation data Decision Tree}
+	\label{p6}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/10.png}}
+	\caption{Cross Validation data SVM}
+	\label{p7}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/11.png}}
+	\caption{Pengamatan Akurasi data dengan Cross Validation}
+	\label{p8}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/12.png}}
+	\caption{Pengamatan Akurasi data dengan Matplotlib}
+	\label{p9}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/error.png}}
+	\caption{Cross Validation data Random Forest}
+	\label{error}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/fix.png}}
+	\caption{Cross Validation data Random Forest}
+	\label{fix}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/matrix.png}}
+	\caption{Hasil Confusion Matrix}
+	\label{matrix}
+\end{figure}
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/fathi/chapter3/hari2/matrix2.png}}
+	\caption{Hasil Confusion Matrix}
+	\label{matrix2}
+\end{figure}
 
 \begin{figure}[ht]
       \centerline{\includegraphics[width=1\textwidth]
