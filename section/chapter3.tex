@@ -101,6 +101,57 @@ Voting merupakan data hasil dari decision tree yang terdapat pada random forest.
 
 \end{enumerate}
 
+
+\subsection{Praktikum}
+\begin{enumerate}
+\item pandas \par
+arti tiap baris codingan yang terdapat pada gambar \ref{c39} yaitu. pada baris ke satu yaitu perintah mengimport library padas pada python atau anaconda kemudian di inisialisasikan menjadi kue. selanjutnya pada baris ke 3 terdapat nama variabel yaitu nama\_kue\_tradisional = yang di dalammyanya terdapat tiga nama field yakni Name Kue, harga satuan dan terbilang kemudian pada baris ke tujuh terdapat variabel baru bernama Data\_kue = kemudian didalammnya mendeskripsikan kue berdasarkan tipe DataFrame yang berisi variabel nama\_kue\_tradisional selanjutnya data tersebut di cetak pada console dengan perintah print (Data\_kue). untuk lebih jelasnya dapat dilihat pada gambar \ref{c39}. dan untuk hasilnya dapat dilihat pada gambar \ref{c40}
+
+\item numpy\par
+Arti tiap baris codingan pada aplikasi sederhana numpy adalah sebagai berikut : pada baris ke satu yaitu mengimport numpy yang di inisialisasi menjadi np kemudian pada baris ke tiga dibut variabel ali yang berisi numpy bertipekan arrange 6 yang berarti berisi nilai array dari 0 sampai 5 kemudian pada baris ke empat di cetak hasilnya dengan memasukan perintah print (ali) selanjutnya yaitu membuat nilai array tiga dimensi pada baris ke tujuh dengan cara membuat variabel botak yang berisi rank nilainya kemudian dimensinya yaitu 4 3 3 kemudian variabel tersebut di print. selanjutnya pada baris ke 12 dibuat variabel nilai\_array\_1 dengan isian nilai array 1 2 3 4 kemudian pada baris ke 13 di buat variabe nilai\_array\_2 dengan nilai array 20 30 40 dan 50 selanjutnya pada baris ke 14 dibut nilai variabel Nilai\_array\_3 dengan rank 4 yang berarti berisi nilai dari 0 sampai 3 setelah itu di buat variabel hasil dimana isinya yaitu penjumlahan nilai\_array\_1+Nilai\_array\_3+Nilai\_array\_3 setelah itu nilai\_array\_1 , Nilai\_array\_3, dan Hasil di prin untuk melihat nilai dari array tersebut. untuk lebih jelasnya codingan aplikasi sederhana numpy dapat dilihat pada gambar \ref{c41} berikut:
+
+\item matplotlib\par
+Arti tiap baris aplikasi sederhana matplotlib pada baris ke satu yaitu memasukan library matplotlib.pyplot yang di definisikan menjadi plt kemudian membuat variabel kelas\_ti3 pada baris ke tiga yang berisi label setelah itu di buat variabel jumlah\_mhs3 pada baris ke empat yang berisi nilai dari setiap label tersebut. begitu juga pada baris ke emam dan ke tujuh kemudian pada baris ke sembilan matplotlib mendefinisikan gambar dengan ukurannya dan pada baris ke 10 di dekralasikan subplot setelah itu pada baris ke 11 matplotlib mendefinisikan jenis grafik yang digunakan dan dimasukan variabel kelas dan jumlah\_mhs. begitujuga oada baris ke 13 14 dan 15 setelah itu di buat title  pada baris ke 17 dan matplotlib di show untuk mendapatkan hasil dari grafiknya. untuk lebih jelasnya dapat di lihat pada gambar\ref{c42} dan untuk hasilnya dapat dilihat pada gambar \ref{c43}.
+
+\item Random Forest\par
+Arti tiap baris hasil codingan random forest pada baris pertama random forest di import dari sklearn dengan ketentuan yaitu maksimal isi dari decision tree berisi 50 data dengan keadaan random dan dengan estimators 100 data ini berada dalam variabel clf kemudian setelah itu variabel clf di running berdasarkan data training dan data label yang telah di definisikan jumlahnya. kemudian variabel clf di running berdasarkan data training paling atas untuk memunculkan hasil data training lima paling atas. setelah itu data tersebut di di running scorenya untuk melihat tingkat akurasi yang dia kerjakan maka tingkat akurasi yang dihasilkan berada pada kisaran 0,437 atau kisaran 43 \%  untuk lebuh jelasnya dapat di lihat pada gambar \ref{c44} berikut.
+ 
+\item Confusion Matrix\par
+arti codingan pada hasil tiap codingan confusion matrix pada baris pertama codingan tersebut mendeskripsikan atau mengimport confusion matrix dari sklearn kemudian dibuat variabel pred labels dengan di isikan clf prdic df\_test\_att setelah itu membuat variabel cm yang isinya terdapat data yang di buat confusion matrix berdasarkan data test setelah variabel cm akan di running yang mana akan menghasilkan gambar berupa matrix matrix tersebut berisi nilai nilai kebenaran yang mendekati nilai benar atau mutlak nilai benar untuk hasilnya dapat di lihat pada gambar \ref{c45} data tersebut berisi data tipe int 64.
+
+\item SVM dan Decision Tree\par
+Arti dari setiap baris hasil codingan decision tree dan SVM pada tree masukan terlebih dahulu library tree setelah itu buat variabel clftree yang berisi decision tree setelah itu masukan nilai data training dan label yang telah di deklarasikan tadi setelah itu running variabel tersebut untuk mendapatkan score 0,266 kisaran 26 sampai 27 \% akurasinya kemudian pada svm juga hampirsama masukan terlebih dahulu librarynya setelah itu buat variabel clfsvm yang berarti berisi nilai data training dan data label dan pendeklarasian svm itu sendiri setelah itu di running untuk mendapatkan nilai akurasinya atau score sebesar 0,283 atau dalam kisaran 23 \%. untuk lebih jelasnya dapat di lihat pada gambar\ref{c46} sebagai berikut:
+
+\item Cross Validation\par
+arti dari setiap baris hasil cross falidation pada gambar\ref{c47} tersebut diperlihatkan codingan error dikarenakan data training terlalu besar maka untuk mengatasi halini dapat dlilihat pada sub bab penanganan error / cokro
+
+\item program pengamatan
+arti dari hasil program pengamatan. perogram pengamatan ini menggunakan library matplotlib supaya hasil dari presentase hasil random forest, svm dan decision tree dapat di bandingkan dengan membuat variabel X Y Z kemudian memberikan label untuk setiap dimensinya untuk lebih jelas dapat dilihat gambar \ref{c48} yang menunjukan hasil perbandingan presentase dari tiga metode tersebut. 
+\end{enumerate}
+
+\subsection{Penanganan Error / cokro}
+Screenshot error
+\begin{enumerate}
+\item  Untuk gambar screenshot error yang pertama dapat dilihat pada gamabar \ref{c49}
+\item  Untuk gambar screenshot error yang kedua dapat dilihat pada gamaba r\ref{c50}
+\item  Untuk gambar screenshot error yang ketiga dapat dilihat pada gamabar \ref{c51}
+\item  Untuk gambar screenshot error yang keempat dapat dilihat pada gamabar \ref{c52}
+\end{enumerate}
+
+Code Errornya 
+\begin{enumerate}
+\item kode error pada screenshot ke satu yaitu dikarenakan clfsvm.fit(df\_train\_att, df\_train\_label) dikarenakan data trainingnya terlalu besar sehingga komputernya error.
+\item untuk kode error pada screen shoot ke 2 sampai ke 4 dikarenakan pada kode berikut  scores = cross\_val\_score(clf, df\_train\_att, df\_train\_label, cv=5) scorestree = cross\_val\_score(clftree, df\_train\_att, df\_train\_label, cv=5) dan  
+scoressvm = cross\_val\_score(clfsvm, df\_train\_att, df\_train\_label, cv=5) hal ini di karenakan data trainingterlalu besar sehingga berdampak pada komputer sehingga library dari python tidak mampu mengolah data dan hasilnya menjadi error. 
+\end{enumerate}
+
+Solusi Untuk mengatasi Error
+\begin{enumerate}
+\item solusinya untuk yang ke satu yaitu dengan cara merestart spyder atau mematikannya kemudian nyalakan kembali setelah itu jalankan code yang error tersebut di CMD cika dalam python CMD jalam maka bisa di running. setelah itu buka kembali spyder dan jalankan codingan dari awal hingga pada bagian SVM tunggu sebenar sampai muncul nilai akurasinya.
+\item solusi untuk mengatasi error tersebut yaitu dengan cara merubah bobot data pada data training seperti pada gambar \ref{c53}
+setelah itu running code yang errornya maka akan muncul hasilnya dengan sekala yang lebih kecil dari persenan yang seharusnya. maka hasilnya seperti pada gambar \ref{c54} berikut.
+\end{enumerate}
+
 \section{Ahmad Syafrizal Huda / 1164062}
 \subsection{Teori}
 \begin{enumerate}
@@ -190,6 +241,125 @@ Hasilnya akan seperti pada gambar \ref{h3} :
       {figures/cokro/c38}}
       \caption{Ilustrasi Confusion matrix}
       \label{c38}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c39}}
+      \caption{Contoh aplikasi sederhana pandas}
+      \label{c39}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c40}}
+      \caption{Hasil aplikasi sederhana pandas}
+      \label{c40}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c41}}
+      \caption{Contoh aplikasi sederhana numpy}
+      \label{c41}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c42}}
+      \caption{Contoh aplikasi sederhana matplotlib}
+      \label{c42}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c43}}
+      \caption{Hasil aplikasi sederhana matplotlib}
+      \label{c43}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c44}}
+      \caption{Hasil aplikasi random forest}
+      \label{c44}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c45}}
+      \caption{Hasil aplikasi confusion matrix}
+      \label{c45}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c46}}
+      \caption{Hasil aplikasi SVM dan Decision tree}
+      \label{c46}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c46}}
+      \caption{Hasil aplikasi SVM dan Decision tree}
+      \label{c46}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c47}}
+      \caption{Hasil aplikasi cross validation}
+      \label{c47}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c48}}
+      \caption{Hasil aplikasi cross validation}
+      \label{c48}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c49}}
+      \caption{Error Svm}
+      \label{c49}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c50}}
+      \caption{Error Svm}
+      \label{c50}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c51}}
+      \caption{Error Svm}
+      \label{c51}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c52}}
+      \caption{Error Svm}
+      \label{c52}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c53}}
+      \caption{Merubah data training}
+      \label{c53}
+      \end{figure}
+
+\begin{figure}[ht]
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c54}}
+      \caption{Hasil Solusi}
+      \label{c54}
       \end{figure}
 
 
