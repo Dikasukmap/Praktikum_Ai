@@ -424,3 +424,300 @@ Wij = 2.954
 \end{figure}
 \end{itemize}
 \end{enumerate}
+
+\subsection{Praktek}
+\begin{enumerate}
+\item Library Pandas dengan Dataset 500
+\begin{verbatim}
+# In[1] 
+# import library pandas dengan menggunakan alias coba1
+import pandas as coba1 
+
+#membuat variable dengan nama datasets dengan perintah code read\_csv dan membaca data csv
+datasets = coba1.read\_csv("C:/../Dokuments/Datasets/forestfire.csv")
+
+#menggunakan perintah len untuk menampilkan hasil data variable
+len(datasets)
+\end{verbatim}
+
+\item Bagi data 450 baris dan 50 baris
+\begin{verbatim}
+# In[2]
+#membuat baris data menjadi 450
+set_train = datasets[:450]
+
+#membuat baris data menjadi 50
+set_test = datasets[450:]
+\end{verbatim}
+
+\item Decision Tree dengan Vektor dan Klasifikasi
+\subitem berikut ini adalah kode ayng digunakan dan beberapa penjelasannya, untuk hasilnya dapat dilihat pada gambar \ref{fig1}
+\begin{verbatim}
+# In[3]
+#import library pandas dengan alias coba2
+import pandas as coba2
+
+#mengambil datasets csv dengan nama Youtube04-Eminem
+datanya = coba2.read\_csv("C:/../Dokuments/Datasets/Youtube04-Eminem.csv")
+
+# In[4]
+#memanggil library Vektorisasi
+from sklearn.feature_extraction.test import CountVectorizer
+
+#menggunakan library vektorisasi pada variable vektor
+vektor = CountVectorizer()
+
+# In[5]
+#membuat variable dengan perintah untuk memproses kolom CONTENT pada datasetnya
+varvektor = vektor.fit_transform(datanya['CONTENT'])
+
+#membaca variable data
+varvektor
+
+# In[6]
+#menggunakan randonmizer untuk membuat datanya menjadi teratur
+absurd = datanya.sample(frac=1)
+
+# In[7]
+#membuat data train dan test
+set_train = absurd[:300]
+set_test = absurd[300:]
+
+# In[8]
+#melakukan test pada data train dengan vektorisasi
+set_train_att = vektor.fit_transform(set_train['CONTENT'])
+set_train_att
+
+# In[9]
+#melakukan test pada data test dengan vektorisasi
+set_test_att = vektor.fit_transform(set_test['CONTENT'])
+set_test_att
+
+# In[10]
+#mengambil data CLASS dan dijadikan data train dan test label
+set_train_label = set_train['CLASS']
+set_test_label = set_test['CLASS']
+\end{verbatim}
+
+\item Klasifikasi SVM
+\subitem berikut adalah kode yang digunakan dan beberapa penjelasannya, untuk hasilnya bisa dilihat pada gambar \ref{fig2}
+\begin{verbatim}
+# In[14]
+#memanggil library SVM dari sklearn
+from sklearn import svm
+
+#membuat data variable dengan library SVM dan perintah SVC
+clfsvm = svm.SVC()
+
+#memasukkan data attribute train dan label train kedalam variable clfsvm
+clfsvm.fit(set_train_att, set_train_label)
+
+#melihat skor dari data attribute test dan test label
+clfsvm.score(set_test_att, set_test_label)
+\end{verbatim}
+
+\item klasifikasi Decision Tree 
+\subitem berikut ini adalh kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{fig3}
+\begin{verbatim}
+# In[15]
+#memanggil library decision tree dari sklearn
+from sklearn import tree
+
+#membuat data variable dengan library decision tree dan perintah kodenya adalah DecisionTreeClassifier
+clftree = tree.DecisionTreeClassifier()
+
+#memasukkan data attribute train dan label train kedalam variable clftree
+clftree.fit(set_train_att, set_train_label)
+
+#melihat skor dari data attribute test dan test label
+clftree.score(set_test_att, set_test_label)
+\end{verbatim}
+
+\item Confusion matrix dan matplotlib
+\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasil dari penggunaan confusion matrix dapat dilihat pada gambar \ref{fig4} dan data penggunaan confusion matrix dengan matplotlib dapat dilihat pada gambar \ref{fig5}
+\begin{verbatim}
+# In[20]
+#mengambil data library confusion matrix dari sklearn
+from sklearn.metrics import confusion_matrix
+
+#membuat variable data dengan isi perintahnya untuk memprediksi nilai dari attribute data test
+siap_label = clf.predict(set_test_att)
+
+#membuat variable dengan perintah datanya menggunakan library confusion matrix dengan data label test dan variable siap
+cm = confusion_matrix(set_test_label, siap_label)
+
+#membaca data variable
+cm
+
+
+# In[21]
+#memanggil library matplotlib dengan dialiaskan menjadi plt
+import matplotlib.pyplot as plt
+
+#membuat fungsi untuk membaca data confusion matrix yang dibuat tadi
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+#menampilkan hasil data dari penggunaan matplotlib pada confusion matrix
+    print(cm)
+   
+# In[22]
+#memanggil library numpy dan dialiaskan menjadi np
+import numpy as np
+
+#library np diperintahkan untuk membaca data dengan nilai presisinya 2
+np.set_printoptions(precision=2)
+
+#membaca data plot confusion matrixnya dengan nilai data yang dibaca adalah datanya
+plot_confusion_matrix(cm, classes=datanya, normalize=True)
+
+#menampilkan data yang telah diolah pada confusion matrix dan diproses menggunakan matplotlib
+plt.show()
+\end{verbatim}
+
+\item klasifikasi Cross Validation
+\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{fig6}, \ref{fig7} dan \ref{fig8}
+\begin{verbatim}
+# In[24]
+#memanggil library cross validasi dari sklearn dengan perintah prosesnya model selection
+from sklearn.model_selection import cross_val_score
+
+#membuat variable SCORES yang menampung data clf, atribut train dan label train
+scores = cross_val_score(clf, set_train_att, set_train_label, cv=5)
+
+# show average score and +/- two standard deviations away (covering 95% of scores)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+
+# In[25]
+#menampilkan skor untuk proses decision tree menggunakan cross validasi
+scorestree = cross_val_score(clftree, set_train_att, set_train_label, cv=5)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scorestree.mean(), scorestree.std() * 2))
+
+# In[26]
+#menampilkan skor untuk proses SVM menggunakan cross validasi
+scoressvm = cross_val_score(clfsvm, set_train_att, set_train_label, cv=5)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scoressvm.mean(), scoressvm.std() * 2))
+
+#membuat data variable yang akan menunjang proses yang akan digunakan sebagai data pengamatan
+dengan menampilkan keseluruhan nilai dari skor yang ada, mulai dari cross validasi, skor tree dan skor SVM dengan randon forest klasifikasi
+max_features_opts = range(1, 10, 1)
+n_estimators_opts = range(2, 40, 4)
+rf_params = np.empty((len(max_features_opts)*len(n_estimators_opts),4), float)
+i = 0
+for max_features in max_features_opts:
+    for n_estimators in n_estimators_opts:
+        clf = RandomForestClassifier(max_features=max_features, n_estimators=n_estimators)
+        scores = cross_val_score(clf, set_train_att, set_train_label, cv=5)
+        rf_params[i,0] = max_features
+        rf_params[i,1] = n_estimators
+        rf_params[i,2] = scores.mean()
+        rf_params[i,3] = scores.std() * 2
+        i += 1
+        print("Max features: %d, num estimators: %d, accuracy: %0.2f (+/- %0.2f)" %
+\end{verbatim}
+\item Pengamatan Program
+\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{fig9}
+\begin{verbatim}
+# In[28]
+#memanggil library matplotlib dengan dialiaskan menjadi plt
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import axes3d, Axes3D
+from matplotlib import cm
+fig = plt.figure()
+fig.clf()
+ax = Axes3D(fig)
+x = rf_params[:,0]
+y = rf_params[:,1]
+z = rf_params[:,2]
+ax.scatter(x, y, z)
+ax.set_zlim(0.9, 1)
+ax.set_xlabel('Max features')
+ax.set_ylabel('Num estimators')
+ax.set_zlabel('Avg accuracy')
+plt.show()
+\end{verbatim}
+\end{enumerate}
+\subsection{Error}
+\begin{enumerate}
+\item eror pada gambar \ref{error}
+\item error pada code 
+\begin{verbatim}
+ax = fig.gca(projection='3d')
+\end{verbatim}
+\item solusi 
+\begin{verbatim}
+from mpl_toolkits.mplot3d import axes3d, Axes3D
+\end{verbatim}
+\end{enumerate}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/1}
+	\caption{Decision Tree di Vektorisasikan}
+	\label{fig1}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/2}
+	\caption{klasifikasi SVM}
+	\label{fig2}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/3}
+	\caption{klasifikasi Tree}
+	\label{fig3}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/4}
+	\caption{Confusion matrix}
+	\label{fig4}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/5}
+	\caption{matplotlib}
+	\label{fig5}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/6}
+	\caption{Cross validasi}
+	\label{fig6}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/7}
+	\caption{Cross validasi pada tree}
+	\label{fig7}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/8}
+	\caption{Cross validasi pada SVM}
+	\label{fig8}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/9}
+	\caption{pengamatan program}
+	\label{fig9}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/10}
+	\caption{Error}
+	\label{error}
+\end{figure}
