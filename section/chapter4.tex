@@ -31,8 +31,203 @@ vektorisasi data merupakan pemechan data menjadi bagian bagian yang lebih sederh
 \end{enumerate}
 
 \subsection{Praktek Program}
+\begin{enumerate}
+\item import data pandas dan 500 baris data dumy kemudian di jelaskan tiap barisnya.
+\begin{verbatim}
+# In[1]: mengimport librari padas yang di gunakan
+# untuk membaca file tex atau csv
+import pandas as pd
+#membaca file csv menggunakan fungsi read csv dari padas
+data_forest = pd.read_csv("E:/KULIAH/../AI/Buku/Chapter03/forest.csv")
+# In[2]: untuk melihat jumlah dari baris data yang telah di import
+len(data_forest)
+# In[3]: untuk melihat lima baris pertama data yang telah di import
+data_forest.head()
+# In[4]: untuk mengetahui banyak baris dan kolom dari data yang
+# telah di import.
+data_forest.shape
+\end{verbatim}
+
+\item memecah data prame menjadi dua yag pertama 450 dan kedua sisanya
+\begin{verbatim}
+# In[5]: membuat data training dan data testing
+
+# jumlah baris data training sebanyak 450 baris
+data_training = data_forest[:450]
+# jumlah baris data testing dari hasil pengurangan 523-450
+data_testing = data_forest[450:]
+\end{verbatim}
+
+\item praktek vektorisasi\par
+berikut merupakan codingan untuk melakukan vektorisasii data berupa teks dalam vormat csv
+\begin{verbatim}
+# In[1]: 
+#melakukan import pandas untuk membaca file csv
+import pandas as pd
+data_komen=pd.read_csv("E:/../../././Chapter03/Youtube02-KatyPerry.csv")
+
+# In[2]: 
+#mengelompokkan komentar spam dan bukan spam 
+spam=data_komen.query('CLASS == 1')
+nospam=data_komen.query('CLASS == 0')
+
+# In[3]: memanggil lib vektorisasi
+#melakukan fungsi bag of word dengan cara menghitung semua kata 
+#yang terdapat dalan file
+from sklearn.feature_extraction.text import CountVectorizer
+vectorizer = CountVectorizer()
+
+# In[3]: memilih colom CONTENT untuk dilakukan vektorisasi
+#melakukan bag of word pada dataframe pada colom CONTENT
+data_vektorisasi = vectorizer.fit_transform(data_komen['CONTENT'])
+
+# In[4]: melihat isi vektorisasi 
+data_vektorisasi
+
+# In[5]: melihat isi data pada baris ke 349
+print(data_komen['CONTENT'][349])
+
+# In[6]: melihat daftar kata yang di vektorisasi
+#feature_names merupakan digunakan untuk mengambil nama 
+#kolomnya ada apa saja
+dk=vectorizer.get_feature_names()
+
+# In[7]: akan melakukan randomisasi pada database nya supaya 
+#sempurna saat melakukan klasifikasi
+acak_acak = data_komen.sample(frac=1)
+
+# In[8]: membuat data traning dan testing
+dk_train=acak_acak[:300]
+dk_test=acak_acak[300:]
+
+# In[9]: melakukan training pada data training dan di vektorisasi
+dk_train_att=vectorizer.fit_transform(dk_train['CONTENT'])
+dk_train_att
+
+# In[10]: melakukan testing pada data testing dan di vektorisasi
+dk_test_att=vectorizer.transform(dk_test['CONTENT'])
+dk_test_att
+
+# In[11]: Dimana akan mengambil label spam dan bukan spam
+dk_train_label=dk_train['CLASS']
+dk_test_label=dk_test['CLASS']
+\end{verbatim}
+untuk hasilnya dapat dilihat pada gambar \ref{c62} pada gambar tersebut di bagian In [100] dilakukan import library pandas yang di inisialisasi menjasi pd setelah itu ada dibuat class data\_komen dengan method read\_csv untuk membaca file berekstensikan csv yang di masukan alamatnya pada kurung kemudian pada bagian In [101] dilakukan klasifikasi atau pemilihan komentar yang berisi spam atau bukan spam dengan parameter class samadengan 1 merupakan spam dan class samadengan 0 bukan spam setelah itu pada bagina In [102] memasukan librari CountVektorizer yang digunakan untuk vektorisasi data kemudian dilanjutkan pada bagian In[103] dibuat variabel yang berisi vektorisasi dari data pada data\_komen di field content setelah itu variabel tersebut di running pada bagian In[104] yang hasilnya menunjukan 350 baris di kali 1738 kolom selanjutnya pada bagian In[105] dicoba untuk memunculkan isi recod pada baris ke 349 maka akan muncul isian dari baris tersebut. selanjutnya dibuat variabel dk atau daftar pada bagian In[106] yang berisi data hasil vektorisasi setelah itu pada bagian In [107 ] yang terdiri dari variabel acak\_acak yang berisi data komen yang di dalamnya di buat random yang nantinya akan dibut data training dan data testing pada bagian In [108] dengan ketentuan data training 300 dan data testing sebanyak 50 setelah itu data training di lakukan vektorisasi pada bagian In [109] dan data testing juga dilakukan vektorisasi pada bagian In [110] setelah itu kedua data training dan testing tersebut dibuat label pada bagian In [111] dengan parameter field CLASS pada tabel.
+\item klasifikasi SVM
+berikut ini merupakan codingan klasifikasi SVM 
+\begin{verbatim}
+# In[18]:
+from sklearn import svm 
+clfsvm = svm.SVC()
+clfsvm.fit(dk_train_att, dk_train_label)
+clfsvm.score(dk_test_att, dk_test_label)
+\end{verbatim}
+untuk hasil codingan klasifikasi svm tersebut dapat dilihat pada gambar \ref{c63} pada bagian In [119] melakukan verifikasi import librari svm dari sklearn kemudian membuat variabel clfsvm berisikan method svc setelah itu variabel tersebut di berikan method fit dengan isian data train vektorisasi dan data training label yang berguna untuk melatih data tersebut setelah itu di coba untuk memunculkan score atau akurasi dari data tersebut menggunakan data testing vektorisasi dan data testing label.
+\item klasifikasi decision tree 
+berikut ini merupakan codingan klasifikasi decision tree
+\begin{verbatim}
+# In[17]:
+from sklearn import tree
+clftree = tree.DecisionTreeClassifier()
+clftree.fit(dk_train_att, dk_train_label)
+clftree.score(dk_test_att, dk_test_label)
+\end{verbatim}
+untuk hasil codingan klasifikasi decision tree tersebut dapat dilihat pada gambar \ref{c64} pada bagian In [118] melakukan verifikasi import librari tree dari sklearn kemudian membuat variabel clftree berisikan method DecisionTreeClasifier setelah itu variabel tersebut di berikan method fit dengan isian data train vektorisasi dan data training label yang berguna untuk melatih data tersebut agar dapat digunakan pada codingan selanjutnya setelah itu di coba untuk memunculkan score atau akurasi dari data tersebut menggunakan data testing vektorisasi dan data testing label.
+\item plot comfusion matrix
+berikut merupakan codingan untuk confusion matrix 
+\begin{verbatim}
+# In[15]: Membuat confusion Matrix dan menampilkannya
+from sklearn.metrics import confusion_matrix
+pred_labels = clf.predict(dk_test_att)
+cm = confusion_matrix(dk_test_label, pred_labels)
+
+cm
+\end{verbatim}
+untuk hasil dari codingan tersebut dapat dilihat pada gambar \ref{c65} pada bagian In [116] dilakukan import library comfusion matrix selanjutnya dilakukan prediksi pada pada data tes nya kemudian data tersebut di masukan kedalam variabel cm dengan method confusion matrix yang di dalamnya terdapat data dari variabel perd label dan dk test label setelah itu variabel cm tersebut di running maka akan muncul hasil Out[116] memunculkan nilai matrixnya. 
+\item cross valodation 
+
+berikut merupakan code untuk cross validation pada codingan pertama yaitu melakukan split 5 kali yaoti mengitung tingkat akurasi menggunakan data training.
+\begin{verbatim}
+# In[16]: Dimana akan melakukan cross validation denga  5 split
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(clf,dk_train_att,dk_train_label,cv=5)
+scorerata2=scores.mean()
+scorersd=scores.std()
+
+# In[21]:
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(clf, dk_train_att, dk_train_label, cv=5)
+# show average score and +/- two standard deviations away (covering 95
+#% of scores)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), 
+scores.std() * 2))
+# In[22]:
+scorestree = cross_val_score(clftree, dk_train_att, dk_train_label, cv=5)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scorestree.mean(), 
+scorestree.std() * 2))
+# In[23]:
+scoressvm = cross_val_score(clfsvm, dk_train_att, dk_train_label, cv=5)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scoressvm.mean(),
+ scoressvm.std() * 2))
+\end{verbatim}
+untuk hasil codingan ke dua dapat dilihat pada gambar \ref{c66} pada gambar tersebut memunculkan nilai akurasi dari tiga metode yaitu random forest, decision tree, dan klasifikasi svm (suport vector machine) diamana akan di bandingkan tingkat akurasi dari semua hasil akurasiya mana yang terbaik dan lebih akurat pada hasilnya data yang paling akurat yaitu random forest.
+
+\item Pengamatan program 
+\begin{verbatim}
+# In[24]:
+max_features_opts = range(1, 10, 1)
+n_estimators_opts = range(2, 40, 4)
+rf_params = np.empty((len(max_features_opts)*len(n_estimators_opts),4)
+, float)
+i = 0
+for max_features in max_features_opts:
+    for n_estimators in n_estimators_opts:
+        clf = RandomForestClassifier(max_features=max_features,
+	 n_estimators=n_estimators)
+        scores = cross_val_score(clf, dk_train_att, dk_train_label, cv=5)
+        rf_params[i,0] = max_features
+        rf_params[i,1] = n_estimators
+        rf_params[i,2] = scores.mean()
+        rf_params[i,3] = scores.std() * 2
+        i += 1
+        print("Max features: %d, num estimators: %d, accuracy: %0.2f 
+(+/- %0.2f)" 
+%   (max_features, n_estimators, scores.mean(), scores.std() * 2))
+
+# In[25]:
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+fig = plt.figure()
+fig.clf()
+ax = fig.gca(projection='3d')
+x = rf_params[:,0]
+y = rf_params[:,1]
+z = rf_params[:,2]
+ax.scatter(x, y, z)
+ax.set_zlim(0.6, 1)
+ax.set_xlabel('Max features')
+ax.set_ylabel('Num estimators')
+ax.set_zlabel('Avg accuracy')
+plt.show()
+\end{verbatim}
+hasil dari codingan diatas dapat dilihat pada gambar \ref{c67} pada gambar tersebut terdapat grafik data yang terdapat dari grafik tersebut di dapat dari codingan In[24] dengan cara pengulangan data masing masing 10 kali setelah itu di eksekusi menjadi grafik berbentuk 3D yang dapat di lihat pada gambar \ref{c68} pada gambar tersebut menunjukan rasio dari yang terrendah yaitu data SVM kemudian data decision tree dan hasil random forest.
+
+\end{enumerate}
 
 \subsection{Penanganan Error}
+\begin{enumerate}
+\item screnn shoot error dapat dilihat pada gambar \ref{c69}
+\item codingan yang errornya terdapat pada 
+\begin{verbatim}
+clfsvm = svm.SVC()
+\end{verbatim}
+\item solusinya
+\begin{verbatim}
+clfsvm = svm.SVR(gamma = 'auto')
+\end{verbatim}
+maka hasilnya dapat dilihat pada gambar \ref{c70}
+\end{enumerate}
 
 \begin{figure}
       \centerline{\includegraphics[width=1\textwidth]
@@ -82,6 +277,70 @@ vektorisasi data merupakan pemechan data menjadi bagian bagian yang lebih sederh
       \caption{Hasil Perhitungan  TF-IDF}
       \label{c61}
       \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c62}}
+      \caption{Hasil running data vektorisasi}
+      \label{c62}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c63}}
+      \caption{Hasil running klasifikasi svm menggunakan data vektorisasi}
+      \label{c63}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c64}}
+      \caption{Hasil running klasifikasi decision treei}
+      \label{c64}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c65}}
+      \caption{Hasil running cnfusion matrix}
+      \label{c65}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c66}}
+      \caption{Hasil Cross Validationi}
+      \label{c66}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c67}}
+      \caption{pengulangan Isi Grafik}
+      \label{c67}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c68}}
+      \caption{Grafik 3D}
+      \label{c68}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c69}}
+      \caption{Gambar Warning}
+      \label{c69}
+      \end{figure}
+
+\begin{figure}
+      \centerline{\includegraphics[width=1\textwidth]
+      {figures/cokro/c70}}
+      \caption{Hasil penanganan Error}
+      \label{c70}
+      \end{figure}
+
 
 \section{Fathi Rabbani / 1164074}
 \subsection{Teori}
