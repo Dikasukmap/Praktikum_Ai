@@ -9,65 +9,199 @@ brief of conclusion
 \item Jelaskan Kenapa Kata-Kata harus dilakukan vektorisasi lengkapi dengan ilustrasi gambar.\par
 Kata kata harus dilakukan vektorisasi dikarenakan atau bertujuan utk mengukur nilai kemunculan suatau kata yang serupa dari sebuah kalimat sehingga kata-kata tersebut dapat di prediksi kemunculanya. atau juga di buatnya vektorisasi data digunakan untuk memprediksi bobot dari suatu kata misalkan ayam dan kucing sama-sama hewan maka akan dibuat prediksi apakah kata tersebut akan muncul pada kalimat yang kira-kira memiliki bobot yang sama. untuk dapat jelasnya dapat melihat ilustrasi pada gambar \ref{c71}.
 
-\item Jelaskan Mengapa dimensi dari vektor dataset google bisa mencapai 300 lengakapi dengan ilustrasi gambar. \par
-Dimensi dataset dari google bisa mencapai 300 karena dimensi dari vektor tersebut digunakan untuk membandingkan bobot dari setiap kata, misalkan terdapat kata dog dan cat pada dataset google tersebut setiap kata tersebut di buat dimensi vektor 300 untuk kata dog dan 300 dimensi vektor juga untuk kata cat kemudian kata tersebt di bandingkan bobot kesamaan katanya maka akan muncul akurasi sekitar 70 persen kesamaan bobot dikarenakan kata dog dan cat sama sama di gunakan untuk hewan priharaan. untuk lebih jelasnya dapat dilihat pada gambar \ref{c72}.
-
-\item Jelaskan Konsep vektorisasi untuk kata . dilengkapi dengan ilustrasi atau gambar. \par
-Vektorisasi untuk kata untuk mengetahui kata tengah dari suatau kalimat atau kata utama atau objek utama pada suatau kalimat contoh ( Jangan lupa subscribe channel saya ya sekian treimakasih ) kata tengah tersebut merupakan channel yang memiliki bobot sebagai kata tengah dari suatu kalimat atau bobot sebagai objek dari suatu kalimat. hal ini sangat berkaitan dengan dimensi vektor pada dataset google yang 300 tadi karena untuk mendapatkan nilai atau bobot dari kata tengah tersebut di dapatkan dari proses dimensiasi dari kata tersebut. untuk lebih jelasnya dapat dilihat pada gambar \ref{c73} berikut :
-
-\item Jelaskan Konsep vektorisasi untuk dokumen. dilengkapi dengan ilustrasi atau gambar. \par
-Vektorisasi untuk dokumen hampir sama seperti vektorisasi untuk kata hanya saja pemilihan kata utama atau kata tengah terdapat pada satu dokumen jadi mesin akan membuat dimensi vektor 300 untuk dokumen dan nanti kata tengahnya akan di sandingkan pada dokumen yany terdapat pada dokumen tersebut contoh dapat dilihat pada gambar \ref{c74} berikut : 
-
-\item Jelaskan apa mean dan standar deviasi, lengkapi dengan iludtrasi atau gambar. \par
-mean merupakan petunjuk terhadap kata-kata yang di olah jika kata kata itu akurasinya tinggi berarti kata tersebut sering muncul begitu juga sebaliknya untuk lebih jelasnya dapat dilihat pada gambar \ref{c75} sedangkan setandar defiation merupakan standar untuk menimbang kesalahan. sehingga kesalahan tersebut di anggap wajar misarkan kita memperkirakan kedalaman dari dataset merupakan 2 atau 3 tapi pada kenyataanya merupakan 5 itu merupakan kesalahan tapi masih bisa dianggap wajar karna masih mendekati perkiraan awal.
-
-\item Jelaskan Apa itu Skip-Gram sertakan contoh ilustrasi. \par
-Skip-Gram adalah kebalikan dari konsep vektorisasi untuk kata dimana kata tengah menjadi acuan terhadap kata kata pelengkap dalam suatu kalimat untuk lebih jelasnya dapat di lihat pada gambar \ref{c76} berikut :
-
-\end{enumerate}
-
-\begin{figure}
-      \centerline{\includegraphics[width=1\textwidth]
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
       {figures/cokro/c71}}
       \caption{Ilustrasi Vektorisasi Kata-Kata}
       \label{c71}
       \end{figure}
 
-\begin{figure}
-      \centerline{\includegraphics[width=1\textwidth]
+\item Jelaskan Mengapa dimensi dari vektor dataset google bisa mencapai 300 lengakapi dengan ilustrasi gambar. \par
+Dimensi dataset dari google bisa mencapai 300 karena dimensi dari vektor tersebut digunakan untuk membandingkan bobot dari setiap kata, misalkan terdapat kata dog dan cat pada dataset google tersebut setiap kata tersebut di buat dimensi vektor 300 untuk kata dog dan 300 dimensi vektor juga untuk kata cat kemudian kata tersebt di bandingkan bobot kesamaan katanya maka akan muncul akurasi sekitar 70 persen kesamaan bobot dikarenakan kata dog dan cat sama sama di gunakan untuk hewan priharaan. untuk lebih jelasnya dapat dilihat pada gambar \ref{c72}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
       {figures/cokro/c72}}
       \caption{Ilustrasi Kenapa dimensi vektor pada datasets google haris 300}
       \label{c72}
       \end{figure}
 
-\begin{figure}
-      \centerline{\includegraphics[width=1\textwidth]
+\item Jelaskan Konsep vektorisasi untuk kata . dilengkapi dengan ilustrasi atau gambar. \par
+Vektorisasi untuk kata untuk mengetahui kata tengah dari suatau kalimat atau kata utama atau objek utama pada suatau kalimat contoh ( Jangan lupa subscribe channel saya ya sekian treimakasih ) kata tengah tersebut merupakan channel yang memiliki bobot sebagai kata tengah dari suatu kalimat atau bobot sebagai objek dari suatu kalimat. hal ini sangat berkaitan dengan dimensi vektor pada dataset google yang 300 tadi karena untuk mendapatkan nilai atau bobot dari kata tengah tersebut di dapatkan dari proses dimensiasi dari kata tersebut. untuk lebih jelasnya dapat dilihat pada gambar \ref{c73} berikut :
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
       {figures/cokro/c73}}
       \caption{Ilustrasi konsep vektorisasi untuk kata}
       \label{c73}
       \end{figure}
 
-\begin{figure}
-      \centerline{\includegraphics[width=1\textwidth]
+\item Jelaskan Konsep vektorisasi untuk dokumen. dilengkapi dengan ilustrasi atau gambar. \par
+Vektorisasi untuk dokumen hampir sama seperti vektorisasi untuk kata hanya saja pemilihan kata utama atau kata tengah terdapat pada satu dokumen jadi mesin akan membuat dimensi vektor 300 untuk dokumen dan nanti kata tengahnya akan di sandingkan pada dokumen yany terdapat pada dokumen tersebut contoh dapat dilihat pada gambar \ref{c74} berikut : 
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
       {figures/cokro/c74}}
       \caption{Ilustrasi konsep vektorisasi untuk dokumen}
       \label{c74}
       \end{figure}
 
-\begin{figure}
-      \centerline{\includegraphics[width=1\textwidth]
+\item Jelaskan apa mean dan standar deviasi, lengkapi dengan iludtrasi atau gambar. \par
+mean merupakan petunjuk terhadap kata-kata yang di olah jika kata kata itu akurasinya tinggi berarti kata tersebut sering muncul begitu juga sebaliknya untuk lebih jelasnya dapat dilihat pada gambar \ref{c75} sedangkan setandar defiation merupakan standar untuk menimbang kesalahan. sehingga kesalahan tersebut di anggap wajar misarkan kita memperkirakan kedalaman dari dataset merupakan 2 atau 3 tapi pada kenyataanya merupakan 5 itu merupakan kesalahan tapi masih bisa dianggap wajar karna masih mendekati perkiraan awal.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
       {figures/cokro/c75}}
       \caption{Ilustrasi Penggunaan Mean}
       \label{c75}
       \end{figure}
 
+\item Jelaskan Apa itu Skip-Gram sertakan contoh ilustrasi. \par
+Skip-Gram adalah kebalikan dari konsep vektorisasi untuk kata dimana kata tengah menjadi acuan terhadap kata kata pelengkap dalam suatu kalimat untuk lebih jelasnya dapat di lihat pada gambar \ref{c76} berikut :
 
-\begin{figure}
-      \centerline{\includegraphics[width=1\textwidth]
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
       {figures/cokro/c76}}
       \caption{Ilustrasi Skip-Gram}
       \label{c76}
       \end{figure}
+
+\end{enumerate}
+\subsection{Praktikum}
+\begin{enumerate}
+\item mencoba dataset google dan penjelasan vektor dari kata love, faith, fall, sick, clear, shine, bag, car, wash, motor, dan cycle.\par
+
+\begin{itemize}
+\item berikut merupakan code import gensim digunakan untuk membuat data model atau rangcangan data yang akan di buat. selanjutnya dibuat variabel gmodel yang berisi data vektor negativ. selanjutnya data tersebut di load agar data tersebut dapat di tampilkan dan di olah. code lengkapnya dapat dilihat pada gambar \ref{c89}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c89}}
+      \caption{Import Gensim dan membuat model gmodel}
+      \label{c89}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata clear pada data google yang di load tadi. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c77}.
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c77}}
+      \caption{Hasil Matrix Clear}
+      \label{c77}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata Shine pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c78}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c78}}
+      \caption{Hasil Matrix Shine}
+      \label{c78}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata bag pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c79}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c79}}
+      \caption{Hasil Matrix bag}
+      \label{c79}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata Car pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c80}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c80}}
+      \caption{Hasil Matrix Car}
+      \label{c80}
+      \end{figure}
+
+
+\item berikut merupakan hasil lpengolahan kata Wash pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c81}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c81}}
+      \caption{Hasil Matrix Wash}
+      \label{c81}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata Motor pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c82}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c82}}
+      \caption{Hasil Matrix Motor}
+      \label{c82}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata Cycle pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c83}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c83}}
+      \caption{Hasil Matrix Cycle}
+      \label{c83}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata love pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c84}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c84}}
+      \caption{Hasil Matrix love}
+      \label{c84}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata faith pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c85}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c85}}
+      \caption{Hasil Matrix faith}
+      \label{c85}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata Fall pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c86}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c86}}
+      \caption{Hasil Matrix Fall}
+      \label{c86}
+      \end{figure}
+
+\item berikut merupakan hasil lpengolahan kata Sick pada data google yang di load. Sehingga memunculkan hasil vektor 300 dimensi untuk kata tersebut. untuk jelasnya dapat di lihat pada gambar \ref{c87}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c87}}
+      \caption{Hasil Matrix Sick}
+      \label{c87}
+      \end{figure}
+
+\item berikut merupakan hasil dari similaritas kata kata yang di olah menjadi matrix tadi adapun persentase untuk perbandingan setiap katanya yaitu 9 persen untuk kata wash dan clear 7 persen untuk kata bag dan love 48 persen untuk kata motor dan car 12 persen untuk kata sick dan faith dan terakhir yaitu 6 persen untuk kata cycle dan shine. untuk jelasnya dapat di lihat pada gambar \ref{c88}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c88}}
+      \caption{hasil dari lima similaritas}
+      \label{c88}
+      \end{figure}
+
+\end{itemize}
+
+\item pada code berikut merupakan hasil dari running code untu ekstrak word dimana pada baris ke tiga dimasukan perintah untuk menghapus tag html yang terdapat dalam file tesebut selanjutnya pada baris ke 4 yaitu perintah untuk menghilangkan tanda kutip satu selanjutnya pada baris ke 5 yaitu perintah untuk menghapus tanda baca pada file tersebut dan yang terakhir yaitu perintah untuk menghapus dable sepasi atau sepasi berurutan. setelah itu dibuat clas bari dari random yang bertujuan untuk mengkocok data yang ada pada file tersebut kemudian class permute sentence tersebut akan di gunkan untuk mengolah data selanjutnya. untuk lebih jelasnya dapat dilihat pada gambar \ref{c90}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c90}}
+      \caption{hasil dari ekstrak\_words dan permute Sentence}
+      \label{c90}
+      \end{figure}
+
+\end{enumerate}
+
 
 \section{Fathi Rabbani / 1164074}
 \subsection{Teori}
