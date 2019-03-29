@@ -202,6 +202,108 @@ Skip-Gram adalah kebalikan dari konsep vektorisasi untuk kata dimana kata tengah
       \label{c90}
       \end{figure}
 
+\item gensim merupakan library untuk memodelkan topik unsuperpise atau memodelkan bahasa dengan model unsuperpise. Sadangkan taget dokumen digunakan untuk TaggetDokumen berarti memasukan dokumen untuk di olah oleh mesin. Kemudian Doc2Vect dugunakan untuk membandingkan dokumen apakah isi dari dokumen itu bobotnya sama dengan dokumen yang di sandingkannya. untuk lebih jelasnya dapat dilihat pada gambar \ref{c91} pada gambar tersebut menunjukan di baris ke satau dilakukan dari librari gensim dokumen mengimport method taggedDocument lalu pada baris kedua dari librari gensim model melakukan import metod Doc2Vec.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c91}}
+      \caption{Hasil dari penggunaan library gensim , TaggetDocument dan Doc2Vec}
+      \label{c91}
+      \end{figure}
+
+\item cara memasukan data traning file pertama tentukan terlebih dahulu tempat file dokumen tersebut disimpan kemudian import librari os setelah itu buat variabel unsup\_sentences yang berisikan array kosong, lalu tentukan file yang akan dimasukan setelah itu lakukan os listdir pada data yang akan dimasukan kemudian semua data tersebut di inisialisasi menjadi f kemudian nama f tersebut dimasukan ke variabel unsup untuk lebih jelasnya dapat di lihat pada gambar \ref{c92} berikut. pada codingan tersebut merupakan praktikum untuk memasukan data doc2vec\par
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c92}}
+      \caption{Codingan untuk memasukan dokumen pelatihan doc2vec}
+      \label{c92}
+      \end{figure}
+
+dan untuk hasilruningnya dapat dilihat pada gambar \ref{c93} kemudian hasilnya dapat dilihat pada gambar \ref{c94}  dimana akan muncul dirname, fname, sent, unsup\_sentences dan word dimana data unsup tersebut yang akan di olah nanti sebagai data seting dan terdapat 391 kata dalam file tersebut. setelah itu dilakukan running lagi pada code berikutnya sehingga akan muncul hasil seperti gambar \ref{c95} yang mana coding tersebut berguna untuk menambah data unsup\_sentences menjadi 160 sekian ribu seperti pada gambar \ref{c96}.  Selanjutnya dirunning code ke tiga yang dapat di lihat pada gambar \ref{c97} untuk  menambahkan data menjadi 175 sekian yang hasil akhirnya dapat di lihat pada gambar \ref{c98}  berikut.\par
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c93}}
+      \caption{hasil running codingan ke 1}
+      \label{c93}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c94}}
+      \caption{Hasil insert data doc2vec dari codingan pertama}
+      \label{c94}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c95}}
+      \caption{hasil running codingan ke 2}
+      \label{c95}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c96}}
+      \caption{Hasil insert data doc2vec dari codingan ke dua}
+      \label{c96}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c97}}
+      \caption{hasil running codingan ke 3}
+      \label{c97}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c98}}
+      \caption{Hasil insert data doc2vec dari codingan ke tiga}
+      \label{c98}
+      \end{figure}
+
+\item kenapa harus dilakukan pengocokan data atau rendomisasi ? hal ini harus dilakukan supaya data lebis gambang untuk di olah dan meningkatkan tingkat akurasi dari proses pengolahan data Doc2Vec. kemudian harus dilakukan pembersihan data agar memori pc atau laptop yang di gunakan untuk mengolah data menjadi ringan dan menambah peforma dari mesin itu sendiri untuk codingan pertama lakukan terlebih dahulu rendomisasi. dapat di lihat pada gambar \ref{c99} selanjutnya membuat variabel baru dengan nama mute yang di isi data class random dan data unsup\_sentence yang dapat dilihat pada gambar \ref{c100}. kemudian setelah pengolahan data dilakukan pembersihan dengan melakukan code pada gambar \ref{c101}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c99}}
+      \caption{Membuat random dan membuat class PermuteSentence}
+      \label{c99}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c100}}
+      \caption{Membuat variabel mute}
+      \label{c100}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c101}}
+      \caption{Code Pembersihan}
+      \label{c101}
+      \end{figure}
+
+\item kenapa model harus di save ? suapaya dalam pengolahan data tidak perlu menjalankan kembali data vektorisasi serta untuk meringankan beban ram. kemudian temporary harus dihapus guna meningkatkan peforma komputer. adapun codenya dapat dilihat pada gambar \ref{c102} dan untuk hasil simpan datanya dapat di lihat pada gambar \ref{c103}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c102}}
+      \caption{Membuat variabel mute}
+      \label{c102}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c103}}
+      \caption{Hasil save data vektorisasi}
+      \label{c103}
+      \end{figure}
+
+
 \end{enumerate}
 
 
