@@ -486,4 +486,114 @@ untuk ilustrasi data mean dan deviation standart bisa dilihat pada gambar \ref{f
 	\caption{Ilustrasi hasil olah data  pada GoogleNews-vector menggunakan extract\_words dan PermuteSentences}
 	\label{fig19}
 \end{figure}
+
+\item TaggedDocument dan Doc2Vec
+\subitem gensim merupakan open-source model ruang vektor dan toolkit topic modeling, yang diimplementasikan dalam bahasa pemrograman Python. Untuk kinerja Gensim, digunakan NumPy, SciPy dan Cython (opsional). Gensim secara khusus ditujukan untuk menangani koleksi teks besar dengan menggunakan algoritma secara online. Gensim mengimplementasikan tf-idf, latent semantic analysis (LSA), Latent Dirichlet Analysis (LDA), dan lain-lain. 
+\subitem tagged document merupakan sebuah class yang terdapat pada pemrosesan data pada library gensim yang akan mengolah data teks yang ada pada dokumen - dokumen yang dipakai.
+\subitem Doc2Vec merupakan algoritma doct embedding, yaitu pemetaan dari dokumen menjadi vektor, serta pemetaan data dokumen 1 dan dokumen lainnya.
+ilustrasi dari tagged document dan Word2Vec ada pada gambar \ref{fig20}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/1}
+	\caption{Ilustrasi TaggedDocument dan Doc2Vec }
+	\label{fig20}
+\end{figure}
+
+\item Praktek data training
+\subitem pertama buka data training yang akan diolah pada aplikasi python, import library OS dan membuat data variable unsup\_senteces dengan nilai array kosong. buatkan data direktori untuk memanggil data yang akan diolah dan buatkan juga variable data nilai fname yang akan memproses data dirname untuk diisikan pada variable unsup\_sentences. code yang digunakan dapat dilihat pada gambar \ref{fig21}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/2}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig21}
+\end{figure}
+
+data pada hasil code digambar berikut \ref{fig22}, menghasilkan data pada gambar \ref{23} yang akan memunculkan data variable DIRNAME, FNAME, KATA dan unsup\_sentences yang memiliki data sebanyak 55 kata dalam file yang diolah tersebut. hasil run dengan menggunakan code pada gambar \ref{fig24}, menghasilkan data nilai yang terdapat pada gambar \ref{25}. lalu pada code yang terdapat digambar \ref{fig26}, menghasilkan data \ref{fig27}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/3}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig22}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/4}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig23}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/5}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig24}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/6}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig25}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/7}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig26}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/8}
+	\caption{Ilustrasi data code praktek data training }
+	\label{fig27}
+\end{figure}
+
+\item Why need Shuffled and Clean memory
+\subitem dilakukan shuffled adalah agar datanya lebih mudah untuk diolah dan untuk menentukan tingkat tinggi akurasi dari hasil pemrosesan. dan dilakukan pembersihan memory adalah agar chace yang disimpan tidak membuat proses pada komputer mejadi lambat dan dapat digunakan untuk memproses data lainnya agar menjadi lebih ringan dan cepat.
+pada gambar \ref{fig28} adlah proses untuk melakukan pengoclokan data dan pada gambar \ref{fig29} adalah proses untuk memasukan data unsup\_sentences kedalam variable muter untuk diproses dengan class PermuterSentences. dan pada gambar \ref{30} adalah code yang digunakan untuk membersihkan data memory.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/9}
+	\caption{Ilustrasi Shuffled dan Randomisasi data }
+	\label{fig28}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/10}
+	\caption{Ilustrasi pembuatan variable muter untuk memuat data unsup\_sentences}
+	\label{fig29}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/11}
+	\caption{Ilustrasi code untuk membersihkan data memory}
+	\label{fig30}
+\end{figure}
+
+
+\item Why model have to be saved
+\subitem dalam pengolahan data dengan menggunakan proses yang panjang ditakutkan data yang sudah diproses tersebut dapat hilang jika terdapat kejadian atau emergency pada saat pengolahan dan pemrosesan data, misalnya harddisk error atau pun listrik yang padam. dan proses penyimpanan data juga dilakukan agar data yang sudah diolah data dipanggil lagi tanpa harus melakukan proses dari awal sehingga tidak memakan waktu. untuk code yang digunakan dapat dilihat pada gambar \ref{fig31}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/12}
+	\caption{Ilustrasi data code save data}
+	\label{fig31}
+\end{figure}
+
+berikut ini adalah hasil file dari penggunaan code save tersebut. bisa dilihat pada gambar \ref{fig32}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/13}
+	\caption{Ilustrasi hasil file simpan}
+	\label{fig32}
+\end{figure}
+
+\item infer\_vector
+\subitem berfungsi untuk dokumen baru, dan  bisa menggunakan data vektor yang dilatih secara massal, seperti yang disimpan dalam model, untuk dokumen yang merupakan bagian dari data training. untuk percobaannya dapat dilihat pada gambar \ref{33}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/14}
+	\caption{Ilustrasi code dan hasil infer\_vector}
+	\label{fig33}
+\end{figure}
+
 \end{enumerate}
