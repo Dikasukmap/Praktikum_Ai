@@ -303,8 +303,78 @@ dan untuk hasilruningnya dapat dilihat pada gambar \ref{c93} kemudian hasilnya d
       \label{c103}
       \end{figure}
 
+\item inver\_code digunakan untuk membandingkan data doc2vec yang telah di olah dengan kata yang baru atau data yang ada dalam perintah vector itu sendiri contoh membandingkan kata (i will go home) untuk lebih jelasnya dapat di lihat pada gambar \ref{c104}. kemudian untuk hasil running code tersebut dapat di lihat pada gambar \ref{c105} pada hasil gambar tersebut terdapat hasil vektor yang rata rata berada pada kisaran 0,2 an yang berarti kata yang dimasukan pada inter\_vec datanya ada pada doc2vec atau ada data yang bobotnya menyamai kata-kata di dalam dokumen tersebut.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c104}}
+      \caption{Code untuk inver\_code}
+      \label{c104}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c105}}
+      \caption{Hasil dari inver code}
+      \label{c105}
+      \end{figure}
+
+\item consine\_simirarity setelah melakukan pengolahan data doc2vec dilakukan consine simirarity yang bertujuan untuk membandingkan data berisikan bahasa inggris dengan data yang telah di olah tadi apakah hasilnya mirip atau tidak untuk caranya yaitu dengan cara mencobacodingan yang terdapat pada gambar \ref{c106} berikut maka akan muncul hasilnya berapa persen dengan tulisan 0.4 sekian yang berarti tingkat kemiripan dokumen yang di uji tadi untuk hasilnya dapat dilihat pada gambar \ref{c107} berikut.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c106}}
+      \caption{Code untuk consine\_simirarity}
+      \label{c106}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c107}}
+      \caption{Hasil dariconsine\_simirarity}
+      \label{c107}
+      \end{figure}
+
+\item untuk melakukan cross validation pertama masukan terlebih dahulu metode KNeighborsClasifier dan RandomForestClasifier dari library sklearn kemudian dilakukan cross validation setelah itu buat variabel clf dengan isi KNeighborsClasifier dan variabel clfrf dengan isi RandomForestClasifier kemudian di buat skor menggunakan cross validation dengan menggunakan variabel clf dan data sentvecs dan sentiments kemudian dengan numpy dibuat mean dari scores begitu pula untuk variabel clfrf selanjutnya melakukan import metode make\_pipeline yang dilakukan untuk membuat skor dari vektorisasi tfidf dan rf. untuk lebih jelasnya dapat di lihat pada gambar \ref{c108}  maka akan muncul hasil rata-rata 0,76 sekian atau 76 persen untuk clf yang dapat dilihat pada gambar \ref{c109} dan untuk hasil clfrf menghasilkan hasil rata-rata di 71 persen yang dapat dilihat pada gambar \ref{c110} dan untuk hasil rata-rata keseluruhan cros validation sebesar 0,74 atau 74 persen yang dapat dilihat pada gambar \ref{c109}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c108}}
+      \caption{Code untuk Cros Validation}
+      \label{c108}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c109}}
+      \caption{Hasil dari perhitungan KNeighborsClasifier}
+      \label{c109}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c110}}
+      \caption{Hasil dari perhitungan RandomForestClasifier}
+      \label{c110}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c111}}
+      \caption{Hasil dari perhitungan Cross Validation 1}
+      \label{c111}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c112}}
+      \caption{Hasil dari perhitungan Cross Validation 2}
+      \label{c112}
+      \end{figure}
 
 \end{enumerate}
+\subsection{Penanganan Error}
+
 
 
 \section{Fathi Rabbani / 1164074}
