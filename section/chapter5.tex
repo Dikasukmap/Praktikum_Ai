@@ -578,7 +578,7 @@ ilustrasi dari tagged document dan Word2Vec ada pada gambar \ref{fig20}
 	\label{fig21}
 \end{figure}
 
-data pada hasil code digambar berikut \ref{fig22}, menghasilkan data pada gambar \ref{23} yang akan memunculkan data variable DIRNAME, FNAME, KATA dan unsup\_sentences yang memiliki data sebanyak 55 kata dalam file yang diolah tersebut. hasil run dengan menggunakan code pada gambar \ref{fig24}, menghasilkan data nilai yang terdapat pada gambar \ref{25}. lalu pada code yang terdapat digambar \ref{fig26}, menghasilkan data \ref{fig27}.
+data pada hasil code digambar berikut \ref{fig22}, menghasilkan data pada gambar \ref{fig23} yang akan memunculkan data variable DIRNAME, FNAME, KATA dan unsup\_sentences yang memiliki data sebanyak 55 kata dalam file yang diolah tersebut. hasil run dengan menggunakan code pada gambar \ref{fig24}, menghasilkan data nilai yang terdapat pada gambar \ref{fig25}. lalu pada code yang terdapat digambar \ref{fig26}, menghasilkan data \ref{fig27}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/3}
@@ -664,6 +664,63 @@ berikut ini adalah hasil file dari penggunaan code save tersebut. bisa dilihat p
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/14}
 	\caption{Ilustrasi code dan hasil infer\_vector}
 	\label{fig33}
+\end{figure}
+
+\item cosine\_similarity
+\subitem merupakan sebuah algoritma yang digunakan untuk membandingkan dari dua buah data yang bukan merupakan data vector untuk menguji nilai kemiripan data satu dengan data lainnya. hasil dari percobaan pada tugas no 8 ini dapat dilihat pada gambar \ref{fig34} yang menghasilkan nilai akurasi sebesar 20 persen dan gambar \ref{fig35} yang menghasilkan nilai akurasi sebesar 91 persen.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/1}
+	\caption{Ilustrasi code dan hasil penggunaan cosine\_similarity}
+	\label{fig34}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/2}
+	\caption{Ilustrasi code dan hasil penggunaan cosine\_similarity}
+	\label{fig35}
+\end{figure}
+
+\item Cross Validation
+\subitem pertama melakukan import data dari library KNeighborsClassifier, RandomForestClassifier, cross\_val\_score dan numpy yang digunakan untuk membuat data cross validasi dapat dilihat pada gambar \ref{fig36}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/3}
+	\caption{Ilustrasi memasukan code import library}
+	\label{fig36}
+\end{figure}
+
+\subitem lalu selanjutnya membuat data variable scores yang akan memuat nilai cross\_val\_score dengan datanya diambil dari KNeighborsClassifier yang terdiri dari sentvecs, sentiments dan clf dan mengolahnya menggunakan numpy untuk menampilkan data pada gambar \ref{fig37}yang menghasilkan nilai akurasi sebesar 53 persen.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/4}
+	\caption{Ilustrasi perhitungan data KNeighborsClassifier dengan cross validasi}
+	\label{fig37}
+\end{figure}
+
+\subitem membuat data variable scores yang akan memuat nilai cross\_val\_score dengan datanya diambil dari RandomForestClassifier yang terdiri dari sentvecs, sentiments dan clfrf dan mengolahnya menggunakan numpy untuk menampilkan data pada gambar \ref{fig38} yang menghasilkan nilai akurasi sebesar 53 persen. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/5}
+	\caption{Ilustrasi perhitungan data  RandomForestClassifier dengan cross validasi}
+	\label{fig38}
+\end{figure}
+
+\subitem penggunaan make\_pipeline adalah untuk membuat data dari KNeighborsClassifier, RandomForestClassifier dan Vectorizer digabungkan untuk menghasilkan data nilai pada gambar\ref{fig39} menghasilkan nilai akurasi sebesar 74 persen. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/6}
+	\caption{Ilustrasi perhitungan data Cross Validasi untuk nilai keseluruhan dari KNeighborsClassifier, RandomForestClassifier dan Vectorizer}
+	\label{fig39}
+\end{figure}
+
+dan keseluruhan nilai yang tercatat terdapat pada gambar \ref{fig40}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/7}
+	\caption{Ilustrasi perhitungan data hasil persenan yang diakumulasi}
+	\label{fig40}
 \end{figure}
 
 \end{enumerate}
