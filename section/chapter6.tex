@@ -95,3 +95,87 @@ sequential adalah prosesperbandingan setiap elemen satu persatu mulai dari dari 
       \end{figure}
 
 \end{enumerate}
+
+\section{Fathi Rabbani / 1164074}
+\subsection{Teori}
+\begin{enumerate}
+\item Kenapa file suara harus dilakukan MFCC
+\subitem MFCC digunakan untuk mengidentifikasi jenis suara yang dimasukan seperti suara lagu, hujan atau pun suara yang tidak dapat didengar oleh telinga manusia yaitu Ultrasonik, sehingga dibutuhkan penggunaan MFCC untuk memproses data tersebut agar dapat dibaca oleh manusia. ilustrasi untuk MFCC dapat dilihat pada gambar \ref{fig1}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/1}}
+      \caption{Ilustrasi MFCC}
+      \label{fig1}
+\end{figure}
+
+\item Konsep dasar Neural Network
+\subitem Neural Network sebenarnya mengadopsi dari kemampuan otak manusia yang mampu memberikan stimulasi/rangsangan, melakukan proses, dan memberikan output. Output diperoleh dari variasi stimulasi dan proses yang terjadi di dalam otak manusia.
+ilustrasi Neural Network dapat dilihat pada gambar \ref{fig2}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/2}}
+      \caption{Ilustrasi Neural Network}
+      \label{fig2}
+\end{figure}
+
+\item Konsep Pembobotan dalam Neural Network
+\subitem konsep pembobotan dalam neural network digunakan untuk membedakan data satu dengan data lainnya, sebagai contoh dapat dilihat pada gambar \ref{fig3}. dimana data inputan yang masuk adalah 2 data yaitu "anjing" dan "kucing" yang diolah dengan proses membandingkan data dan diolah melalui pembobotan sehingga menampilkan hasil output.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/3}}
+      \caption{Ilustrasi pembobotan Neural Network}
+      \label{fig3}
+\end{figure}
+
+\item Konsep Aktifasi dalam Neural Network
+\subitem dalam Neural Network fungsi aktifasi meliputi inputan dan diproses sehingga menghasilkan Output nilai yang diharapkan, dengan menggunakan persepsi alur cara penyampaian informasi pada jaringan syaraf otak. ilustrasi dapat dilihat pada gambar \ref{fig4}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/4}}
+      \caption{Ilustrasi fungsi aktifasi Neural Network}
+      \label{fig4}
+\end{figure}
+
+\item cara membaca hasil PLOT dari MFCC
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/5}}
+      \caption{Ilustrasi Membaca nilai Plot dari MFCC}
+      \label{fig5}
+\end{figure}
+
+\item One-hot Encoding
+\subitem penggunaan One-hot Encoding adalah dengan membaca data yang memiliki nilai 1 sebagai nilai tinggi atau bisa disebut juga sebagai nilai positif dan 0 sebagai nilai rendah yang bermakna juga sebagai nilai negatif. ilustrasi dapat dilihat pada gambar \ref{fig6}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/6}}
+      \caption{Ilustrasi One-hot Encoding}
+      \label{fig6}
+\end{figure}
+
+\item fungsi dari np.unique dan to\_categorial dalam Code Program
+\subitem fungsi dari NP.UNIQUE dalah untuk membuat data elemen menjadi nilai yang bersifat unik dalam artian (Array), ilustrasi dapat dilihat pada gambar \ref{fig7}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/7}}
+      \caption{Ilustrasi np.unique}
+      \label{fig7}
+\end{figure}
+
+\subitem sedangkan perintah to\_categorial adalah untuk membuat data integer yang terdeteksi untuk diubah menjadi data matrix biner. ilustrasi dapat dilihat pada gambar \ref{fig8}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/8}}
+      \caption{Ilustrasi to\_categorial}
+      \label{fig8}
+\end{figure}
+
+\item fungsi dari Sequential
+\subitem fungsi dari Sequential dari code program adalah untuk membagi data - data agar dapat dianalisis oleh sistem lebih mudah, misalkan dari data 100 dibagi prosesnya menjadi 4 yaitu 25 perproses, seperti yang terdapat pada gambar \ref{fig9} sehingga hasil yang didapatkan akan lebih baik lagi.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/9}}
+      \caption{Ilustrasi fungsi Sequential}
+      \label{fig9}
+\end{figure}
+\end{enumerate}
