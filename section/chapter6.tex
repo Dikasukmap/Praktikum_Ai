@@ -93,8 +93,145 @@ sequential adalah prosesperbandingan setiap elemen satu persatu mulai dari dari 
       \caption{Ilustrasi Konsep pembobotan pada neural network}
       \label{c121}
       \end{figure}
-
 \end{enumerate}
+\subsection{Praktikum}
+\begin{enumerate}
+\item Jelaskan isi dari data GTZAN Genre Collection dan data dari freesound. Buat kode program program untuk meload data tersebut untuk digunakan pada MFCC. Jelaskan arti dari perbaris kode yang dibuat (harus beda dengan teman satukelas).\par
+\subitem Isi data data merupakan datasets lagu atau suara yang tersiri dari 10 gendre yang di simpan kedalam 10 folder yaitu folder blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, dan rock ke sepuluh folder tersebut masing-masing  berisi 100 data suara sedangkan data freesound merupakan contoh data suara yang akan di gunakan untuk menguji hasil pengolahan data tersebut dengan menggunakan metode mfcc. apakah suara dari freesound termasuk kategori jazz pop atau sebagainya ?.
+
+\lstinputlisting[firstline=1, lastline=21]{src/cokro/praktikum6.py}
+
+\subitem dapat dilihat pada kode diatas pada baris kesatu dilakukan import librosa tang digunakan untuk fungsi mfcc pada suara.
+pada baris kedua dilakukan import librosa featuse dan pada baris ke tiga dilakukan librosa display selanjutnya pada baris ke empat dilakukan import glob kemudian insert numpy untuk pengolahan data menjadi vektor setelah itu dilakukan import matplotlib untuk melakukan ploting setelah itu dilakukan import librari keras.\par
+
+\subitem Selanjutnya yaitu membuat fungsi mfcc dengan nama display\_mfcc yang didalamnya terdapat variabel y yang berisi method librosa load kemudian variabel mfcc yang berisi method librosa featurea mfcc. Setelah itu membuat flot figure dengan ukuran 10 banding 4 kemudian di isi oleh data librosa display dengan variabel x nya yaitu waktu dan y yaitu mel atau Hz kemudian melakukan plot warna setelah itu melakukan plot judul dan terakhir flot di tampilkan. 
+
+\item Jelaskan perbaris kode program dengan kata-kata dan di lengkapi ilustrasi gambar fungsi dari display\_mfcc().\par
+
+\lstinputlisting[firstline=22, lastline=43]{src/cokro/praktikum6.py}
+
+\subitem pada baris ke dua program diatas digunakan untuk mendisplay tampilan glombang suara dari file 266093\_\_stereo-surgeon\_\_kick-loop-5.wav menggunakan metode mfcc dengan menggunakan fungsi display\_mfcc yang telah tadi di buat pada nomer dua begitu juga pada baris ke 4 6 8 sampai ke 22 secara teksis sama menggunakan fungsi display\_mfcc hanyasaja beda peyimpanan data yang akan di tampilkan atau di eksekusi. untuk contoh hasilnya dapat dilihat pada gambar \ref{c122} berikut:
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c122}}
+      \caption{Ilustrasi gambar fungsi dari display\_mfcc() }
+      \label{c122}
+      \end{figure}
+
+Gambar \ref{c122} tersebut merupakan hasil dari mfcc dari salah satu gender lagu pop yang ada pada datasets yang 1000 atau terdapat dalam sepuluh folder tadi.
+
+\item Jelaskan perbaris dengan kata-kata dan dilengkapi dengan ilustrasi gambar fungsi dari extract\_features\_song jelaskan kenapa data yangdiambil merupakan data 25.000 baris pertama ? 
+
+\lstinputlisting[firstline=44, lastline=55]{src/cokro/praktikum6.py}
+
+\subitem pada baris ke tiga di definisikan nama extract\_features\_song yang nantinya akan di gunakan pada fungsi yang lainya kemudian dibuat variabel y dengan method librosa load setelah itu dibuat variabel baru mfcc dengan isi librosa features mfcc dengan isi variabel y tadi kemudian dibuat variabel mfcc dengan isian np.max dan variabel mfcc tadi terakhir di buat array dari data tersebut merupakan data 25000 data pertama. kenapa data 25000 pertama yang digunakan dikarenakan data tersebut digunakan sebagai data testing semakin besar data testing yang di gunakan maka semakin akurat hasil AI. tapi sebenarnya data tersebut relatif bisa lebih besar atau lebih kecil tergantung pada komputer masing masing.
+
+\item Jelaskan Perbaris kode program dengan kata-kata dan di lengkapi ilustrasi gambar fungsi dari generate features and labels.
+
+\lstinputlisting[firstline=56, lastline=76]{src/cokro/praktikum6.py}
+
+\subitem pada baris ke tiga merupakan pendefinisian nama fungsi yaitu generate features and labels kemudian membuat variabel baru dengan array kosing yaitu all\_features dan all\_labels kemudian mendefinisikan isian label untuk gendre dengan cara membuat variabel genres kemudian di isi dengan 10 gendre yang tadi setelah itu dilakukan fungsi if else dengan code for dan in setelah itu akan di buat encoding untuk data tiap tiap label contoh untuk blues 1000000000 dan untuk clasical 0100000000.
+
+\item Jelaskan dengan kata dan praktek kenapa penggunaan fungsi generate features and labels sangat lama saat meload dataset gendre tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut.\par
+
+halnini menjadi lama dikarenakan mesin membaca satupersatu file yang ada pada folder dan dalam foldertersebut terdapat 100 file sehingga wajar menjadi lama ditambah lagi mengolah data yang tadinya suara menjadi bentuk vektor. berikut merupakan codenya.
+\lstinputlisting[firstline=77, lastline=79]{src/cokro/praktikum6.py}
+kemudian untuk hasilnya dapat dilihat pada gambar \ref{c123} berikut :
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c123}}
+      \caption{Hasil dari fungsi generate features and labels}
+      \label{c123}
+      \end{figure}
+
+pada keluaran yang terdapat pada gambar \ref{c123} tersebut menunjukan bahwa mesin telah meload dan membaca masing masing 100 data dari setiap gendre
+
+\item jelaskan kenapa harus dilakukan pemisahan data training dan data testing sebesar 80 persen praktekan dengan kode dan tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut. 
+
+untuk code nya adalah sebagai berikut  yang merupakan code untuk membagi data sebanyak 80 persen untuk data training maka data musik tadi yang total jumlahnya 1000 akan di bagi dua untuk data training sebanyak 800  dan 200 untuk data testing.
+
+\lstinputlisting[firstline=83, lastline=84]{src/cokro/praktikum6.py}
+
+dan untuk hasilnya dapat dilihat pada gambar \ref{c124} dan gambar \ref{c125} pada gambar tersebut menunjukan hasil dari pembagian 80 persen tadi dimana kolom menjadi 25010 yangmerupakan kombinasi antara label dan data 25000 yang diambil dari data pertama.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c124}}
+      \caption{Hasi eksekusi code}
+      \label{c124}
+      \end{figure}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c125}}
+      \caption{Hasil pembagian 80 persen}
+      \label{c125}
+      \end{figure}
+
+\item praktekan dan jelaskan masing masing parameter dari fungsi Sequential().  tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut.\par
+\subitem fungsi sequential digunakan untuk mengolah data inputan sesuai dengan fungsi yang ada pada fungsi sequential pada fungsi sequential kali ini menggunakan dua fungsi dapat dilihat pada gambar \ref{c126} pada gambar tersebut fungsi sequential mengkompile data dari 100 neuron atau dari 1 folder file dengan menggunakan fungsi relu dan softmax untuk menghasilkan outputan yang sesuai dengan keriteria.
+\lstinputlisting[firstline=105, lastline=111]{src/cokro/praktikum6.py}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c126}}
+      \caption{Hasil fungsi sequential}
+      \label{c126}
+      \end{figure}
+
+\item praktekan dan jelaskan masing masing parameter dari fungsi compile().  tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut. \par
+\subitem yaitu fungsi kompile yang digunakan untuk mengetahui parameter yang digunakan dari data yang telah diolah untuk caranya dapat menggunakan codingan sebagai berikut dan untuk hasilnya dapat dilihat pada gambar \ref{c127} pada gambar tersebut memunculkan parameternya berapasaja dan total parameter yang digunakan.
+
+\lstinputlisting[firstline=112, lastline=116]{src/cokro/praktikum6.py}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c127}}
+      \caption{Hasil fungsi compile}
+      \label{c127}
+      \end{figure}
+
+\item praktekan dan jelaskan masing masing parameter dari fungsi fit().  tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut.\par
+\subitem pada fungsi ini dilakukan pengolahan data dari 10 label tadi atau 10 file data sets tadi kemudian di hitung tingkat akurasi masing masing dan tingkat kegagalan atau loss data darisetiap file tersebut caranya dengan melakukan codingan berikut. dan untuk hasilnya dapat dilihat pada gambar \ref{c128} berikut pada gambar tersebut menunjukan 10 pengolahan data untuk menentukan nilai akurasi dan loss dari data tersebut dan selanjutnya dilakukan fingsi evaluasi.
+
+\lstinputlisting[firstline=117, lastline=119]{src/cokro/praktikum6.py}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c128}}
+      \caption{Hasil fungsi fit}
+      \label{c128}
+      \end{figure}
+
+\item praktekan dan jelaskan masing masing parameter dari fungsi evaluate().  tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut.\par
+\subitem pada fungsi ini dilakukan evaluasi terhadap datayang telah di runing sebelummnya untuk lebih jelasnya dapat di lihat codingan tersebut  pada codingan tersebut dilakukan evaluasi pada tingkat kegagalan dan akurasi kebenaran maka hasilnya dapat dilihat pada gambar \ref{c129} pada gambar tersebut di munculkan hasil evaluasi dari 10 proses dari setiap gendre yaitu akurasi sebesar 51 persen dan loss data sebesar 1.4105 data.
+
+\lstinputlisting[firstline=120, lastline=125]{src/cokro/praktikum6.py}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c129}}
+      \caption{Hasil fungsi evaluasi}
+      \label{c129}
+      \end{figure}
+
+\item praktekan dan jelaskan masing masing parameter dari fungsi predic  tunjukan keluarannya dari komputer sendiri dan artikan maksud dari luaran tersebut. \par 
+\subitem fungsi predic merupakan fungsi untuk membandingkan tingkat akurasi pada setiap label yang sepuluh tadi maka data akan di sandingkan ke masing masing tingkat akurasinya, yang akurasinya paling tinggi maka itulah jawaban untuk setiap inputan yang dilakukan. 
+
+\lstinputlisting[firstline=126, lastline=127]{src/cokro/praktikum6.py}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]
+      {figures/cokro/c130}}
+      \caption{Hasil fungsi prediksi}
+      \label{c130}
+      \end{figure}
+
+untuk hasilnya dapat dilihat pada gambar \ref{c130} yang menunukan hasil berupa array dari kesepuluh label yang telah di olah tadi.
+\end{enumerate}
+
 
 \section{Fathi Rabbani / 1164074}
 \subsection{Teori}
