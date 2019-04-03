@@ -1,6 +1,9 @@
 \chapter{Discussion}
 Please tell more about conclusion and how to the next work of this study.
 
+\maxdeadcycles=200
+\extrafloats{100}
+
 \section{Cokro Edi Prawiro / 1164069}
 \subsection{Teori}
 
@@ -94,6 +97,7 @@ sequential adalah prosesperbandingan setiap elemen satu persatu mulai dari dari 
       \label{c121}
       \end{figure}
 \end{enumerate}
+
 \subsection{Praktikum}
 \begin{enumerate}
 \item Jelaskan isi dari data GTZAN Genre Collection dan data dari freesound. Buat kode program program untuk meload data tersebut untuk digunakan pada MFCC. Jelaskan arti dari perbaris kode yang dibuat (harus beda dengan teman satukelas).\par
@@ -237,40 +241,40 @@ untuk hasilnya dapat dilihat pada gambar \ref{c130} yang menunukan hasil berupa 
 \subsection{Teori}
 \begin{enumerate}
 \item Kenapa file suara harus dilakukan MFCC
-\subitem MFCC digunakan untuk mengidentifikasi jenis suara yang dimasukan seperti suara lagu, hujan atau pun suara yang tidak dapat didengar oleh telinga manusia yaitu Ultrasonik, sehingga dibutuhkan penggunaan MFCC untuk memproses data tersebut agar dapat dibaca oleh manusia. ilustrasi untuk MFCC dapat dilihat pada gambar \ref{fig1}
+\subitem MFCC digunakan untuk mengidentifikasi jenis suara yang dimasukan seperti suara lagu, hujan atau pun suara yang tidak dapat didengar oleh telinga manusia yaitu Ultrasonik, sehingga dibutuhkan penggunaan MFCC untuk memproses data tersebut agar dapat dibaca oleh manusia. ilustrasi untuk MFCC dapat dilihat pada gambar \ref{data1}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/1}}
       \caption{Ilustrasi MFCC}
-      \label{fig1}
+      \label{data1}
 \end{figure}
 
 \item Konsep dasar Neural Network
 \subitem Neural Network sebenarnya mengadopsi dari kemampuan otak manusia yang mampu memberikan stimulasi/rangsangan, melakukan proses, dan memberikan output. Output diperoleh dari variasi stimulasi dan proses yang terjadi di dalam otak manusia.
-ilustrasi Neural Network dapat dilihat pada gambar \ref{fig2}
+ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/2}}
       \caption{Ilustrasi Neural Network}
-      \label{fig2}
+      \label{data2}
 \end{figure}
 
 \item Konsep Pembobotan dalam Neural Network
-\subitem konsep pembobotan dalam neural network digunakan untuk membedakan data satu dengan data lainnya, sebagai contoh dapat dilihat pada gambar \ref{fig3}. dimana data inputan yang masuk adalah 2 data yaitu "anjing" dan "kucing" yang diolah dengan proses membandingkan data dan diolah melalui pembobotan sehingga menampilkan hasil output.
+\subitem konsep pembobotan dalam neural network digunakan untuk membedakan data satu dengan data lainnya, sebagai contoh dapat dilihat pada gambar \ref{data3}. dimana data inputan yang masuk adalah 2 data yaitu "anjing" dan "kucing" yang diolah dengan proses membandingkan data dan diolah melalui pembobotan sehingga menampilkan hasil output.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/3}}
       \caption{Ilustrasi pembobotan Neural Network}
-      \label{fig3}
+      \label{data3}
 \end{figure}
 
 \item Konsep Aktifasi dalam Neural Network
-\subitem dalam Neural Network fungsi aktifasi meliputi inputan dan diproses sehingga menghasilkan Output nilai yang diharapkan, dengan menggunakan persepsi alur cara penyampaian informasi pada jaringan syaraf otak. ilustrasi dapat dilihat pada gambar \ref{fig4}
+\subitem dalam Neural Network fungsi aktifasi meliputi inputan dan diproses sehingga menghasilkan Output nilai yang diharapkan, dengan menggunakan persepsi alur cara penyampaian informasi pada jaringan syaraf otak. ilustrasi dapat dilihat pada gambar \ref{data4}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/4}}
       \caption{Ilustrasi fungsi aktifasi Neural Network}
-      \label{fig4}
+      \label{data4}
 \end{figure}
 
 \item cara membaca hasil PLOT dari MFCC
@@ -278,41 +282,99 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{fig2}
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/5}}
       \caption{Ilustrasi Membaca nilai Plot dari MFCC}
-      \label{fig5}
+      \label{data5}
 \end{figure}
 
 \item One-hot Encoding
-\subitem penggunaan One-hot Encoding adalah dengan membaca data yang memiliki nilai 1 sebagai nilai tinggi atau bisa disebut juga sebagai nilai positif dan 0 sebagai nilai rendah yang bermakna juga sebagai nilai negatif. ilustrasi dapat dilihat pada gambar \ref{fig6}
+\subitem penggunaan One-hot Encoding adalah dengan membaca data yang memiliki nilai 1 sebagai nilai tinggi atau bisa disebut juga sebagai nilai positif dan 0 sebagai nilai rendah yang bermakna juga sebagai nilai negatif. ilustrasi dapat dilihat pada gambar \ref{data6}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/6}}
       \caption{Ilustrasi One-hot Encoding}
-      \label{fig6}
+      \label{data6}
 \end{figure}
 
 \item fungsi dari np.unique dan to\_categorial dalam Code Program
-\subitem fungsi dari NP.UNIQUE dalah untuk membuat data elemen menjadi nilai yang bersifat unik dalam artian (Array), ilustrasi dapat dilihat pada gambar \ref{fig7}
+\subitem fungsi dari NP.UNIQUE dalah untuk membuat data elemen menjadi nilai yang bersifat unik dalam artian (Array), ilustrasi dapat dilihat pada gambar \ref{data7}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/7}}
       \caption{Ilustrasi np.unique}
-      \label{fig7}
+      \label{data7}
 \end{figure}
 
-\subitem sedangkan perintah to\_categorial adalah untuk membuat data integer yang terdeteksi untuk diubah menjadi data matrix biner. ilustrasi dapat dilihat pada gambar \ref{fig8}
+\subitem sedangkan perintah to\_categorial adalah untuk membuat data integer yang terdeteksi untuk diubah menjadi data matrix biner. ilustrasi dapat dilihat pada gambar \ref{data8}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/8}}
       \caption{Ilustrasi to\_categorial}
-      \label{fig8}
+      \label{data8}
 \end{figure}
 
 \item fungsi dari Sequential
-\subitem fungsi dari Sequential dari code program adalah untuk membagi data - data agar dapat dianalisis oleh sistem lebih mudah, misalkan dari data 100 dibagi prosesnya menjadi 4 yaitu 25 perproses, seperti yang terdapat pada gambar \ref{fig9} sehingga hasil yang didapatkan akan lebih baik lagi.
+\subitem fungsi dari Sequential dari code program adalah untuk membagi data - data agar dapat dianalisis oleh sistem lebih mudah, misalkan dari data 100 dibagi prosesnya menjadi 4 yaitu 25 perproses, seperti yang terdapat pada gambar \ref{data9} sehingga hasil yang didapatkan akan lebih baik lagi.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/9}}
       \caption{Ilustrasi fungsi Sequential}
-      \label{fig9}
+      \label{data9}
 \end{figure}
+\end{enumerate}
+
+\subsection{Praktikum}
+\begin{enumerate}
+\item Penjelasan data GTZAN Genre Collection dan Freesound, Buat Code Program untuk Load data Tersebut.
+\subitem GTZAN Genre Collection merupakan datasets yang berisi data lagu yang terdiri dari 10 genre yaitu :
+\begin{itemize}
+\item Blues
+\item Classical
+\item Country
+\item Disco
+\item Hip-Hop
+\item Jazz
+\item Metal
+\item Pop
+\item Reggae
+\item Rock
+\end{itemize}
+10 genre tersebut memiliki data sebesar 100 data suara.
+
+\subitem sedangkan Freesound merupakan sebuah contoh suara yang digunakan untuk menguji hasil dari pengolahannya dengan menggunakan metode MFCC, untuk mencari genre yang pas bagi contoh suara tersebut.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/1}}
+      \caption{Code Program pemanggilan Library}
+      \label{data10}
+\end{figure}
+
+\subitem Code pada gambar \ref{data10} digunakan untuk memanggil library Librosa yang memuat metode Feature dan Display yang akan digunakan untuk memproses data suara tersebut dengan MFCC. lalu Library Glob yang digunakan untuk mencocokan pattern yang spesifik dari data tersebut, Library Numpe yang digunakan untuk membuat data Vector, Library matplotlib yang digunakan untuk membuat data grafik dan Library Keras adalah open-source yang bekerja untuk memproses TensorFlow, CNTK dan Theano, yang didesain untuk melakukan penelitian dengan menggunakan Deep Neural Network.
+
+\item Penjelasan Code Program display\_mfcc
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/2}}
+      \caption{Code Program display\_mfcc}
+      \label{data11}
+\end{figure}
+
+\subitem Code pada gambar \ref{data11} meliputi penggunaan MFCC dengan proses Display yang memiliki penjelasan seabgai berikut, Variable Y berisi Library Librosa dengan method LOAD dan berisi nilai SONG sebagai penggunaan classnya. dan Variable MFCC yang berisi method feature.mfcc dan memiliki nilai dari Variable Y. penggunaan plt sebagai pemanggilan matplotlib dengan method FIGURE yang akan menampilkan data gambar. dan Librosa yang akan menampilkan method display.specshow dengan data dari Variable mfcc dan pengaturan Axis X dan Y. lalu mengisikan data dengan nilai dari COLORBAR, TITLE yang berisi data dari class SONG dan tight\_layout serta show yang akan menampilkan hasil RUN yang dilakukan.
+
+\subitem hasilnya adalah sebagai berikut, dengan menampilkan data dari file disco.00035.au dapat dilihat pada gambar \ref{data12}:
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/3}}
+      \caption{Hasil dari Code Program display\_mfcc}
+      \label{data12}
+\end{figure}
+
+\item Penjelasan Code Program extract\_feature\_song
+\subitem Pada Code Program berikut ini akan menjelaskan tentang ekstrasi data feature dari lagu yang akan di olah dengan Code yang ada pada gambar \ref{data13}. dengan menggunakan Variable Y yang berisi method LOAD dengan record datanya dari class F pada extract\_feature\_song lalu membuat Variable mfcc dengan nilai yang akan meload data mfcc dari class Y, lalu melakukan normalisasi pada data Variable mfcc dengan penggunaan np.amax dengan nilai np.absolute(mfcc) lalu melakukan return dengan method np.ndarray.flatten(mfcc)[:25000] dimana data yang akan dibaca adalah sebanyak 25000 data dengan nilainya adalah array.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/4}}
+      \caption{Code Program extract\_feature\_song}
+      \label{data13}
+\end{figure}
+
+
 \end{enumerate}
