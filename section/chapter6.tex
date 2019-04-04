@@ -341,40 +341,159 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 
 \subitem sedangkan Freesound merupakan sebuah contoh suara yang digunakan untuk menguji hasil dari pengolahannya dengan menggunakan metode MFCC, untuk mencari genre yang pas bagi contoh suara tersebut.
 
-\begin{figure}[!htbp]
-      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/1}}
-      \caption{Code Program pemanggilan Library}
-      \label{data10}
-\end{figure}
+\lstinputlisting[firstline=1, lastline=10]{src/fathi/chapter6/code.py}
 
-\subitem Code pada gambar \ref{data10} digunakan untuk memanggil library Librosa yang memuat metode Feature dan Display yang akan digunakan untuk memproses data suara tersebut dengan MFCC. lalu Library Glob yang digunakan untuk mencocokan pattern yang spesifik dari data tersebut, Library Numpe yang digunakan untuk membuat data Vector, Library matplotlib yang digunakan untuk membuat data grafik dan Library Keras adalah open-source yang bekerja untuk memproses TensorFlow, CNTK dan Theano, yang didesain untuk melakukan penelitian dengan menggunakan Deep Neural Network.
+\subitem Code tersebut digunakan untuk memanggil library Librosa yang memuat metode Feature dan Display yang akan digunakan untuk memproses data suara tersebut dengan MFCC. lalu Library Glob yang digunakan untuk mencocokan pattern yang spesifik dari data tersebut, Library Numpe yang digunakan untuk membuat data Vector, Library matplotlib yang digunakan untuk membuat data grafik dan Library Keras adalah open-source yang bekerja untuk memproses TensorFlow, CNTK dan Theano, yang didesain untuk melakukan penelitian dengan menggunakan Deep Neural Network.
 
 \item Penjelasan Code Program display\_mfcc
 
-\begin{figure}[!htbp]
-      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/2}}
-      \caption{Code Program display\_mfcc}
-      \label{data11}
-\end{figure}
+\lstinputlisting[firstline=12, lastline=22]{src/fathi/chapter6/code.py}
 
-\subitem Code pada gambar \ref{data11} meliputi penggunaan MFCC dengan proses Display yang memiliki penjelasan seabgai berikut, Variable Y berisi Library Librosa dengan method LOAD dan berisi nilai SONG sebagai penggunaan classnya. dan Variable MFCC yang berisi method feature.mfcc dan memiliki nilai dari Variable Y. penggunaan plt sebagai pemanggilan matplotlib dengan method FIGURE yang akan menampilkan data gambar. dan Librosa yang akan menampilkan method display.specshow dengan data dari Variable mfcc dan pengaturan Axis X dan Y. lalu mengisikan data dengan nilai dari COLORBAR, TITLE yang berisi data dari class SONG dan tight\_layout serta show yang akan menampilkan hasil RUN yang dilakukan.
+\subitem Code tersebut meliputi penggunaan MFCC dengan proses Display yang memiliki penjelasan seabgai berikut, Variable Y berisi Library Librosa dengan method LOAD dan berisi nilai SONG sebagai penggunaan classnya. dan Variable MFCC yang berisi method feature.mfcc dan memiliki nilai dari Variable Y. penggunaan plt sebagai pemanggilan matplotlib dengan method FIGURE yang akan menampilkan data gambar. dan Librosa yang akan menampilkan method display.specshow dengan data dari Variable mfcc dan pengaturan Axis X dan Y. lalu mengisikan data dengan nilai dari COLORBAR, TITLE yang berisi data dari class SONG dan tight\_layout serta show yang akan menampilkan hasil RUN yang dilakukan.
 
-\subitem hasilnya adalah sebagai berikut, dengan menampilkan data dari file disco.00035.au dapat dilihat pada gambar \ref{data12}:
+\subitem dengan menggunakan code ini akan menampilkan hasil dari penggunaan display mfcc
+
+\lstinputlisting[firstline=24, lastline=25]{src/fathi/chapter6/code.py}
+
+\subitem hasilnya adalah sebagai berikut, dengan menampilkan data dari file disco.00035.au dapat dilihat pada gambar \ref{data10} :
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/3}}
       \caption{Hasil dari Code Program display\_mfcc}
-      \label{data12}
+      \label{data10}
 \end{figure}
 
 \item Penjelasan Code Program extract\_feature\_song
-\subitem Pada Code Program berikut ini akan menjelaskan tentang ekstrasi data feature dari lagu yang akan di olah dengan Code yang ada pada gambar \ref{data13}. dengan menggunakan Variable Y yang berisi method LOAD dengan record datanya dari class F pada extract\_feature\_song lalu membuat Variable mfcc dengan nilai yang akan meload data mfcc dari class Y, lalu melakukan normalisasi pada data Variable mfcc dengan penggunaan np.amax dengan nilai np.absolute(mfcc) lalu melakukan return dengan method np.ndarray.flatten(mfcc)[:25000] dimana data yang akan dibaca adalah sebanyak 25000 data dengan nilainya adalah array.
+
+\lstinputlisting[firstline=27, lastline=36]{src/fathi/chapter6/code.py}
+
+\subitem Pada Code Program diatas akan menjelaskan tentang ekstrasi data feature dari lagu yang akan di olah. dengan menggunakan Variable Y yang berisi method LOAD dengan record datanya dari class F pada extract\_feature\_song lalu membuat Variable mfcc dengan nilai yang akan meload data mfcc dari class Y, lalu melakukan normalisasi pada data Variable mfcc dengan penggunaan np.amax dengan nilai np.absolute(mfcc) lalu melakukan return dengan method np.ndarray.flatten(mfcc)[:25000] dimana data yang akan dibaca adalah sebanyak 25000 data dengan nilainya adalah array.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/4}}
       \caption{Code Program extract\_feature\_song}
-      \label{data13}
+      \label{data11}
 \end{figure}
 
 
+\item Penjelasan Code program  generate\_features\_and\_labels
+
+\lstinputlisting[firstline=38, lastline=56]{src/fathi/chapter6/code.py}
+
+\subitem pada code ini dimulai dengan membuat 3 data Variable array dengan format 2 nilai kosong dan 1 memiliki nilai. dimana data tersebut akan diolah dengan perintah FOR untuk membagi datasetnya sesuai dengan data GENRE yang telah ada. dengan menggunakan NUMPY pada perintah selanjutnya untuk melakukan pembagian data dan dikonversikan menjadi data one-hot encoding.
+
+\subitem hasil dari penggunaan perintah generate\_features\_and\_labels dapat dilihat pada gambar \ref{data12}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/6}}
+      \caption{Code Program generate\_features\_and\_labels}
+      \label{data12}
+\end{figure}
+
+\item Penjelasan tentang Kenapa proses pada generate\_features\_and\_labels lama
+
+\lstinputlisting[firstline=58, lastline=59]{src/fathi/chapter6/code.py}
+
+\subitem pada bagian penampilan hasil tersebut bisa lama dikarenakan data yang diolah itu tidaklah sedikit yang artinya memiliki data yang banyak, dimana masing - masing data yang diolah akan dilakukan cek terlebih dahulu untuk menentukan GENRE yang sesuai dan data tersebut akan dibagi menjadi 100 data yang telah dikonversikan menjadi data one-hot encoding.
+
+\item Penjelasan tentang pembagian data training sebesar 80 persen.
+
+\lstinputlisting[firstline=65, lastline=66]{src/fathi/chapter6/code.py}
+
+\subitem pemisahan data tersebut adalah untuk memastikan bahwa sistem telah siap untuk dilakukan uji coba dengan benar, dimana sistem tersebut telah dilakukan test dengan menggunakan testing data sehingga data yang akan didapatkan nanti dari penggunaan training data tidaklah terlalu jauh untuk nilai akhirnya. hasil dari penggunaan training\_split dapat dilihat pada gambar \ref{data13}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/9}}
+      \caption{Hasil Code Program training\_split}
+      \label{data13}
+\end{figure}
+
+\subitem dan berikut ini adalah hasil akhir dari data yang telah dipisahkan menjadi data TEST dan TRAIN dengan data tersebut sudah dilakukan SHUFFLE (acak) terdapat pada gambar \ref{data14}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/15}}
+      \caption{Hasil Code Program training\_split}
+      \label{data14}
+\end{figure}
+
+\item Penjelasan parameter fungsi Sequential
+
+\lstinputlisting[firstline=92, lastline=98]{src/fathi/chapter6/code.py}
+
+\subitem fungsi Sequential pada code program ini adalah untuk mengolah data inputan agar sesuai dengan fungsi - fungsi yang ada pada code tersebut, dimana data yang akan diolah akan dilakukan pembentukan terlebih dahulu dengan menggunakan perintah pada Library NUMPY yaitu SHAPE dengan data yang digunakan adalah train\_input.
+
+\subitem pada gambar \ref{data15} adalah keluaran dari RUNNING code tersebut
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/16}}
+      \caption{Hasil Code fungsi Sequential}
+      \label{data15}
+\end{figure}
+
+\item Penjelasan parameter fungsi Compile
+
+\lstinputlisting[firstline=100, lastline=103]{src/fathi/chapter6/code.py}
+
+\subitem fungsi Compile digunakan untuk melakukan proses yang akan mengecek data parameter yang akan digunakan dari data yang telah diolah dari proses Sequential. hasil dari RUNNING pada fungsi Compile dapat dilihat pada gambar \ref{data16}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/17}}
+      \caption{Hasil Code fungsi Compile}
+      \label{data16}
+\end{figure}
+
+\subitem pada gambar \ref{data17} adalah hasil dari penjelasan tentang data Sequential dan Compile
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/18}}
+      \caption{Hasil Code Program Summary}
+      \label{data17}
+\end{figure}
+
+\item Penjelasan parameter fungsi Fit
+
+\lstinputlisting[firstline=107, lastline=109]{src/fathi/chapter6/code.py}
+
+\subitem fungsi Fit digunakan untuk mengolah data dari 10 label data menjadi 10 File datasets, yang kemudian akan dihitung untuk mengukur tingkat akurasi penilaiannya untuk keakuratan data yang diolah serta tingkat Loss (gagal) data yang terjadi. hasil dari RUNNING fungsi Fit dapat dilihat pada gambar \ref{data18}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/19}}
+      \caption{Hasil Code fungsi Fit}
+      \label{data18}
+\end{figure}
+
+\item Penjelasan parameter fungsi Evaluate
+
+\lstinputlisting[firstline=111, lastline=112]{src/fathi/chapter6/code.py}
+
+\subitem fungsi Evaluate digunakan untuk mengevaluasi data yang telah diolah dengan menggunakan perintah fungsi Seqeuntial, Compile dan juga Fit. untuk hasilnya dapat dilihat pada gambar \ref{data19}.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/20}}
+      \caption{Hasil Code fungsi Evaluate}
+      \label{data19}
+\end{figure}
+
+
+\lstinputlisting[firstline=114, lastline=116]{src/fathi/chapter6/code.py}
+
+\subitem untuk data yang ditampilkan pada gambar \ref{data20} adalah data yang telah disusun untuk membandingkan tingkat Akurasi dan Loss yang terjadi.
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/21}}
+      \caption{Hasil Code fungsi Evaluate}
+      \label{data20}
+\end{figure}
+
+\item Penjelasan parameter fungsi Predict
+
+\lstinputlisting[firstline=118, lastline=119]{src/fathi/chapter6/code.py}
+
+\subitem fungsi Predict adalah untuk membandingkan tingkat Akurasi dari data pada setiap label yang ada pada dataset GENRE dimana data akurasi nilainya yang tertinggi maka akan diambil sebagai hasil akhir untuk nilai akurasi Predict. hasil RUNNING dapat dilihat pada gambar \ref{data21}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/22}}
+      \caption{Hasil Code fungsi Predict}
+      \label{data21}
+\end{figure}
 \end{enumerate}
