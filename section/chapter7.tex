@@ -1,2 +1,33 @@
 \chapter{Discussion}
 Please tell more about conclusion and how to the next work of this study.
+
+\section{Cokro Edi Prawiro / 1164069}
+\subsection{Teori}
+
+\begin{enumerate}
+
+\item Jelaskan Kenapa file teks harus dilakukan tokenizer. Dilengkap dengan ilustrasi atau gambar.\par
+Tokenizer adalah proses untuk membagi kalimat menjadi beberapa teks, hal ini sangat di perlukan dalam AI karena nanti setiap teks akan di hitung bobotnya dang akan memunculkan nilai vektor sehingga teks tersebut bisa di gunakan sebagai data untuk memprediksi teks yang muncul dalam satu kalimat sedangakan proses tkenizer merupakan caramembagi bagi teks dari suatu kalimat biasanya pembagi kalimat tersebut merupakan spasi dalan suatu kalimat. Agar lebih jelas dapat melihat gamabr \ref{c131} berikut. 
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c131}}
+      \caption{Ilustrasi Tokenisasi}
+      \label{c131}
+      \end{figure}
+
+\item jelaskan konsep dasar K Fold Cross VAlidation dan dataset komentar youtube pada code berikut dilengkapi dengan ilustrasi gambar  
+\begin{verbatim}
+kfold = StartifiedKFlod(n_splits=5)
+splits = kfold.split(d, d['CLASS'])
+\end{verbatim}
+pada codingan tersebut terdapat kfold sebagai variabel yang didalammnya terdiri dari split 5 yang berarti pengulangan terhadap pengolahan masing masing lima kali pada kasus ini terdapat data sebanyak 5 berarti ke lima data tersebut di ulang sebanyak lima kali dengan atribut class sebagai acuan pengolahan datanya kemudian akan di hasilkan akurasi dari pengulangan data tersebut sebesar sekian persen tergantung datanya. agar lebih jelas dapat di lihat pada gambar \ref{c132}  berikut:
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c132}}
+      \caption{Ilustrasi K Fold Cross Validation}
+      \label{c132}
+      \end{figure}
+
+\end{enumerate}
