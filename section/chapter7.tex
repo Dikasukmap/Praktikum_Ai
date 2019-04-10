@@ -107,3 +107,44 @@ merupakan algoritma jaringan syaraf juga yang mena akan melakukan pembobotan ter
 
 
 \end{enumerate}
+
+\section{Fathi Rabbani / 1164074}
+\subsection{Teori}
+\begin{enumerate}
+\item Kenapa file Text harus di Tokenizer
+\par Tokenizer adalah langkah pertama yang diperlukan dalam tugas pemrosesan bahasa, seperti penghitungan kata, penguraian, pemeriksaan ejaan, pembuatan corpus, dan analisis statistik teks. Itu mengkonversi string teks Python menjadi aliran objek token, di mana setiap objek token adalah kata yang terpisah, tanda baca, nomor / jumlah, tanggal, email, URL / URI, dll. Ini juga mengelompokkan aliran token menjadi kalimat, dengan mempertimbangkan sudut kasus-kasus seperti singkatan dan tanggal di tengah kalimat. ilustrasi dapat dilihat pada Gambar \ref{data1}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.6\textwidth]{figures/fathi/chapter7/hari1/1}}
+      \caption{Ilustrasi Tokenisasi}
+      \label{data1}
+\end{figure}
+
+\item Konsep dasar K Fold Cross Validation pada dataset Komentar Youtube
+\begin{verbatim}
+kfold = StartifiedKFlod(n_splits=5)
+splits = kfold.split(d, d['CLASS'])
+\end{verbatim}
+\par pada Code tersebut terdapat penggunaan K Fold dengan metode yang akan membagi data dalam 5 hasil pengulangan dari pembagian data yang akan dilakukan pada Attribute CLASS. ilustrasinya dapat dilihat pada Gambar \ref{data2}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.6\textwidth]{figures/fathi/chapter7/hari1/2}}
+      \caption{Ilustrasi  K Fold Cross Validation pada dataset Komentar Youtube}
+      \label{data2}
+\end{figure}
+
+\item Code program for train, test in split
+\par Membagi susunan atau matriks menjadi rangkaian acak, dimana data yang dimasukan akan dibagi dengan porsi yang sesuai dengan Train dan Test datanya. untuk lebih jelas tentang bagaimana penggunaannya dapat dilihat pada Gambar \ref{data3}
+
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.6\textwidth]{figures/fathi/chapter7/hari1/3}}
+      \caption{Ilustrasi  penggunaan Train dan Test Split}
+      \label{data3}
+\end{figure}
+
+\end{enumerate}
+
+\subsection{Pemrograman}
+\begin{enumerate}
+\item 
+\end{enumerate}
