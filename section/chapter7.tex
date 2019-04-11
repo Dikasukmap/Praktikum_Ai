@@ -93,9 +93,16 @@ maksud dari fungsi tersebut yaitu untuk merubah nilai vektor yang ada pada atrib
       \label{c138}
       \end{figure}
 
-\item Jelaskan Maksud Dari fungsi
+\item model = sequential berarti variabel model berisi method sequential yang berguna untuk searching data dengan menerima parameter atau argumen kunci dengan langkah tertentu untuk mencari data yang telah di olah. kemudian modeldi tambahkan metod add dengan Dense yang berarti data data yang di inputkan akan terhubung, dengan data 612 dan 2000 data  kata atau word kemudian model tersebut di masukan fungsi aktivation dengan rumusa atau methode relu setelah itu data tersebut di dropout 0.5 atau di pangkas sebanyak 50 persen di karenakan pada pohon bobot terlalu akurat terhadap data. sehingga data dilakukan pemangkasan 50 persen. kemudian data tersebut di hubungkan. setelah data tersebut di hubungkan maka di lakukan perhitungan dengan menggunakan fungsi softmax. agar lebih jelas dapat di lihat pada ilustrasi gambar \ref{c139} berikut.
 
-\item Jelaskan Maksud Dari Fungsi
+\begin{figure}[!htbp]
+      \centering{\includegraphics[width=0.7\textwidth]
+      {figures/cokro/c139}}
+      \caption{Ilustrasid Neural Network}
+      \label{c139}
+      \end{figure}
+
+\item model tersebut kemudian di compile atau di kembalikan kembali fungsi nilainya yangmana akan mengembalikan fungsi nilai loss nya berapa yang diambil dari fungsi adamax yang berberguna untuk  mengetahui nilai lossnya kemudian metrics = acuracy merupakan akurasi dari nilai matrixnya.
 
 \item Jelaskan apa itu Deep Learning \par
 merupakan salah satu algoritma jaringan saraf tiruan yang menggunakan meta data sebagai inputan dan mengolahnya menggunakan layer layer yang tersembunyi. deep lerning memiliki suatu keunikan yaitu fitur yang dapat mengekstraksi secara otomatis.
@@ -103,8 +110,10 @@ merupakan salah satu algoritma jaringan saraf tiruan yang menggunakan meta data 
 \item Jelaskan Apa itu Deep Neural Network dan apa perbedaanya dengan Deep Learning.\par
 merupakan algoritma jaringan syaraf juga yang mena akan melakukan pembobotan terhadap data yang sudah ada sebagai acuan untuk data inputan selanjutnya. kemudian terdiri atas beberapa layer atau hiden layer. perbedaan antara deep learning dan DNN atau Deep Neural Network yaitu deep lerning merupakan pemakai algoritma dari DNN dan DNN merupakan algoritma yang ada pada deep learning.
 
-\item Konfolusi
+\item Jelaskan dengan ilustrasi gambar buatan sendiri(langkah per langkah) bagaimana perhitungan algoritma konvolusi dengan ukuran stride (NPM mod3+1) x (NPM mod3+1) yang terdapat max pooling.(nilai 30)\par
+ sebelum membuat ilustrasi perlu di ketahui apa itu stride, stride adalah acuan atau parameter yang menentukan pergeseran pada filter fixcel. sebagai contoh nilai stride 1 yang berarti filter akan bergeser sebanyak satu fixcel secara vertikal dan horizontal. selanjutnya apa itu max pooling contoh pada suatu gambar di tentukan Max Pooling dari 3 x 3 dengan stride 1 yang berarti setiap pergeseran 1 pixcel akan diambil nilai terbesar dari pixcel 3 x 3 tersebut.\par
 
+selanjutnya jawaban dari soal ini yaitu menggunakan stride 1 dengan ketentuan max pooling. untuk jawaban dapat di lihat pada gambar gambar berikut. 
 
 \end{enumerate}
 
