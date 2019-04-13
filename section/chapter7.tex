@@ -414,5 +414,123 @@ splits = kfold.split(d, d['CLASS'])
 
 \subsection{Pemrograman}
 \begin{enumerate}
-\item 
+
+\item No. 1 Kode Program Blok \# In 1
+\par \lstinputlisting[firstline=1, lastline=4]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Melakukan Import Library CSV
+\item Melakukan Import Library PIL (Python Imaging Library) yang berguna untuk melakukan pemrosesan data yang bersifat Image. dengan fungsi yang diimport adalah pil\_image
+\item Melakukan Import data preprocessing dari Library Keras yang akan memproses data Image.
+\item hasilnya dapat dilihat pada Gambar \ref{data12}
+\end{itemize}
+
+
+
+\item No. 2 Kode Program Blok \# In 2
+\par \lstinputlisting[firstline=6, lastline=20]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Membuat Variable 'imgs' dan 'classes' yang memiliki nilai array kosong agar dapat diisikan oleh data nantinya.
+\item Membuka file csv dari Folder HSYv2 dengan nama file hasy-data-labels.csv yang dialiaskan sebagai Variable csvfile.
+\item Variabel csvreader akan menggunakan fungsi reader pada library csv untuk membaca file pada variable csvfile.
+\item Membuat Variable i yang bernilai NOL.
+\item Membuat pemrosesan data yang akan membaca datan dari csvreader dengan membuat Variable 'row', dimasukan dengan fungsi IF jika i lebih besar dari NOL.
+\item membuat Variable 'img' yang berisi data pemrosesan Library keras dengan fungsi image.im\_to\_array yang akan mmebuat data yang dibuka menjadi format array pada Folder HASYv2 yang dimulai dari NOL.
+\item Hasil dari variabel img akan dibagi dengan 255.0
+\item .append akan membuat list array baru untuk baris 0 baris 2 pada img.
+\item Menyimpan setiap class nya  pada baris 2
+\item Penambahan i sebanyak 1. 
+\item hasilnya dapat dilihat pada Gambar \ref{data13}
+\end{itemize}
+
+
+
+\item No. 3 Kode Program Blok \# In 3
+\par \lstinputlisting[firstline=22, lastline=27]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Melakukan Import Library random.
+\item Membuat parameter dari penggunaan library random yang akan mengacak data dengan fungsi 'shuffle' pada data Variable 'imgs'.
+\item Membagi index data dari imgs dengan cara mengalikan 80\% dengan jumlah data dari imgs.
+\item Untuk data train mengambil hasil dari perhitungan sebelumnya.
+\item Untuk data test mengambil sisa dari jumlah yang telah dijadikan data train.
+\item hasil dapat dilihat pada Gambar \ref{data14}
+\end{itemize}
+
+
+\item No. 4 Kode Program Blok \# In 4
+\par \lstinputlisting[firstline=29, lastline=36]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Melakukan Import dari Library Numpy dialiaskan menjadi np.
+\item Variabel train\_input mengubah input menjadi sebuah array yang diambil dari baris 2, dari data train.
+\item Variabel test\_input mengubah input menjadi sebuah array yang diambil dari baris 2, dari data test.
+\item Variabel train\_output mengubah input menjadi sebuah array yang diambil dari baris 1, dari data train.
+\item Variabel train\_output mengubah input menjadi sebuah array yang diambil dari baris 1, dari data test.
+\item hasil dapat dilihat pada Gambar \ref{data15}
+\end{itemize}
+
+
+
+\item No. 5 Kode Program Blok \# In 5
+\par \lstinputlisting[firstline=38, lastline=40]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Melakukan Import fungsi Labeldari Library sklearn 
+\item Melakukan Import fungsi OneHotEncoderdari Library sklearn
+\item hasil dapat dilihat pada Gambar \ref{data16}
+\end{itemize}
+
+
+
+\item No. 6 Kode Program Blok \# In 6
+\par \lstinputlisting[firstline=42, lastline=45]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Membuat Variabel label\_encoder yang akan memanggil fungsi LabelEncoder tadi.
+\item Membuat Variabel integer\_encoded yang akan menggunakan labelencoder untuk melakukan fit pada classes agar berubah datanya menjadi integer.
+\item hasil dapat dilihat pada Gambar \ref{data17}
+\end{itemize}
+
+
+
+\item No. 7 Kode Program Blok \# In 7
+\par \lstinputlisting[firstline=47, lastline=50]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Membuat Variabel onehot\_encoder akan memanggil fungsi OneHotEncoder dimana tidak berisikan matriks sparse.
+\item Pada variabel integer\_encoded akan diubah bentuknya dimana setiap nilai integer akan direpresentasikan sebagai vektor binari dengan nilai 0 kecuali index dari integer tersebut ditandai dengan 1.
+\item Melakukan fit untuk one hot encoder kedalam integer\_encoder.
+\item hasil dapat dilihat pada Gambar \ref{data18}
+\end{itemize}
+
+
+
+\item No. 8 Kode Program Blok \# In 8
+\par \lstinputlisting[firstline=52, lastline=59]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Membuat Variabel train\_output\_int  akan mengubah data dari train\_output menjadi LabelEncoder
+\item Membuat Variable train\_output dimana setelah diubah labelnya menjadi integer dilakukan onehot\_encoding diambil dari train\_output\_int dan menggunakan .reshape untuk memberikan bentuk baru ke array tanpa mengubah datanya dengan keterangan jika index dari integer tersebut ditandai dengan 1 dan sisanya yang bukan nol.
+\item Membuat Variabel test\_output\_int  akan mengubah data dari test\_output menjadi LabelEncoder
+\item Membuat Variable test\_output dimana setelah diubah labelnya menjadi integer dilakukan one hot encoding diambil dari test\_output\_int dan menggunakan .reshape untuk memberikan bentuk baru ke array tanpa mengubah datanya dengan keterangan jika index dari integer tersebut ditandai dengan 1 dan sisanya yang bukan nol.
+\item Membuat Variabel num\_classes akan menampilakn jumlah data dari classes yang telah dilakukan label encoder
+\item Melakukan print dengan Format tulisannya adalah "Number of classes : \%d dmana mengembalikan nilai integer dari num\_classes.
+\item hasil dapat dilihat pada Gambar \ref{data19}
+\end{itemize}
+
+
+
+\item No. 9 Kode Program Blok \# In 9
+\par \lstinputlisting[firstline=61, lastline=64]{src/fathi/chapter7/MathSymbols.py}
+
+\begin{itemize}
+\item Melakukan Import Sequential dari model pada Library Keras.
+\item Melakukan Import Dense, Dropout, Flatten dari modul Layers pada Library Keras.
+\item Melakukan Import Conv2D, MaxPooling2D dari modul Layers pada Library Keras.
+\item hasil dapat dilihat pada Gambar \ref{data20}
+\end{itemize}
+
+
 \end{enumerate}
