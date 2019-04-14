@@ -451,7 +451,7 @@ set_test = datasets[450:]
 \end{verbatim}
 
 \item Decision Tree dengan Vektor dan Klasifikasi
-\subitem berikut ini adalah kode ayng digunakan dan beberapa penjelasannya, untuk hasilnya dapat dilihat pada gambar \ref{fig1}
+\subitem berikut ini adalah kode ayng digunakan dan beberapa penjelasannya, untuk hasilnya dapat dilihat pada gambar \ref{b1}
 \begin{verbatim}
 # In[3]
 #import library pandas dengan alias coba2
@@ -500,7 +500,7 @@ set_test_label = set_test['CLASS']
 \end{verbatim}
 
 \item Klasifikasi SVM
-\subitem berikut adalah kode yang digunakan dan beberapa penjelasannya, untuk hasilnya bisa dilihat pada gambar \ref{fig2}
+\subitem berikut adalah kode yang digunakan dan beberapa penjelasannya, untuk hasilnya bisa dilihat pada gambar \ref{b2}
 \begin{verbatim}
 # In[14]
 #memanggil library SVM dari sklearn
@@ -517,7 +517,7 @@ clfsvm.score(set_test_att, set_test_label)
 \end{verbatim}
 
 \item klasifikasi Decision Tree 
-\subitem berikut ini adalh kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{fig3}
+\subitem berikut ini adalh kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{b3}
 \begin{verbatim}
 # In[15]
 #memanggil library decision tree dari sklearn
@@ -534,7 +534,7 @@ clftree.score(set_test_att, set_test_label)
 \end{verbatim}
 
 \item Confusion matrix dan matplotlib
-\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasil dari penggunaan confusion matrix dapat dilihat pada gambar \ref{fig4} dan data penggunaan confusion matrix dengan matplotlib dapat dilihat pada gambar \ref{fig5}
+\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasil dari penggunaan confusion matrix dapat dilihat pada gambar \ref{b4} dan data penggunaan confusion matrix dengan matplotlib dapat dilihat pada gambar \ref{b5}
 \begin{verbatim}
 # In[20]
 #mengambil data library confusion matrix dari sklearn
@@ -587,7 +587,7 @@ plt.show()
 \end{verbatim}
 
 \item klasifikasi Cross Validation
-\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{fig6}, \ref{fig7} dan \ref{fig8}
+\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{b6}, \ref{b7} dan \ref{b8}
 \begin{verbatim}
 # In[24]
 #memanggil library cross validasi dari sklearn dengan perintah prosesnya model selection
@@ -627,7 +627,7 @@ for max_features in max_features_opts:
         print("Max features: %d, num estimators: %d, accuracy: %0.2f (+/- %0.2f)" %
 \end{verbatim}
 \item Pengamatan Program
-\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{fig9}
+\subitem berikut ini adalah kode yang digunakan dan beberapa penjelasannya untuk hasilnya dapat dilihat pada gambar \ref{b9}
 \begin{verbatim}
 # In[28]
 #memanggil library matplotlib dengan dialiaskan menjadi plt
@@ -665,55 +665,55 @@ from mpl_toolkits.mplot3d import axes3d, Axes3D
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/1}
 	\caption{Decision Tree di Vektorisasikan}
-	\label{fig1}
+	\label{b1}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/2}
 	\caption{klasifikasi SVM}
-	\label{fig2}
+	\label{b2}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/3}
 	\caption{klasifikasi Tree}
-	\label{fig3}
+	\label{b3}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/4}
 	\caption{Confusion matrix}
-	\label{fig4}
+	\label{b4}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/5}
 	\caption{matplotlib}
-	\label{fig5}
+	\label{b5}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/6}
 	\caption{Cross validasi}
-	\label{fig6}
+	\label{b6}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/7}
 	\caption{Cross validasi pada tree}
-	\label{fig7}
+	\label{b7}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/8}
 	\caption{Cross validasi pada SVM}
-	\label{fig8}
+	\label{b8}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/fathi/chapter4/hari2/9}
 	\caption{pengamatan program}
-	\label{fig9}
+	\label{b9}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
