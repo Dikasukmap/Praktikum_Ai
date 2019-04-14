@@ -381,39 +381,39 @@ dan untuk hasilruningnya dapat dilihat pada gambar \ref{c93} kemudian hasilnya d
 \subsection{Teori}
 \begin{enumerate}
 \item Why words need to be Vectorizer
-\subitem karena kata - kata yang digunakan untuk memproses data agar dapat menjadi bagian dati kumpulan data atatu atribut yang dapat dibaca oleh sistem machine learning karena sistem tersebut tidak dapat memproses data text secara langsung dan harus di convert terlebih dahulu kedalam bilangan.untuk ilustrasinya dapat dilihat pada gambar \ref{fig1}
+\subitem karena kata - kata yang digunakan untuk memproses data agar dapat menjadi bagian dati kumpulan data atatu atribut yang dapat dibaca oleh sistem machine learning karena sistem tersebut tidak dapat memproses data text secara langsung dan harus di convert terlebih dahulu kedalam bilangan.untuk ilustrasinya dapat dilihat pada gambar \ref{d1}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari1/1}
 	\caption{Ilustrasi Vektorisasi Kata}
-	\label{fig1}
+	\label{d1}
 \end{figure}
 
 \item Why Dimension of Google dataset can reach 300
-\subitem Dimensi dataset dari google bisa mencapai 300 karena dimensi dari vektor tersebut digunakan untuk membandingkan bobot dari setiap data kata yang diproses. ilustrasi dapat dilihat pada gambar \ref{fig2}
+\subitem Dimensi dataset dari google bisa mencapai 300 karena dimensi dari vektor tersebut digunakan untuk membandingkan bobot dari setiap data kata yang diproses. ilustrasi dapat dilihat pada gambar \ref{d2}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari1/2}
 	\caption{Ilustrasi Google dataset}
-	\label{fig2}
+	\label{d2}
 \end{figure}
 
 \item Concept of Vectorizer on words
-\subitem pada vektorisasi dengan menggunakan Word2Vec memiliki kelebihan yang dapat dibedakan dengan pengguaan bag of words yang biasanya.  pada bag of word pemrosesan data tidak dapat menganalisa data yang memiliki makna sama namun penulisannya berbeda, namun pada penggunaan Word2Vec proses tersebut dapat berjalan dengan lebih mudah contohnya adalah penulisan kata please dengan plz. untuk ilustrasi datanya bisa dilihat dalam gambar \ref{fig3}
+\subitem pada vektorisasi dengan menggunakan Word2Vec memiliki kelebihan yang dapat dibedakan dengan pengguaan bag of words yang biasanya.  pada bag of word pemrosesan data tidak dapat menganalisa data yang memiliki makna sama namun penulisannya berbeda, namun pada penggunaan Word2Vec proses tersebut dapat berjalan dengan lebih mudah contohnya adalah penulisan kata please dengan plz. untuk ilustrasi datanya bisa dilihat dalam gambar \ref{d3}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari1/3}
 	\caption{Ilustrasi Concept of Vectorizer on Words}
-	\label{fig3}
+	\label{d3}
 \end{figure}
 
 \item Concept of Vectorizer on documents
-\subitem vektorisasi pada Doct2Vec dimana data yang terdapat pada file document tersebut diolah dengan melakukan pemrosesan yang mengutamakan nilai data filenamenya atau atribut utama dimana nilai data inputnya tidak terlalu diproses. ilustrasinya dapat dilihat pada gambar \ref{fig4}
+\subitem vektorisasi pada Doct2Vec dimana data yang terdapat pada file document tersebut diolah dengan melakukan pemrosesan yang mengutamakan nilai data filenamenya atau atribut utama dimana nilai data inputnya tidak terlalu diproses. ilustrasinya dapat dilihat pada gambar \ref{d4}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari1/4}
 	\caption{Ilustrasi Concept of Vectorizer on Document}
-	\label{fig4}
+	\label{d4}
 \end{figure}
 
 \item What is mean and deviation standart
@@ -421,21 +421,21 @@ dan untuk hasilruningnya dapat dilihat pada gambar \ref{c93} kemudian hasilnya d
 
 \subitem Standar deviasi adalah nilai statistik yang digunakan untuk menentukan bagaimana sebaran data dalam sampel, dan seberapa dekat titik data individu ke mean – atau rata-rata – nilai sampel.
 
-untuk ilustrasi data mean dan deviation standart bisa dilihat pada gambar \ref{fig5}
+untuk ilustrasi data mean dan deviation standart bisa dilihat pada gambar \ref{d5}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari1/5}
 	\caption{Ilustrasi Mean and Deviation Standart}
-	\label{fig5}
+	\label{d5}
 \end{figure}
 
 \item What is skip-gram
-\subitem Skip-gram merupakan teknik yang digunakan di area speech processing, dimana n-gram yang dibentuk kemudian ditambahkan juga dengan tindakan “skip” pada token-tokennya. contohnya terdapat pada gambar \ref{fig6}
+\subitem Skip-gram merupakan teknik yang digunakan di area speech processing, dimana n-gram yang dibentuk kemudian ditambahkan juga dengan tindakan “skip” pada token-tokennya. contohnya terdapat pada gambar \ref{d6}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari1/6}
 	\caption{Ilustrasi  skip-gram}
-	\label{fig6}
+	\label{d6}
 \end{figure}
 \end{enumerate}
 
@@ -443,284 +443,284 @@ untuk ilustrasi data mean dan deviation standart bisa dilihat pada gambar \ref{f
 \begin{enumerate}
 \item Try datasets GoogleNews-vectors
 \begin{itemize}
-\item berikut adalah hasil dari code yang digunakan untuk memanggil data library GENSIM dengan menggunakan perintah import, lalu dari library tersebut diambillah data yang akan digunakan untuk memproses data dari GoogleNews-vector. ilustrasi dapat dilihat pada gambar \ref{fig7}
+\item berikut adalah hasil dari code yang digunakan untuk memanggil data library GENSIM dengan menggunakan perintah import, lalu dari library tersebut diambillah data yang akan digunakan untuk memproses data dari GoogleNews-vector. ilustrasi dapat dilihat pada gambar \ref{d7}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/fathi/chapter5/hari2/1}
 	\caption{Ilustrasi  import gensim dan olah data GoogleNews-vector}
-	\label{fig7}
+	\label{d7}
 \end{figure}
 
-\item lalu pada penggunaan code berikut ini akan mengolah data LOVE yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig8}
+\item lalu pada penggunaan code berikut ini akan mengolah data LOVE yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d8}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/2}
 	\caption{Ilustrasi hasil olah data LOVE pada GoogleNews-vector}
-	\label{fig8}
+	\label{d8}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data FAITH yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig8}
+\item  lalu pada penggunaan code berikut ini akan mengolah data FAITH yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d9}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/3}
 	\caption{Ilustrasi hasil olah data FAITH pada GoogleNews-vector}
-	\label{fig8}
+	\label{d9}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data FALL yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig9}
+\item  lalu pada penggunaan code berikut ini akan mengolah data FALL yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d10}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/4}
 	\caption{Ilustrasi hasil olah data FALL pada GoogleNews-vector}
-	\label{fig9}
+	\label{d10}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data SICK yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig10}
+\item  lalu pada penggunaan code berikut ini akan mengolah data SICK yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d11}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/5}
 	\caption{Ilustrasi hasil olah data SICK pada GoogleNews-vector}
-	\label{fig10}
+	\label{d11}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data CLEAR yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig11}
+\item  lalu pada penggunaan code berikut ini akan mengolah data CLEAR yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d12}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/6}
 	\caption{Ilustrasi hasil olah data CLEAR pada GoogleNews-vector}
-	\label{fig11}
+	\label{d12}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data SHINE yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig12}
+\item  lalu pada penggunaan code berikut ini akan mengolah data SHINE yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d13}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/7}
 	\caption{Ilustrasi hasil olah data SHINE pada GoogleNews-vector}
-	\label{fig12}
+	\label{d13}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data BAG yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig13}
+\item  lalu pada penggunaan code berikut ini akan mengolah data BAG yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d14}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/8}
 	\caption{Ilustrasi hasil olah data BAG pada GoogleNews-vector}
-	\label{fig13}
+	\label{d14}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data CAR yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig14}
+\item  lalu pada penggunaan code berikut ini akan mengolah data CAR yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d15}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/9}
 	\caption{Ilustrasi hasil olah data CAR pada GoogleNews-vector}
-	\label{fig14}
+	\label{d15}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data WASH yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig15}
+\item  lalu pada penggunaan code berikut ini akan mengolah data WASH yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d16}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/10}
 	\caption{Ilustrasi hasil olah data WASH pada GoogleNews-vector}
-	\label{fig15}
+	\label{d16}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data MOTOR yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig16}
+\item  lalu pada penggunaan code berikut ini akan mengolah data MOTOR yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d17}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/11}
 	\caption{Ilustrasi hasil olah data MOTOR pada GoogleNews-vector}
-	\label{fig16}
+	\label{d17}
 \end{figure}
 
-\item  lalu pada penggunaan code berikut ini akan mengolah data CYCLE yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{fig17}
+\item  lalu pada penggunaan code berikut ini akan mengolah data CYCLE yang terdapat pada file GoogleNews-vector, hasil dari pemrosesannya dapat dilihat pada gambar \ref{d18}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/12}
 	\caption{Ilustrasi hasil olah data CYCLE pada GoogleNews-vector}
-	\label{fig17}
+	\label{d18}
 \end{figure}
 
-\item  dan pada hasil code berikut ini adalah hasil dari proses penggunaan perintah code similarity yang akan menghitung nilai value data yang dibandingkan dengan masing - masing kata seperti pada hasil dari perbandingan kata LOVE disandingkan dengan FAITH menghasilkan nilai 37 persen, sedangkan kata WASH dan SHINE menghasilkan nilai 27 persen dan kata CAR yang disandingkan dengan kata MOTOR menghasilkan 48 persen, dimana kita dapat menyimpulkan bahwa semakin data kata tersebut memiliki tingkat kesamaan yang tinggi maka nilai hasil yang ditampilkanpun akan semakin tinggi. ilustrasi bisa dilihat pada gambar \ref{fig18}
+\item  dan pada hasil code berikut ini adalah hasil dari proses penggunaan perintah code similarity yang akan menghitung nilai value data yang dibandingkan dengan masing - masing kata seperti pada hasil dari perbandingan kata LOVE disandingkan dengan FAITH menghasilkan nilai 37 persen, sedangkan kata WASH dan SHINE menghasilkan nilai 27 persen dan kata CAR yang disandingkan dengan kata MOTOR menghasilkan 48 persen, dimana kita dapat menyimpulkan bahwa semakin data kata tersebut memiliki tingkat kesamaan yang tinggi maka nilai hasil yang ditampilkanpun akan semakin tinggi. ilustrasi bisa dilihat pada gambar \ref{d19}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/13}
 	\caption{Ilustrasi hasil olah data  pada GoogleNews-vector menggunakan SIMILARITY}
-	\label{fig18}
+	\label{d19}
 \end{figure}
 \end{itemize}
 
 \item extract\_words dan PermutedSentences
-\subitem pada penjelasan berikut ini akan menyangkut pembersihan data yang akan digunakan untuk diproses, dimana data akan di EXTRACT dari setiap katanya agar terbebas dari data TAG HTML, APOSTROPHES, TANDA BACA, dan SPASI yang berlebih. dengan menggunakan perintah code STRIP dan SPLIT. lalu penggunaan library random yang akan dibuat untuk melakukan KOCLOK data dengan acuan datanya adalah data yang terdapat pada variable KATA. untuk ilustrasi hasil dari codenya dapat dilihat pada gambar \ref{fig19}
+\subitem pada penjelasan berikut ini akan menyangkut pembersihan data yang akan digunakan untuk diproses, dimana data akan di EXTRACT dari setiap katanya agar terbebas dari data TAG HTML, APOSTROPHES, TANDA BACA, dan SPASI yang berlebih. dengan menggunakan perintah code STRIP dan SPLIT. lalu penggunaan library random yang akan dibuat untuk melakukan KOCLOK data dengan acuan datanya adalah data yang terdapat pada variable KATA. untuk ilustrasi hasil dari codenya dapat dilihat pada gambar \ref{d20}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari2/14}
 	\caption{Ilustrasi hasil olah data  pada GoogleNews-vector menggunakan extract\_words dan PermuteSentences}
-	\label{fig19}
+	\label{d20}
 \end{figure}
 
 \item TaggedDocument dan Doc2Vec
 \subitem gensim merupakan open-source model ruang vektor dan toolkit topic modeling, yang diimplementasikan dalam bahasa pemrograman Python. Untuk kinerja Gensim, digunakan NumPy, SciPy dan Cython (opsional). Gensim secara khusus ditujukan untuk menangani koleksi teks besar dengan menggunakan algoritma secara online. Gensim mengimplementasikan tf-idf, latent semantic analysis (LSA), Latent Dirichlet Analysis (LDA), dan lain-lain. 
 \subitem tagged document merupakan sebuah class yang terdapat pada pemrosesan data pada library gensim yang akan mengolah data teks yang ada pada dokumen - dokumen yang dipakai.
 \subitem Doc2Vec merupakan algoritma doct embedding, yaitu pemetaan dari dokumen menjadi vektor, serta pemetaan data dokumen 1 dan dokumen lainnya.
-ilustrasi dari tagged document dan Word2Vec ada pada gambar \ref{fig20}
+ilustrasi dari tagged document dan Word2Vec ada pada gambar \ref{d21}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/1}
 	\caption{Ilustrasi TaggedDocument dan Doc2Vec }
-	\label{fig20}
+	\label{d21}
 \end{figure}
 
 \item Praktek data training
-\subitem pertama buka data training yang akan diolah pada aplikasi python, import library OS dan membuat data variable unsup\_senteces dengan nilai array kosong. buatkan data direktori untuk memanggil data yang akan diolah dan buatkan juga variable data nilai fname yang akan memproses data dirname untuk diisikan pada variable unsup\_sentences. code yang digunakan dapat dilihat pada gambar \ref{fig21}
+\subitem pertama buka data training yang akan diolah pada aplikasi python, import library OS dan membuat data variable unsup\_senteces dengan nilai array kosong. buatkan data direktori untuk memanggil data yang akan diolah dan buatkan juga variable data nilai fname yang akan memproses data dirname untuk diisikan pada variable unsup\_sentences. code yang digunakan dapat dilihat pada gambar \ref{d22}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/2}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig21}
+	\label{d22}
 \end{figure}
 
-data pada hasil code digambar berikut \ref{fig22}, menghasilkan data pada gambar \ref{fig23} yang akan memunculkan data variable DIRNAME, FNAME, KATA dan unsup\_sentences yang memiliki data sebanyak 55 kata dalam file yang diolah tersebut. hasil run dengan menggunakan code pada gambar \ref{fig24}, menghasilkan data nilai yang terdapat pada gambar \ref{fig25}. lalu pada code yang terdapat digambar \ref{fig26}, menghasilkan data \ref{fig27}.
+data pada hasil code digambar berikut \ref{d23}, menghasilkan data pada gambar \ref{d24} yang akan memunculkan data variable DIRNAME, FNAME, KATA dan unsup\_sentences yang memiliki data sebanyak 55 kata dalam file yang diolah tersebut. hasil run dengan menggunakan code pada gambar \ref{d25}, menghasilkan data nilai yang terdapat pada gambar \ref{d26}. lalu pada code yang terdapat digambar \ref{d27}, menghasilkan data \ref{d28}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/3}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig22}
+	\label{d23}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/4}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig23}
+	\label{d24}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/5}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig24}
+	\label{d25}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/6}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig25}
+	\label{d26}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/7}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig26}
+	\label{d27}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/8}
 	\caption{Ilustrasi data code praktek data training }
-	\label{fig27}
+	\label{d28}
 \end{figure}
 
 \item Why need Shuffled and Clean memory
 \subitem dilakukan shuffled adalah agar datanya lebih mudah untuk diolah dan untuk menentukan tingkat tinggi akurasi dari hasil pemrosesan. dan dilakukan pembersihan memory adalah agar chace yang disimpan tidak membuat proses pada komputer mejadi lambat dan dapat digunakan untuk memproses data lainnya agar menjadi lebih ringan dan cepat.
-pada gambar \ref{fig28} adlah proses untuk melakukan pengoclokan data dan pada gambar \ref{fig29} adalah proses untuk memasukan data unsup\_sentences kedalam variable muter untuk diproses dengan class PermuterSentences. dan pada gambar \ref{30} adalah code yang digunakan untuk membersihkan data memory.
+pada gambar \ref{d29} adlah proses untuk melakukan pengoclokan data dan pada gambar \ref{d30} adalah proses untuk memasukan data unsup\_sentences kedalam variable muter untuk diproses dengan class PermuterSentences. dan pada gambar \ref{d31} adalah code yang digunakan untuk membersihkan data memory.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/9}
 	\caption{Ilustrasi Shuffled dan Randomisasi data }
-	\label{fig28}
+	\label{d29}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/10}
 	\caption{Ilustrasi pembuatan variable muter untuk memuat data unsup\_sentences}
-	\label{fig29}
+	\label{d30}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/11}
 	\caption{Ilustrasi code untuk membersihkan data memory}
-	\label{fig30}
+	\label{d31}
 \end{figure}
 
 
 \item Why model have to be saved
-\subitem dalam pengolahan data dengan menggunakan proses yang panjang ditakutkan data yang sudah diproses tersebut dapat hilang jika terdapat kejadian atau emergency pada saat pengolahan dan pemrosesan data, misalnya harddisk error atau pun listrik yang padam. dan proses penyimpanan data juga dilakukan agar data yang sudah diolah data dipanggil lagi tanpa harus melakukan proses dari awal sehingga tidak memakan waktu. untuk code yang digunakan dapat dilihat pada gambar \ref{fig31}
+\subitem dalam pengolahan data dengan menggunakan proses yang panjang ditakutkan data yang sudah diproses tersebut dapat hilang jika terdapat kejadian atau emergency pada saat pengolahan dan pemrosesan data, misalnya harddisk error atau pun listrik yang padam. dan proses penyimpanan data juga dilakukan agar data yang sudah diolah data dipanggil lagi tanpa harus melakukan proses dari awal sehingga tidak memakan waktu. untuk code yang digunakan dapat dilihat pada gambar \ref{d32}
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/12}
 	\caption{Ilustrasi data code save data}
-	\label{fig31}
+	\label{d32}
 \end{figure}
 
-berikut ini adalah hasil file dari penggunaan code save tersebut. bisa dilihat pada gambar \ref{fig32}
+berikut ini adalah hasil file dari penggunaan code save tersebut. bisa dilihat pada gambar \ref{d33}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/13}
 	\caption{Ilustrasi hasil file simpan}
-	\label{fig32}
+	\label{d33}
 \end{figure}
 
 \item infer\_vector
-\subitem berfungsi untuk dokumen baru, dan  bisa menggunakan data vektor yang dilatih secara massal, seperti yang disimpan dalam model, untuk dokumen yang merupakan bagian dari data training. untuk percobaannya dapat dilihat pada gambar \ref{33}
+\subitem berfungsi untuk dokumen baru, dan  bisa menggunakan data vektor yang dilatih secara massal, seperti yang disimpan dalam model, untuk dokumen yang merupakan bagian dari data training. untuk percobaannya dapat dilihat pada gambar \ref{d34}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari3/14}
 	\caption{Ilustrasi code dan hasil infer\_vector}
-	\label{fig33}
+	\label{d34}
 \end{figure}
 
 \item cosine\_similarity
-\subitem merupakan sebuah algoritma yang digunakan untuk membandingkan dari dua buah data yang bukan merupakan data vector untuk menguji nilai kemiripan data satu dengan data lainnya. hasil dari percobaan pada tugas no 8 ini dapat dilihat pada gambar \ref{fig34} yang menghasilkan nilai akurasi sebesar 20 persen dan gambar \ref{fig35} yang menghasilkan nilai akurasi sebesar 91 persen.
+\subitem merupakan sebuah algoritma yang digunakan untuk membandingkan dari dua buah data yang bukan merupakan data vector untuk menguji nilai kemiripan data satu dengan data lainnya. hasil dari percobaan pada tugas no 8 ini dapat dilihat pada gambar \ref{d35} yang menghasilkan nilai akurasi sebesar 20 persen dan gambar \ref{d36} yang menghasilkan nilai akurasi sebesar 91 persen.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/1}
 	\caption{Ilustrasi code dan hasil penggunaan cosine\_similarity}
-	\label{fig34}
+	\label{d35}
 \end{figure}
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/2}
 	\caption{Ilustrasi code dan hasil penggunaan cosine\_similarity}
-	\label{fig35}
+	\label{d36}
 \end{figure}
 
 \item Cross Validation
-\subitem pertama melakukan import data dari library KNeighborsClassifier, RandomForestClassifier, cross\_val\_score dan numpy yang digunakan untuk membuat data cross validasi dapat dilihat pada gambar \ref{fig36}.
+\subitem pertama melakukan import data dari library KNeighborsClassifier, RandomForestClassifier, cross\_val\_score dan numpy yang digunakan untuk membuat data cross validasi dapat dilihat pada gambar \ref{d37}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/3}
 	\caption{Ilustrasi memasukan code import library}
-	\label{fig36}
+	\label{d37}
 \end{figure}
 
-\subitem lalu selanjutnya membuat data variable scores yang akan memuat nilai cross\_val\_score dengan datanya diambil dari KNeighborsClassifier yang terdiri dari sentvecs, sentiments dan clf dan mengolahnya menggunakan numpy untuk menampilkan data pada gambar \ref{fig37}yang menghasilkan nilai akurasi sebesar 53 persen.
+\subitem lalu selanjutnya membuat data variable scores yang akan memuat nilai cross\_val\_score dengan datanya diambil dari KNeighborsClassifier yang terdiri dari sentvecs, sentiments dan clf dan mengolahnya menggunakan numpy untuk menampilkan data pada gambar \ref{d38}yang menghasilkan nilai akurasi sebesar 53 persen.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/4}
 	\caption{Ilustrasi perhitungan data KNeighborsClassifier dengan cross validasi}
-	\label{fig37}
+	\label{d38}
 \end{figure}
 
-\subitem membuat data variable scores yang akan memuat nilai cross\_val\_score dengan datanya diambil dari RandomForestClassifier yang terdiri dari sentvecs, sentiments dan clfrf dan mengolahnya menggunakan numpy untuk menampilkan data pada gambar \ref{fig38} yang menghasilkan nilai akurasi sebesar 53 persen. 
+\subitem membuat data variable scores yang akan memuat nilai cross\_val\_score dengan datanya diambil dari RandomForestClassifier yang terdiri dari sentvecs, sentiments dan clfrf dan mengolahnya menggunakan numpy untuk menampilkan data pada gambar \ref{d39} yang menghasilkan nilai akurasi sebesar 53 persen. 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/5}
 	\caption{Ilustrasi perhitungan data  RandomForestClassifier dengan cross validasi}
-	\label{fig38}
+	\label{d39}
 \end{figure}
 
-\subitem penggunaan make\_pipeline adalah untuk membuat data dari KNeighborsClassifier, RandomForestClassifier dan Vectorizer digabungkan untuk menghasilkan data nilai pada gambar\ref{fig39} menghasilkan nilai akurasi sebesar 74 persen. 
+\subitem penggunaan make\_pipeline adalah untuk membuat data dari KNeighborsClassifier, RandomForestClassifier dan Vectorizer digabungkan untuk menghasilkan data nilai pada gambar\ref{d40} menghasilkan nilai akurasi sebesar 74 persen. 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/6}
 	\caption{Ilustrasi perhitungan data Cross Validasi untuk nilai keseluruhan dari KNeighborsClassifier, RandomForestClassifier dan Vectorizer}
-	\label{fig39}
+	\label{d40}
 \end{figure}
 
-dan keseluruhan nilai yang tercatat terdapat pada gambar \ref{fig40}.
+dan keseluruhan nilai yang tercatat terdapat pada gambar \ref{d41}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/fathi/chapter5/hari4/7}
 	\caption{Ilustrasi perhitungan data hasil persenan yang diakumulasi}
-	\label{fig40}
+	\label{d41}
 \end{figure}
 
 \end{enumerate}
