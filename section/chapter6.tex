@@ -241,40 +241,40 @@ untuk hasilnya dapat dilihat pada gambar \ref{c130} yang menunukan hasil berupa 
 \subsection{Teori}
 \begin{enumerate}
 \item Kenapa file suara harus dilakukan MFCC
-\subitem MFCC digunakan untuk mengidentifikasi jenis suara yang dimasukan seperti suara lagu, hujan atau pun suara yang tidak dapat didengar oleh telinga manusia yaitu Ultrasonik, sehingga dibutuhkan penggunaan MFCC untuk memproses data tersebut agar dapat dibaca oleh manusia. ilustrasi untuk MFCC dapat dilihat pada gambar \ref{data1}
+\subitem MFCC digunakan untuk mengidentifikasi jenis suara yang dimasukan seperti suara lagu, hujan atau pun suara yang tidak dapat didengar oleh telinga manusia yaitu Ultrasonik, sehingga dibutuhkan penggunaan MFCC untuk memproses data tersebut agar dapat dibaca oleh manusia. ilustrasi untuk MFCC dapat dilihat pada gambar \ref{f1}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/1}}
       \caption{Ilustrasi MFCC}
-      \label{data1}
+      \label{f1}
 \end{figure}
 
 \item Konsep dasar Neural Network
 \subitem Neural Network sebenarnya mengadopsi dari kemampuan otak manusia yang mampu memberikan stimulasi/rangsangan, melakukan proses, dan memberikan output. Output diperoleh dari variasi stimulasi dan proses yang terjadi di dalam otak manusia.
-ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
+ilustrasi Neural Network dapat dilihat pada gambar \ref{f2}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/2}}
       \caption{Ilustrasi Neural Network}
-      \label{data2}
+      \label{f2}
 \end{figure}
 
 \item Konsep Pembobotan dalam Neural Network
-\subitem konsep pembobotan dalam neural network digunakan untuk membedakan data satu dengan data lainnya, sebagai contoh dapat dilihat pada gambar \ref{data3}. dimana data inputan yang masuk adalah 2 data yaitu "anjing" dan "kucing" yang diolah dengan proses membandingkan data dan diolah melalui pembobotan sehingga menampilkan hasil output.
+\subitem konsep pembobotan dalam neural network digunakan untuk membedakan data satu dengan data lainnya, sebagai contoh dapat dilihat pada gambar \ref{f3}. dimana data inputan yang masuk adalah 2 data yaitu "anjing" dan "kucing" yang diolah dengan proses membandingkan data dan diolah melalui pembobotan sehingga menampilkan hasil output.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/3}}
       \caption{Ilustrasi pembobotan Neural Network}
-      \label{data3}
+      \label{f3}
 \end{figure}
 
 \item Konsep Aktifasi dalam Neural Network
-\subitem dalam Neural Network fungsi aktifasi meliputi inputan dan diproses sehingga menghasilkan Output nilai yang diharapkan, dengan menggunakan persepsi alur cara penyampaian informasi pada jaringan syaraf otak. ilustrasi dapat dilihat pada gambar \ref{data4}
+\subitem dalam Neural Network fungsi aktifasi meliputi inputan dan diproses sehingga menghasilkan Output nilai yang diharapkan, dengan menggunakan persepsi alur cara penyampaian informasi pada jaringan syaraf otak. ilustrasi dapat dilihat pada gambar \ref{f4}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/4}}
       \caption{Ilustrasi fungsi aktifasi Neural Network}
-      \label{data4}
+      \label{f4}
 \end{figure}
 
 \item cara membaca hasil PLOT dari MFCC
@@ -282,42 +282,42 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/5}}
       \caption{Ilustrasi Membaca nilai Plot dari MFCC}
-      \label{data5}
+      \label{f5}
 \end{figure}
 
 \item One-hot Encoding
-\subitem penggunaan One-hot Encoding adalah dengan membaca data yang memiliki nilai 1 sebagai nilai tinggi atau bisa disebut juga sebagai nilai positif dan 0 sebagai nilai rendah yang bermakna juga sebagai nilai negatif. ilustrasi dapat dilihat pada gambar \ref{data6}
+\subitem penggunaan One-hot Encoding adalah dengan membaca data yang memiliki nilai 1 sebagai nilai tinggi atau bisa disebut juga sebagai nilai positif dan 0 sebagai nilai rendah yang bermakna juga sebagai nilai negatif. ilustrasi dapat dilihat pada gambar \ref{f6}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/6}}
       \caption{Ilustrasi One-hot Encoding}
-      \label{data6}
+      \label{f6}
 \end{figure}
 
 \item fungsi dari np.unique dan to\_categorial dalam Code Program
-\subitem fungsi dari NP.UNIQUE dalah untuk membuat data elemen menjadi nilai yang bersifat unik dalam artian (Array), ilustrasi dapat dilihat pada gambar \ref{data7}
+\subitem fungsi dari NP.UNIQUE dalah untuk membuat data elemen menjadi nilai yang bersifat unik dalam artian (Array), ilustrasi dapat dilihat pada gambar \ref{f7}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/7}}
       \caption{Ilustrasi np.unique}
-      \label{data7}
+      \label{f7}
 \end{figure}
 
-\subitem sedangkan perintah to\_categorial adalah untuk membuat data integer yang terdeteksi untuk diubah menjadi data matrix biner. ilustrasi dapat dilihat pada gambar \ref{data8}
+\subitem sedangkan perintah to\_categorial adalah untuk membuat data integer yang terdeteksi untuk diubah menjadi data matrix biner. ilustrasi dapat dilihat pada gambar \ref{f8}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/8}}
       \caption{Ilustrasi to\_categorial}
-      \label{data8}
+      \label{f8}
 \end{figure}
 
 \item fungsi dari Sequential
-\subitem fungsi dari Sequential dari code program adalah untuk membagi data - data agar dapat dianalisis oleh sistem lebih mudah, misalkan dari data 100 dibagi prosesnya menjadi 4 yaitu 25 perproses, seperti yang terdapat pada gambar \ref{data9} sehingga hasil yang didapatkan akan lebih baik lagi.
+\subitem fungsi dari Sequential dari code program adalah untuk membagi data - data agar dapat dianalisis oleh sistem lebih mudah, misalkan dari data 100 dibagi prosesnya menjadi 4 yaitu 25 perproses, seperti yang terdapat pada gambar \ref{f9} sehingga hasil yang didapatkan akan lebih baik lagi.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari1/9}}
       \caption{Ilustrasi fungsi Sequential}
-      \label{data9}
+      \label{f9}
 \end{figure}
 \end{enumerate}
 
@@ -355,12 +355,12 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 
 \lstinputlisting[firstline=24, lastline=25]{src/fathi/chapter6/code.py}
 
-\subitem hasilnya adalah sebagai berikut, dengan menampilkan data dari file disco.00035.au dapat dilihat pada gambar \ref{data10} :
+\subitem hasilnya adalah sebagai berikut, dengan menampilkan data dari file disco.00035.au dapat dilihat pada gambar \ref{f10} :
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/3}}
       \caption{Hasil dari Code Program display\_mfcc}
-      \label{data10}
+      \label{f10}
 \end{figure}
 
 \item Penjelasan Code Program extract\_feature\_song
@@ -372,7 +372,7 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/4}}
       \caption{Code Program extract\_feature\_song}
-      \label{data11}
+      \label{f11}
 \end{figure}
 
 
@@ -382,12 +382,12 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 
 \subitem pada code ini dimulai dengan membuat 3 data Variable array dengan format 2 nilai kosong dan 1 memiliki nilai. dimana data tersebut akan diolah dengan perintah FOR untuk membagi datasetnya sesuai dengan data GENRE yang telah ada. dengan menggunakan NUMPY pada perintah selanjutnya untuk melakukan pembagian data dan dikonversikan menjadi data one-hot encoding.
 
-\subitem hasil dari penggunaan perintah generate\_features\_and\_labels dapat dilihat pada gambar \ref{data12}
+\subitem hasil dari penggunaan perintah generate\_features\_and\_labels dapat dilihat pada gambar \ref{f12}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/6}}
       \caption{Code Program generate\_features\_and\_labels}
-      \label{data12}
+      \label{f12}
 \end{figure}
 
 \item Penjelasan tentang Kenapa proses pada generate\_features\_and\_labels lama
@@ -400,20 +400,20 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 
 \lstinputlisting[firstline=65, lastline=66]{src/fathi/chapter6/code.py}
 
-\subitem pemisahan data tersebut adalah untuk memastikan bahwa sistem telah siap untuk dilakukan uji coba dengan benar, dimana sistem tersebut telah dilakukan test dengan menggunakan testing data sehingga data yang akan didapatkan nanti dari penggunaan training data tidaklah terlalu jauh untuk nilai akhirnya. hasil dari penggunaan training\_split dapat dilihat pada gambar \ref{data13}.
+\subitem pemisahan data tersebut adalah untuk memastikan bahwa sistem telah siap untuk dilakukan uji coba dengan benar, dimana sistem tersebut telah dilakukan test dengan menggunakan testing data sehingga data yang akan didapatkan nanti dari penggunaan training data tidaklah terlalu jauh untuk nilai akhirnya. hasil dari penggunaan training\_split dapat dilihat pada gambar \ref{f13}.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/9}}
       \caption{Hasil Code Program training\_split}
-      \label{data13}
+      \label{f13}
 \end{figure}
 
-\subitem dan berikut ini adalah hasil akhir dari data yang telah dipisahkan menjadi data TEST dan TRAIN dengan data tersebut sudah dilakukan SHUFFLE (acak) terdapat pada gambar \ref{data14}.
+\subitem dan berikut ini adalah hasil akhir dari data yang telah dipisahkan menjadi data TEST dan TRAIN dengan data tersebut sudah dilakukan SHUFFLE (acak) terdapat pada gambar \ref{f14}.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/15}}
       \caption{Hasil Code Program training\_split}
-      \label{data14}
+      \label{f14}
 \end{figure}
 
 \item Penjelasan parameter fungsi Sequential
@@ -422,78 +422,78 @@ ilustrasi Neural Network dapat dilihat pada gambar \ref{data2}
 
 \subitem fungsi Sequential pada code program ini adalah untuk mengolah data inputan agar sesuai dengan fungsi - fungsi yang ada pada code tersebut, dimana data yang akan diolah akan dilakukan pembentukan terlebih dahulu dengan menggunakan perintah pada Library NUMPY yaitu SHAPE dengan data yang digunakan adalah train\_input.
 
-\subitem pada gambar \ref{data15} adalah keluaran dari RUNNING code tersebut
+\subitem pada gambar \ref{f15} adalah keluaran dari RUNNING code tersebut
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/16}}
       \caption{Hasil Code fungsi Sequential}
-      \label{data15}
+      \label{f15}
 \end{figure}
 
 \item Penjelasan parameter fungsi Compile
 
 \lstinputlisting[firstline=100, lastline=103]{src/fathi/chapter6/code.py}
 
-\subitem fungsi Compile digunakan untuk melakukan proses yang akan mengecek data parameter yang akan digunakan dari data yang telah diolah dari proses Sequential. hasil dari RUNNING pada fungsi Compile dapat dilihat pada gambar \ref{data16}
+\subitem fungsi Compile digunakan untuk melakukan proses yang akan mengecek data parameter yang akan digunakan dari data yang telah diolah dari proses Sequential. hasil dari RUNNING pada fungsi Compile dapat dilihat pada gambar \ref{f16}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/17}}
       \caption{Hasil Code fungsi Compile}
-      \label{data16}
+      \label{f16}
 \end{figure}
 
-\subitem pada gambar \ref{data17} adalah hasil dari penjelasan tentang data Sequential dan Compile
+\subitem pada gambar \ref{f17} adalah hasil dari penjelasan tentang data Sequential dan Compile
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/18}}
       \caption{Hasil Code Program Summary}
-      \label{data17}
+      \label{f17}
 \end{figure}
 
 \item Penjelasan parameter fungsi Fit
 
 \lstinputlisting[firstline=107, lastline=109]{src/fathi/chapter6/code.py}
 
-\subitem fungsi Fit digunakan untuk mengolah data dari 10 label data menjadi 10 File datasets, yang kemudian akan dihitung untuk mengukur tingkat akurasi penilaiannya untuk keakuratan data yang diolah serta tingkat Loss (gagal) data yang terjadi. hasil dari RUNNING fungsi Fit dapat dilihat pada gambar \ref{data18}.
+\subitem fungsi Fit digunakan untuk mengolah data dari 10 label data menjadi 10 File datasets, yang kemudian akan dihitung untuk mengukur tingkat akurasi penilaiannya untuk keakuratan data yang diolah serta tingkat Loss (gagal) data yang terjadi. hasil dari RUNNING fungsi Fit dapat dilihat pada gambar \ref{f18}.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/19}}
       \caption{Hasil Code fungsi Fit}
-      \label{data18}
+      \label{f18}
 \end{figure}
 
 \item Penjelasan parameter fungsi Evaluate
 
 \lstinputlisting[firstline=111, lastline=112]{src/fathi/chapter6/code.py}
 
-\subitem fungsi Evaluate digunakan untuk mengevaluasi data yang telah diolah dengan menggunakan perintah fungsi Seqeuntial, Compile dan juga Fit. untuk hasilnya dapat dilihat pada gambar \ref{data19}.
+\subitem fungsi Evaluate digunakan untuk mengevaluasi data yang telah diolah dengan menggunakan perintah fungsi Seqeuntial, Compile dan juga Fit. untuk hasilnya dapat dilihat pada gambar \ref{f19}.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/20}}
       \caption{Hasil Code fungsi Evaluate}
-      \label{data19}
+      \label{f19}
 \end{figure}
 
 
 \lstinputlisting[firstline=114, lastline=116]{src/fathi/chapter6/code.py}
 
-\subitem untuk data yang ditampilkan pada gambar \ref{data20} adalah data yang telah disusun untuk membandingkan tingkat Akurasi dan Loss yang terjadi.
+\subitem untuk data yang ditampilkan pada gambar \ref{f20} adalah data yang telah disusun untuk membandingkan tingkat Akurasi dan Loss yang terjadi.
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/21}}
       \caption{Hasil Code fungsi Evaluate}
-      \label{data20}
+      \label{f20}
 \end{figure}
 
 \item Penjelasan parameter fungsi Predict
 
 \lstinputlisting[firstline=118, lastline=119]{src/fathi/chapter6/code.py}
 
-\subitem fungsi Predict adalah untuk membandingkan tingkat Akurasi dari data pada setiap label yang ada pada dataset GENRE dimana data akurasi nilainya yang tertinggi maka akan diambil sebagai hasil akhir untuk nilai akurasi Predict. hasil RUNNING dapat dilihat pada gambar \ref{data21}
+\subitem fungsi Predict adalah untuk membandingkan tingkat Akurasi dari data pada setiap label yang ada pada dataset GENRE dimana data akurasi nilainya yang tertinggi maka akan diambil sebagai hasil akhir untuk nilai akurasi Predict. hasil RUNNING dapat dilihat pada gambar \ref{f21}
 
 \begin{figure}[!htbp]
       \centering{\includegraphics[width=0.5\textwidth]{figures/fathi/chapter6/hari2/22}}
       \caption{Hasil Code fungsi Predict}
-      \label{data21}
+      \label{f21}
 \end{figure}
 \end{enumerate}
