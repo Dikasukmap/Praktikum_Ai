@@ -212,81 +212,81 @@ for conv2d_count in [1, 2]:
 
 
 # In[14]:rebuild/retrain a model with the best parameters (from the search) and use all data
-
+# membuat variabel model dengan isian librari Sequential
 model = Sequential()
-
+# variabel model di tambahkan librari Conv2D tigapuluh dua bit dengan ukuran kernel 3 x 3 dan fungsi penghitungan relu dang menggunakan data train_input
 model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=np.shape(train_input[0])))
-
+# variabel model di tambahkan dengan lib MaxPooling2D dengan ketentuan ukuran 2 x 2 pixcel
 model.add(MaxPooling2D(pool_size=(2, 2)))
-
+# variabel model di tambahkan dengan librari Conv2D 32bit dengan kernel 3 x 3
 model.add(Conv2D(32, (3, 3), activation='relu'))
-
+# variabel model di tambahkan dengan lib MaxPooling2D dengan ketentuan ukuran 2 x 2 pixcel
 model.add(MaxPooling2D(pool_size=(2, 2)))
-
+# variabel model di tambahkan librari Flatten
 model.add(Flatten())
-
+# variabel model di tambahkan librari Dense dengan fungsi tanh
 model.add(Dense(128, activation='tanh'))
-
+# variabel model di tambahkan librari dropout untuk memangkas data tree sebesar 50 persen
 model.add(Dropout(0.5))
-
+# variabel model di tambahkan librari Dense dengan data dari num_classes dan fungsi softmax
 model.add(Dense(num_classes, activation='softmax'))
-
+# mengkompile data model untuk mendapatkan data loss akurasi dan optimasi
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
+# mencetak variabel model kemudian memunculkan kesimpulan berupa data total parameter, trainable paremeter dan bukan trainable parameter
 print(model.summary())
 # In[15]:join train and test data so we train the network on all data we have available to us
-
+# melakukan join numpy menggunakan data train_input test_input
 model.fit(np.concatenate((train_input, test_input)),
-          
+          # kelanjutan data yang di gunakan pada join train_output test_output
           np.concatenate((train_output, test_output)),
-          
+          #menggunakan ukuran 32 bit dan epoch 10 
           batch_size=32, epochs=10, verbose=2)
 
 # In[16]:save the trained model
-
+#menyimpan model atau mengeksport model yang telah di jalantadi
 model.save("mathsymbols.model")
 
 # In[17]:save label encoder (to reverse one-hot encoding)
-
+# menyompan label encoder dengan nama classes.npy 
 np.save('classes.npy', label_encoder.classes_)
 
 
 # In[18]:load the pre-trained model and predict the math symbol for an arbitrary image;
 # the code below could be placed in a separate file
-
+# mengimpport librari keras model
 import keras.models
-
+# membuat variabel model2 untuk meload model yang telah di simpan tadi
 model2 = keras.models.load_model("mathsymbols.model")
-
+# mencetak hasil model2
 print(model2.summary())
 
 # In[19]:restore the class name to integer encoder
-
+# membuat variabel label encoder ke 2 dengan isian fungsi label encoder.
 label_encoder2 = LabelEncoder()
-
+# menambahkan method classess dengan data classess yang di eksport tadi
 label_encoder2.classes_ = np.load('classes.npy')
-
+# membuat fumgsi predict dengan path img
 def predict(img_path):
-    
+    # membuat variabel newimg dengam membuay immage menjadi array dan membuka data berdasarkan img path
     newimg = keras.preprocessing.image.img_to_array(pil_image.open(img_path))
-    
+    # membagi data yang terdapat pada variabel newimg sebanyak 255
     newimg /= 255.0
 
     # do the prediction
-    
+    # membuat variabel predivtion dengan isian variabel model2 menggunakan fungsi predic dengan syarat variabel newimg dengan data reshape
     prediction = model2.predict(newimg.reshape(1, 32, 32, 3))
 
     # figure out which output neuron had the highest score, and reverse the one-hot encoding
-    
-    inverted = label_encoder2.inverse_transform([np.argmax(prediction)]) # argmax finds highest-scoring output
-    
+    # membuat variabel inverted  denagan label encoder2 dan  menggunakan argmax untuk mencari skor luaran tertinggi
+    inverted = label_encoder2.inverse_transform([np.argmax(prediction)])
+    # mencetak prediksi gambar dan confidence dari gambar.
     print("Prediction: %s, confidence: %.2f" % (inverted[0], np.max(prediction)))
 
 # In[20]: grab an image (we'll just use a random training image for demonstration purposes)
-
+# mencari prediksi menggunakan fungsi prediksi yang di buat tadi dari data di HASYv2/hasy-data/v2-00010.png
 predict("HASYv2/hasy-data/v2-00010.png")
-
+# mencari prediksi menggunakan fungsi prediksi yang di buat tadi dari data di HASYv2/hasy-data/v2-00500.png
 predict("HASYv2/hasy-data/v2-00500.png")
-
+# mencari prediksi menggunakan fungsi prediksi yang di buat tadi dari data di HASYv2/hasy-data/v2-00700.png
 predict("HASYv2/hasy-data/v2-00700.png")
 
